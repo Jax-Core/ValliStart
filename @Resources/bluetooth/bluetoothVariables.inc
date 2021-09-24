@@ -1,0 +1,6 @@
+[Variables]
+BT_CheckBluetooth=[!CommandMeasure BT_MeasureCheckBluetoothRun "run"]
+BT_ToggleBluetooth=[!CommandMeasure BT_MeasureToggleBluetoothRun "run"]
+BT_TurnOnBluetooth=[!CommandMeasure BT_MeasureTurnOnBluetooth "run"]
+BT_TurnOffBluetooth=[!CommandMeasure BT_MeasureTurnOffBluetooth "run"]
+BT_OpenBluetoothDevices=["#@#\bluetooth\batch\bluetoothDevices.url"]
