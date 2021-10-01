@@ -2,8 +2,8 @@
 Measure=calc
 DynamicVariables=1
 ifcondition=(mState = 0)
-iftrueaction=[!HideMeterGroup Music][!SetOption MonitorsBisecotr Y "474*#Scale#"][!UpdateMeter *][!Redraw]
-IfFalseAction=[!ShowMeterGroup Music][!SetOption MonitorsBisecotr Y "((474+145)*#Scale#)"][!UpdateMeter *][!Redraw]
+iftrueaction=[!HideMeterGroup Music][!SetOption MonitorsBisecotr Y "476*#Scale#"][!UpdateMeter *][!Redraw]
+IfFalseAction=[!ShowMeterGroup Music][!SetOption MonitorsBisecotr Y "((474+150)*#Scale#)"][!UpdateMeter *][!Redraw]
 UpdateDivider=2
 
 [mCover]
