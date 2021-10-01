@@ -1,0 +1,15 @@
+[Values]
+Accent=212,212,212
+Alpha=255
+Color=247,247,247
+Border=94,94,94
+FontColor=23,23,23
+DarkColor=82,82,82
+BoxBorder=92,92,92
+BoxColor=36,36,36
+Stroke=1
+FetchImage=1
+Blur=None
+Edge=15
+StartText=Start
+IconName=Win

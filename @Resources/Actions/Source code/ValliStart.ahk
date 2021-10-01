@@ -1,37 +1,25 @@
-; #SingleInstance Force
-; #NoTrayIcon
-; SetTitleMatchMode, 2
-; DetectHiddenWindows, On
-; numberkeys := 0
-
-
-; IniRead, OutputVar, Hotkeys.ini, Variables, Key
-; IniRead, RainmeterPath, Hotkeys.ini, Variables, RMPATH
-
-; Hotkey,%OutputVar%,Button
-; Return
-
-; Button:
-; Run "%RainmeterPath% "!UpdateMeasure "mToggle" "ValliStart\Main" "
-; Unload := 1
-; Return
-
 #SingleInstance Force
 #NoTrayIcon
-Unload := 0
+IniRead, OutputVar, Hotkeys.ini, Variables, Key
+IniRead, Variable, ..\Vars.inc, Variables, ReplaceWin
+IniRead, RainmeterPath, Hotkeys.ini, Variables, RMPATH
 
-$LWin::
-	Run "C:\Program Files\Rainmeter\Rainmeter.exe "!UpdateMeasureGroup "UpdateOnLoad" "ValliStart\Main"""
-	Unload := 1
-	return
+if (Variable = 0)
+{
+	Hotkey,%OutputVar%,Button
+	Return
+}
+else
+{
+	HotKey,$LWin,Button
+	HotKey,LWin & F1,DisabledWin
+	Return
+}
 
-~Esc::
-	if (Unload = 1)
-		Run "C:\Program Files\Rainmeter\Rainmeter.exe "!UpdateMeasure "Unload" "ValliStart\Main"""
-		Unload := 0
-	return
-return
+Button:
+Run "%RainmeterPath% "!UpdateMeasure "mToggle" "ValliStart\Main" "
+Return
 
-LWin & F1::
+DisabledWin:
 MsgBox, Windows key + F1
-return
+Return
