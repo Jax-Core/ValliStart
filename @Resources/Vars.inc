@@ -19,7 +19,7 @@ ShowSec=0
 Animated=1
 Blur=None
 
-Monitor=3
+Monitor=1
 
 Accent=35,159,255
 Alpha=255

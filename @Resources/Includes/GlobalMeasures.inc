@@ -2,20 +2,20 @@
 [MeasureTime]
 Measure=Time
 Format=%#2412#:%M
-UpdateDivider=(#Animated# = 2 ? 50 : 1)
+UpdateDivider=(#Animated# = 2 ? 10 : 1)
 [MeasureSec]
 Measure=Time
 Format=:%S
-UpdateDivider=(#Animated# = 2 ? 50 : 1)
+UpdateDivider=(#Animated# = 2 ? 10 : 1)
 Disabled=(#ShowSEc#-1)
 [MeasureAP]
 Measure=Time
 Format=%p
-UpdateDivider=(#Animated# = 2 ? 50 : 1)
+UpdateDivider=(#Animated# = 2 ? 10 : 1)
 ; [MeasureDate]
 ; Measure=Time
 ; Format=%a, %#b %#d
-; UpdateDivider=(#Animated# = 2 ? 50 : 1)
+; UpdateDivider=(#Animated# = 2 ? 10 : 1)
 ; [MeasureUsername]
 ; Measure=Plugin
 ; Plugin=SysInfo
@@ -36,7 +36,7 @@ IfCondition3=(MeasureWin7Audio > 32) && (MeasureWin7Audio < 81)
 IfTrueAction3=[!SetOption SoundIcon ImageName "#@#Icons\Sound2.png"][!UpdateMeter SoundIcon]
 IfCondition4=MeasureWin7Audio > 80
 IfTrueAction4=[!SetOption SoundIcon ImageName "#@#Icons\Sound.png"][!UpdateMeter SoundIcon]
-UpdateDivider=(#Animated# = 2 ? 50 : 1)
+UpdateDivider=(#Animated# = 2 ? 10 : 1)
 
 [SliderPercent]
 Measure=Calc
@@ -64,14 +64,15 @@ Measure=PLUGIN
 Plugin=WifiStatus
 WiFiInfoType=SSID
 Substitute="-1":"Not connected"
-UpdateDivider=(#Animated# = 2 ? 50 : 1)
+OnChangeAction=[!UpdateMeter WifiName1][!Redraw]
+UpdateDivider=(#Animated# = 2 ? 10 : 1)
 [WifiPercent]
 Measure=PLUGIN
 Plugin=WifiStatus
 WiFiInfoType=QUALITY
 Substitute="":""
 OnUpdateAction=[!UpdateMeasure Wifistatus]
-UpdateDivider=(#Animated# = 2 ? 50 : 1)
+UpdateDivider=(#Animated# = 2 ? 10 : 1)
 [WifiStatus]
 Measure=CALC
 Formula=(WifiPercent > 0) ? 1 : 0
@@ -85,7 +86,8 @@ Substitute="^1$":"Connected","^-1$":"Not connected"
 IfCondition=InternetStatus = -1
 IfTrueAction=[!SetOption InternetStatus1 LeftMouseUpAction """[!CommandMeasure InternetOn "Run"]"""][!UpdateMeter InternetStatus1]
 IfFalseAction=[!SetOption InternetStatus1 LeftMouseUpAction """[!CommandMeasure InternetOff "Run"]"""][!UpdateMeter InternetStatus1]
-UpdateDivider=(#Animated# = 2 ? 50 : 1)
+OnChangeAction=[!UpdateMeter InternetName1][!Redraw]
+UpdateDivider=(#Animated# = 2 ? 10 : 1)
 [InternetOff]
 Measure=Plugin
 Plugin=RunCommand
