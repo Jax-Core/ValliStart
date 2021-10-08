@@ -17,7 +17,10 @@ FetchImage=1
 Location=Center
 ShowSec=0
 Animated=1
+TypeToSearch=1
 Blur=None
+
+Mon=0
 
 Monitor=1
 
