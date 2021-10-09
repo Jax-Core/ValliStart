@@ -1,7 +1,5 @@
 #NoTrayIcon
 
-IniRead, OutputVar, CloseInstance.ini, Variables, Module
-
 CloseScript(Name)
 	{
 	DetectHiddenWindows On
@@ -19,5 +17,7 @@ CloseScript(Name)
 		return Name . " not found"
 	}
 
-CloseScript("WinInput.ahk")
+sleep, 10
+CloseScript("s")
+MsgBox, Clcosed
 ExitApp

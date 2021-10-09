@@ -1,7 +1,5 @@
 #NoTrayIcon
 
-IniRead, OutputVar, CloseInstance.ini, Variables, Module
-
 CloseScript(Name)
 	{
 	DetectHiddenWindows On
