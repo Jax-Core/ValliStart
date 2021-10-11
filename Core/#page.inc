@@ -89,3 +89,20 @@ Meter=String
 Text=Media
 DynamicVariables-1
 MeterStyle=Set.String:S | PageText:S
+[Modules]
+Meter=Shape
+Y=(10*[Set.S])R
+MeterStyle=PageBox:S
+Fill=Fill Color #Set.Accent_Color#,(#BarHandler# = 6 ? 255: 0)
+Handle=6
+
+[ModulesIcon]
+Meter=Image
+MeterStyle=PageIcon:S
+Greyscale=(#BarHandler# = 6 ? 1 : 0)
+
+[6]
+Meter=String
+Text=Modules
+DynamicVariables-1
+MeterStyle=Set.String:S | PageText:S

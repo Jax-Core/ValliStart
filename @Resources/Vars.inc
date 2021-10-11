@@ -6,6 +6,7 @@ IconName=Win
 
 Font=Poppins Light
 Scale=1
+IconScale=1
 Corner=1
 Stroke=1
 Edge=15
@@ -20,7 +21,7 @@ Animated=1
 TypeToSearch=1
 Blur=None
 
-Mon=0
+Module=Weather
 
 Monitor=1
 
@@ -32,6 +33,13 @@ FontColor=255,255,255
 DarkColor=190,190,190
 BoxBorder=80,80,80
 BoxColor=60,60,60
+
+Sound0=
+Sound1=
+
+WeatherLocation=Hong Kong
+WeatherUnits=Metric
+Language=en
 
 ;;╔══════════════════════════════════════════════════════════════════════════════════════════════════════╗
 ;;║ METERSTYLES                                                                                          ║

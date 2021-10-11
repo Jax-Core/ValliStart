@@ -1,3 +1,23 @@
+; ---------------------------------------------------------------------------- ;
+;                                   Function                                   ;
+; ---------------------------------------------------------------------------- ;
+
+[SettingImport3]
+Measure=String
+String=#Monitor#
+DynamicVariables=1
+IfMatch=1
+IfMatchAction=[!SetOption MonBox1 Monitor "Fill Color #Accent#"][!SetOption MonBox2 Monitor "Fill Color 0,0,0,0"][!SetOption MonBox3 Monitor "Fill Color 0,0,0,0"][!SetOption MonBox4 Monitor "Fill Color 0,0,0,0"]
+IfMatch2=2
+IfMatchAction2=[!SetOption MonBox2 Monitor "Fill Color #Accent#"][!SetOption MonBox1 Monitor "Fill Color 0,0,0,0"][!SetOption MonBox3 Monitor "Fill Color 0,0,0,0"][!SetOption MonBox4 Monitor "Fill Color 0,0,0,0"]
+IfMatch3=3
+IfMatchAction3=[!SetOption MonBox3 Monitor "Fill Color #Accent#"][!SetOption MonBox2 Monitor "Fill Color 0,0,0,0"][!SetOption MonBox1 Monitor "Fill Color 0,0,0,0"][!SetOption MonBox4 Monitor "Fill Color 0,0,0,0"]
+IfMatch4=4
+IfMatchAction4=[!SetOption MonBox4 Monitor "Fill Color #Accent#"][!SetOption MonBox2 Monitor "Fill Color 0,0,0,0"][!SetOption MonBox3 Monitor "Fill Color 0,0,0,0"][!SetOption MonBox1 Monitor "Fill Color 0,0,0,0"]
+
+; ---------------------------------------------------------------------------- ;
+;                                    Content                                   ;
+; ---------------------------------------------------------------------------- ;
 
 [MonStyle]
 X=((#MonW#/2-64*#Scale#/2)+20*#Scale#)R

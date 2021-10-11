@@ -1,3 +1,18 @@
+[Choose:M]
+Measure=Plugin
+Plugin=FileChoose
+UseNewStyle=0
+GetTarget=0
+AllowNonstorageFolder=1
+GetIcon=0
+ReturnValue=WholePath
+FileInitialDirectory=
+ImageInitialDirectory=#CurrentPath#IconCache\
+DynamicVariables=1
+Command1=[!WriteKeyvalue Variables Sound0 "$Path$" "#Sec.SaveLocatioN#"][!Refresh]
+Command2=[!WriteKeyvalue Variables Sound1 "$Path$" "#Sec.SaveLocatioN#"][!Refresh]
+
+
 [HotkeysTitle]
 Meter=String
 Text=Hotkeys
@@ -26,7 +41,7 @@ MeterStyle=Set.String:S | Set.OptionName:S
 
 [Time]
 Meter=String
-Text=Time
+Text=Time & weather
 MeterStyle=Set.String:S |  Set.OptionCat:S
 
 [Option11]
@@ -39,6 +54,20 @@ MeterStyle=Set.Div:S
 [Option12]
 Meter=String
 Text=Show seconds
+MeterStyle=Set.String:S | Set.OptionName:S
+[Set.Div:23123]
+Meter=Shape
+MeterStyle=Set.Div:S
+[Option13]
+Meter=String
+Text=Weather location
+MeterStyle=Set.String:S | Set.OptionName:S
+[Set.Div:23124125158]
+Meter=Shape
+MeterStyle=Set.Div:S
+[Option14]
+Meter=String
+Text=Unit (Metric/Imperial)
 MeterStyle=Set.String:S | Set.OptionName:S
 
 
@@ -66,6 +95,32 @@ MeterStyle=Set.Div:S
 [Option23]
 Meter=String
 Text=Start text
+MeterStyle=Set.String:S | Set.OptionName:S
+
+;================================================================================================================================================================================
+
+[Sound]
+Meter=String
+Text=Sound
+MeterStyle=Set.String:S | Set.OptionCat:S
+
+[Option31]
+Meter=String
+Text=Start sound
+MeterStyle=Set.String:S | Set.OptionName:S
+[Set.Div:31238]
+Meter=Shape
+MeterStyle=Set.Div:S
+[Option32]
+Meter=String
+Text=Close sound
+MeterStyle=Set.String:S | Set.OptionName:S
+[Set.Div:3123812342131]
+Meter=Shape
+MeterStyle=Set.Div:S
+[Option33]
+Meter=String
+Text=Remove sounds
 MeterStyle=Set.String:S | Set.OptionName:S
 
 ;================================================================================================================================================================================
@@ -116,6 +171,24 @@ Meter=Shape
 MeterStyle=Set.Bool:S
 Y=([Option12:Y]-#Set.P#+(-20/2+8)*[Set.S])
 
+[WeatherLocation]
+Meter=Shape
+MeterStyle=Set.Textbox:S
+Y=([Option13:Y]-#Set.P#+(-30/2+8)*[Set.S])
+[Value13]
+Meter=String
+Text=#WeatherLocation#
+MeterStyle=Set.String:S | Set.Value:S
+
+[WeatherUnits]
+Meter=Shape
+MeterStyle=Set.Textbox:S
+Y=([Option14:Y]-#Set.P#+(-30/2+8)*[Set.S])
+[Value14]
+Meter=String
+Text=#WeatherUnits#
+MeterStyle=Set.String:S | Set.Value:S
+
 [Button21]
 Meter=Shape
 MeterStyle=Set.Button:S
@@ -148,6 +221,42 @@ Y=([Option23:Y]-#Set.P#+(-30/2+8)*[Set.S])
 [Value23]
 Meter=String
 Text=#StartText#
+MeterStyle=Set.String:S | Set.Value:S
+
+[Sound0]
+Meter=Shape
+MeterStyle=Set.Button:S
+OverColor=0,60,250,150
+LeaveColor=0,60,250,50
+Y=([Option31:Y]-#Set.P#+(-30/2+8)*[Set.S])
+Act=[!CommandMeasure Choose:M "ChooseFile 1"]
+[Value31]
+Meter=String
+Text=Select
+MeterStyle=Set.String:S | Set.Value:S
+
+[Sound1]
+Meter=Shape
+MeterStyle=Set.Button:S
+OverColor=0,60,250,150
+LeaveColor=0,60,250,50
+Y=([Option32:Y]-#Set.P#+(-30/2+8)*[Set.S])
+Act=[!CommandMeasure Choose:M "ChooseFile 2"]
+[Value32]
+Meter=String
+Text=Select
+MeterStyle=Set.String:S | Set.Value:S
+
+[Remove]
+Meter=Shape
+MeterStyle=Set.Button:S
+Y=([Option33:Y]-#Set.P#+(-30/2+8)*[Set.S])
+OverColor=255,0,0,150
+LeaveColor=255,0,0,50
+Act=[!WriteKeyvalue Variables Sound0 "" "#Sec.SaveLocatioN#"][!WriteKeyvalue Variables Sound1 "" "#Sec.SaveLocatioN#"][!Refresh]
+[Value33]
+Meter=String
+Text=Remove
 MeterStyle=Set.String:S | Set.Value:S
 
 

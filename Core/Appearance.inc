@@ -17,6 +17,13 @@ MeterStyle=Set.Div:S
 Meter=String
 Text=Skin scale
 MeterStyle=Set.String:S | Set.OptionName:S
+[Set.Div:s121241424143s]
+Meter=Shape
+MeterStyle=Set.Div:S
+[Option07]
+Meter=String
+Text=Icon scale
+MeterStyle=Set.String:S | Set.OptionName:S
 [Set.Div:S19203s8sdsds]
 Meter=Shape
 MeterStyle=Set.Div:S
@@ -147,6 +154,15 @@ Meter=String
 Text=#Scale#
 MeterStyle=Set.String:S | Set.Value:S
 
+[IconScale]
+Meter=Shape
+MeterStyle=Set.TextBox:S
+Y=([Option07:Y]-#Set.P#+(-30/2+8)*[Set.S])
+[Value07]
+Meter=String
+Text=#IconScale#
+MeterStyle=Set.String:S | Set.Value:S
+
 [Edge]
 Meter=Shape
 MeterStyle=Set.TextBox:S
@@ -156,29 +172,10 @@ Meter=String
 Text=#Edge#
 MeterStyle=Set.String:S | Set.Value:S
 
-[Animated:]
+[Animated]
 Meter=Shape
-0Act=[!WriteKeyValue Variables Animated "0" "#Sec.SaveLocation#"]
-1Act=[!WriteKeyValue Variables Animated "1" "#Sec.SaveLocation#"]
-2Act=[!WriteKeyValue Variables Animated "2" "#Sec.SaveLocation#"]
-MeterStyle=Set.Pick3:S
-Shape2=Rectangle (100*[Set.S]*([&Func:returnBool('Animated', '1')]+[&Func:returnBool('Animated', '2')]*2)),0,(300/3*[Set.S]),(30*[Set.S]),(7*[Set.S]) | Fill Color #Set.Text_Color# | StrokeWidth 0
-Y=([Option04:Y]-#Set.P#+(-30/2+8)*[Set.S])
-[Animated:0]
-Meter=String
-Text=None
-FontColor=([&Func:returnBool('Animated', '0')] = 1 ? 0 : 255),([&Func:returnBool('Animated', '0')] = 1 ? 0 : 255),([&Func:returnBool('Animated', '0')] = 1 ? 0 : 255)
-MeterStyle=Set.String:S | Set.PickOption3_0:S
-[Animated:1]
-Meter=String
-Text=Legacy
-FontColor=([&Func:returnBool('Animated', '1')] = 1 ? 0 : 255),([&Func:returnBool('Animated', '1')] = 1 ? 0 : 255),([&Func:returnBool('Animated', '1')] = 1 ? 0 : 255)
-MeterStyle=Set.String:S | Set.PickOption3_1:S
-[Animated:2]
-Meter=String
-Text=Dynamic
-FontColor=([&Func:returnBool('Animated', '2')] = 1 ? 0 : 255),([&Func:returnBool('Animated', '2')] = 1 ? 0 : 255),([&Func:returnBool('Animated', '2')] = 1 ? 0 : 255)
-MeterStyle=Set.String:S | Set.PickOption3_2:S
+MeterStyle=Set.Bool:S
+Y=([Option04:Y]-#Set.P#+(-20/2+8)*[Set.S])
 
 [Location:]
 Meter=Shape
