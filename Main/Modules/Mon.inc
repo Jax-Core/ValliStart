@@ -22,7 +22,7 @@ IfMatchAction4=[!SetOption MonBox4 Monitor "Fill Color #Accent#"][!SetOption Mon
 [MonStyle]
 X=((#MonW#/2-64*#Scale#/2)+20*#Scale#)R
 Y=(-#MonW#/2.2/2+64*#Scale#/2)r
-Shape=Rectangle 0,0,#MonW#,(#MonW#/2.2),(#Corner#*3),(#Corner#*3) | StrokeWidth #Stroke# | Stroke Color #BoxBorder#,(#Alpha#*0.5) | Extend This
+Shape=Rectangle 0,0,#MonW#,(#MonW#/2.2),(#Corner#*3),(#Corner#*3) | StrokeWidth (#Stroke#*2) | Stroke Color #BoxBorder#,(#Alpha#*0.5) | Extend This
 Shape2=Rectangle (8*#Scale#),(7*#Scale#),(4*#Scale#),(#MonW#/2.2-7*2*#Scale#),(#Corner#*2),(#Corner#*2) | StrokeWidth 0 | Extend Monitor
 Monitor=Fill Color 0,0,0,0
 This=Fill Color #DarkColor#,(#Alpha#*0.1)
