@@ -1,3 +1,6 @@
+[DefaultStartActions]
+Custom1=[!SetOption #Module# MeterStyle "Select:S | Selected:S"][!UpdateMEter #Module#][!Redraw]
+
 [Header]
 Y=(20*[Set.S]+#Scroll#)
 
@@ -14,9 +17,9 @@ MeterStyle=Set.String:S | Set.OptionName:S
 [Select:S]
 X=r
 Y=(20*[Set.S])R
-W=(650*[Set.S])
+W=(600*[Set.S])
 H=(150*[Set.S])
-ImageName=#@#Images\ValliStartModules\#CURRENTSECTIOn#.png
+ImageName=#SKINSPATH##Skin.Name#\Core\Module\#CURRENTSECTIOn#.png
 DynamicVariables=1
 ImageAlpha=200
 MouseOverAction=[!SetOption #CURRENTSECTION# ImageAlpha "255"][!UpdateMeter #CURRENTSECTION#][!Redraw]

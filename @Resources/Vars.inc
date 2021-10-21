@@ -1,18 +1,18 @@
 [Variables]
-ReplaceWin=1
+ReplaceWin=0
 2412=H
 StartText=Start
 IconName=Win
 
-Font=Poppins Light
+Font=Segoe UI
 Scale=1
 IconScale=1
 Corner=1
 Stroke=1
 Edge=15
 
-Player=WNP
-NPName=Spotify
+Player=NP
+NPName=iTunes
 FetchImage=1
 
 Location=Center
