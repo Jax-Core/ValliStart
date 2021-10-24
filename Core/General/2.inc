@@ -61,13 +61,13 @@ Meter=String
 Text=Separate module
 FontColor=(#ReplaceWin# = 0 ? 0 : 255),(#ReplaceWin# = 0 ? 0 : 255),(#ReplaceWin# = 0 ? 0 : 255)
 MeterStyle=Set.String:S | Set.PickOption_0:S
-LeftMouseUpAction=[!WriteKeyValue Variables [&Func:GroupVar('#CURRENTSECTION#')] 0 "#Sec.SaveLocation#"][&Func:GroupVar('#CURRENTSECTION#', '0Act')][!Refresh][!Refresh "#Skin.Name#\WinBlock"]
+LeftMouseUpAction=[!WriteKeyValue Variables [&Func:GroupVar('#CURRENTSECTION#')] 0 "#Sec.SaveLocation#"][&Func:GroupVar('#CURRENTSECTION#', '0Act')][!Refresh][!Refresh "#Skin.Name#\Main"]
 [ReplaceWin:1]
 Meter=String
 Text=Replace Start
 FontColor=(#ReplaceWin# = 1 ? 0 : 255),(#ReplaceWin# = 1 ? 0 : 255),(#ReplaceWin# = 1 ? 0 : 255)
 MeterStyle=Set.String:S | Set.PickOption_1:S
-LeftMouseUpAction=[!WriteKeyValue Variables [&Func:GroupVar('#CURRENTSECTION#')] 1 "#Sec.SaveLocation#"][&Func:GroupVar('#CURRENTSECTION#', '1Act')][!Refresh][!Refresh "#Skin.Name#\WinBlock"]
+LeftMouseUpAction=[!WriteKeyValue Variables [&Func:GroupVar('#CURRENTSECTION#')] 1 "#Sec.SaveLocation#"][&Func:GroupVar('#CURRENTSECTION#', '1Act')][!Refresh][!Refresh "#Skin.Name#\Main"]
 
 [Button02]
 Meter=Shape
@@ -95,9 +95,9 @@ MeterStyle=Set.Bool:S | WinBlock#WinBlock#
 Y=([Option03:Y]-#Set.P#+(-20/2+8)*[Set.S])
 Hidden=(1-#ReplaceWin#)
 [WinBlock0]
-Leftmouseupaction=[!ActivateConfig "#Skin.Name#\WinBlock"][!Refresh]
+Leftmouseupaction=[!ActivateConfig "#Skin.Name#\WinBlock"][!Refresh "#Skin.Name#\Main"][!Refresh]
 [WinBlock1]
-Leftmouseupaction=[!DeactivateConfig "#Skin.Name#\WinBlock"][!Refresh]
+Leftmouseupaction=[!DeactivateConfig "#Skin.Name#\WinBlock"][!Refresh "#Skin.Name#\Main"][!Refresh]
 
 
 [Button10]
@@ -121,3 +121,15 @@ Y=r
 MeterStyle=Set.String:S | Set.Value:S
 
 @includeKeys=#SKINSPATH##Skin.Name#\@Resources\Actions\HotKeys.ini
+
+
+; ---------------------------------------------------------------------------- ;
+;                                    Anchor                                    ;
+; ---------------------------------------------------------------------------- ;
+
+
+[AnchorSuppli]
+Meter=String
+Container=ContentContainer
+x=r
+Y=R

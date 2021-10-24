@@ -1,5 +1,5 @@
 [Variables]
-ReplaceWin=0
+ReplaceWin=1
 2412=H
 StartText=Start
 IconName=Win
