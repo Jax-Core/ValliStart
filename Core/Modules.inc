@@ -1,61 +1,14 @@
+[Variables]
+Page.Page=0
+Page.Editing=Module3
+
 [DefaultStartActions]
-Custom1=[!SetOption #Module# MeterStyle "Select:S | Selected:S"][!UpdateMEter #Module#][!Redraw]
+Custom2=[!SetOption AnchorSuppli Y [AnchorSuppli:Y]][!UpdateMeter AnchorSuppli]
+[ContentContainer]
+MouseScrollDownAction=[!SetVariable Scroll "(Clamp(#Scroll#-50,Clamp(#Set.H#-#Set.P#*2-[AnchorSuppli:Y], -1000, 0),0))"][!UpdateMeter *][!Redraw]
+MouseScrollUpAction=[!SetVariable Scroll "(Clamp(#Scroll#+50,Clamp(#Set.H#-#Set.P#*2-[AnchorSuppli:Y], -1000, 0),0))"][!UpdateMeter *][!Redraw]
 
 [Header]
 Y=(20*[Set.S]+#Scroll#)
 
-[Option01]
-Meter=String
-X=r
-Text=Choose a module! This will appear at the bottom section of ValliStart.
-MeterStyle=Set.String:S | Set.OptionName:S
-
-; ---------------------------------------------------------------------------- ;
-;                                    Styles                                    ;
-; ---------------------------------------------------------------------------- ;
-
-[Select:S]
-X=r
-Y=(20*[Set.S])R
-W=(600*[Set.S])
-H=(150*[Set.S])
-ImageName=#SKINSPATH##Skin.Name#\Core\Module\#CURRENTSECTIOn#.png
-DynamicVariables=1
-ImageAlpha=200
-MouseOverAction=[!SetOption #CURRENTSECTION# ImageAlpha "255"][!UpdateMeter #CURRENTSECTION#][!Redraw]
-MouseLeaveAction=[!SetOption #CURRENTSECTION# ImageAlpha "200"][!UpdateMeter #CURRENTSECTION#][!Redraw]
-Leftmouseupaction=[!WriteKeyValue Variables Module "#CURRENTSECTION#" "#SEc.SaveLocation#"][!UpdateMeasure Auto_Refresh:M][!Refresh]
-PreserveAspectRatio=2
-DynamicVariables=1
-MaskImageName=#@#Images\LayoutMask.png
-Container=ContentContainer
-[Selected:S]
-Fill=Fill Color 255,255,255,255
-ImageAlpha=255
-MouseOverAction=
-MouseLeaveAction=
-LeftMouseUpAction=
-
-; ---------------------------------------------------------------------------- ;
-;                                    Content                                   ;
-; ---------------------------------------------------------------------------- ;
-
-
-[Weather]
-Meter=Image
-X=r
-Y=(30*[Set.S])R
-MeterStyle=Select:S
-
-[Resource]
-Meter=Image
-MeterStyle=Select:S
-
-[Mon]
-Meter=Image
-MeterStyle=Select:S
-
-[None]
-Meter=Image
-MeterStyle=Select:S
-
+@includePagePage=#SKINSPATH##Skin.Name#\Core\Module\#Page.Page#.inc

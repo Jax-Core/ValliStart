@@ -2,23 +2,24 @@
 Measure=calc
 DynamicVariables=1
 ifcondition=(mState = 0)
-iftrueaction=[!HideMeterGroup Music][!SetOption MonitorBisector MeterStyle "MonitorBisector:0"][!UpdateMeter *][!Redraw]
-IfFalseAction=[!ShowMeterGroup Music][!SetOption MonitorBisector MeterStyle "MonitorBisector:1"][!UpdateMeter *][!Redraw]
+iftrueaction=[!HideMeterGroup Music][!UpdateMeter *][!Redraw]
+IfFalseAction=[!ShowMeterGroup Music][!UpdateMeter *][!Redraw]
 UpdateDivider=2
 
 [mCover]
-Measure=Plugin
-Plugin=WebNowPlaying
+Measure=NowPlaying
+PlayerName=[mState]
 PlayerType=Cover
-DefaultPath=#@#Images\Default.png
-CoverPath=#@#Images\Cover.png
+Substitute="":"#@#Images\Default.png"
 OnChangeAction=[!SetOption MainC Path "[#CURRENTSECTION#]"][!UpdateMeter MusicImg][!Redraw]
-UpdateDivider=(#Animated# = 2 ? 10 : 1)
+UpdateDivider=1
+DynamicVariables=1
 Disabled=(1-#FetchImage#)
 
+
 [mState]
-Measure=Plugin
-Plugin=WebNowPlaying
+Measure=NowPlaying
+PlayerName=#NPName#
 PlayerType=State
 IfCondition=mState = 1
 IfTrueAction=[!SetOption PlayPause MeterStyle Pause][!UpdateMeter PlayPause][!Redraw]
@@ -29,48 +30,54 @@ IfTrueAction3=[!SetOption PlayPause MeterStyle Play][!UpdateMeter PlayPause][!Re
 IfConditionMode=0
 OnChangeAction=[!UpdateMeterGroup Music][!Redraw]
 DynamicVariables=1
-UpdateDivider=(#Animated# = 2 ? 10 : 1)
+UpdateDivider=1
 
 [mArtist]
-Measure=Plugin
-Plugin=WebNowPlaying
+Measure=NowPlaying
+PlayerName=[mState]
 OnchangeAction=[!UpdateMeasureGroup Music][!UpdateMeter *][!Redraw]
 PlayerType=Artist
 Substitute="":"Fetching..."
-UpdateDivider=(#Animated# = 2 ? 10 : 1)
+UpdateDivider=1
+DynamicVariables=1
 
 [mTrack]
-Measure=Plugin
-Plugin=WebNowPlaying
+Measure=NowPlaying
+PlayerName=[mState]
 PlayerType=Title
 OnChangeAction=[!UpdateMeter *][!Redraw]
 Substitute="":"Fetching..."
-UpdateDivider=(#Animated# = 2 ? 10 : 1)
+UpdateDivider=1
+DynamicVariables=1
 
 [mProgress]
-Measure=Plugin
-Plugin=WebNowPlaying
+Measure=NowPlaying
+PlayerName=[mState]
 PlayerType=Progress
 Substitute="NaN":"1"
-UpdateDivider=(#Animated# = 2 ? 10 : 1)
+UpdateDivider=1
+DynamicVariables=1
 
 [mCurrentPosition]
-Measure=Plugin
-Plugin=WebNowPlaying
+Measure=NowPlaying
+PlayerName=[mState]
 PlayerType=Position
-UpdateDivider=(#Animated# = 2 ? 10 : 1)
+UpdateDivider=1
+DynamicVariables=1
 
 [mLength]
-Measure=Plugin
-Plugin=WebNowPlaying
+Measure=NowPlaying
+PlayerName=[mState]
 PlayerType=Duration
-UpdateDivider=(#Animated# = 2 ? 10 : 1)
+UpdateDivider=1
+DynamicVariables=1
 
 [mHeart]
-Measure=Plugin
-Plugin=WebNowPlaying
+Measure=NowPlaying
+PlayerName=[mState]
 PlayerType=Rating
 IfCondition=mHeart = 0
 IfTrueAction=[!SetOption Heart MeterStyle "EmptyHeart"]
 IfFalseAction=[!SetOption Heart MeterStyle "FullHeart"]
-UpdateDivider=(#Animated# = 2 ? 10 : 1)
+UpdateDivider=1
+DynamicVariables=1

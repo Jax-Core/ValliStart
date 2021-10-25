@@ -4,8 +4,8 @@
 Measure=Plugin
 Plugin=ActionTimer
 DynamicVariables=1
-ActionList1=Show | Repeat In,6,10 | BlurOn
-ActionList2=BlurOff | Repeat Out,6,10 | Hide
+ActionList1=Show | Repeat In,4,10 | BlurOn
+ActionList2=BlurOff | Repeat Out,4,10 | Hide
 In=[!SetVariable TweenNode1 "(Clamp((#TweenNode1#-10),0,100))"][!UpdateMeter Container][!UpdateMeasure ActionTimer][!Redraw]
 Out=[!SetVariable TweenNode1 "(Clamp((#TweenNode1#+10),0,100))"][!UpdateMeter Container][!UpdateMeasure ActionTimer][!Redraw]
 Show=[!Show][!SetVariable TweenNode1 100][!UpdateMeasure ActionTimer]

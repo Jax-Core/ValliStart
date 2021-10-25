@@ -1,41 +1,40 @@
 [Variables]
 ReplaceWin=1
 2412=H
-StartText=Start
-IconName=Win
+StartText=Welcome back!
+IconName=Core
 
 Font=Segoe UI
 Scale=1
 IconScale=1
 Corner=1
-Stroke=1
+Stroke=0
 Edge=15
 
-Player=NP
-NPName=iTunes
-FetchImage=1
+Player=WNP
+NPName=Spotify
+FetchImage=0
 
 Location=Center
 ShowSec=0
 Animated=1
-TypeToSearch=1
+TypeToSearch=0
 Blur=None
 
-Module=Weather
+Module1=Connection
+Module2=Music
+Module3=Resource
 
 Monitor=1
 
-Accent=35,159,255
+Accent=242, 52, 0
 Alpha=255
-Color=36,36,36
-Border=54,54,54
-FontColor=255,255,255
-DarkColor=190,190,190
-BoxBorder=80,80,80
-BoxColor=60,60,60
-
-Sound0=
-Sound1=
+Color=12,12,12
+Border=28,28,28
+FontColor=242,240,255
+DarkColor=120,120,120
+BoxBorder=35,35,35
+BoxColor=35,35,35
 
 WeatherLocation=Hong Kong
 WeatherUnits=Metric

@@ -1,18 +1,3 @@
-[Choose:M]
-Measure=Plugin
-Plugin=FileChoose
-UseNewStyle=0
-GetTarget=0
-AllowNonstorageFolder=1
-GetIcon=0
-ReturnValue=WholePath
-FileInitialDirectory=
-ImageInitialDirectory=#CurrentPath#IconCache\
-DynamicVariables=1
-Command1=[!WriteKeyvalue Variables Sound0 "$Path$" "#Sec.SaveLocatioN#"][!Refresh]
-Command2=[!WriteKeyvalue Variables Sound1 "$Path$" "#Sec.SaveLocatioN#"][!Refresh]
-
-
 [HotkeysTitle]
 Meter=String
 Text=Activation
@@ -88,32 +73,6 @@ MeterStyle=Set.Div:S
 [Option23]
 Meter=String
 Text=Start text
-MeterStyle=Set.String:S | Set.OptionName:S
-
-;================================================================================================================================================================================
-
-[Sound]
-Meter=String
-Text=Sound
-MeterStyle=Set.String:S | Set.OptionCat:S
-
-[Option31]
-Meter=String
-Text=Start sound
-MeterStyle=Set.String:S | Set.OptionName:S
-[Set.Div:3123123138]
-Meter=Shape
-MeterStyle=Set.Div:S
-[Option32]
-Meter=String
-Text=Close sound
-MeterStyle=Set.String:S | Set.OptionName:S
-[Set.Div:3123812342131]
-Meter=Shape
-MeterStyle=Set.Div:S
-[Option33]
-Meter=String
-Text=Remove sounds
 MeterStyle=Set.String:S | Set.OptionName:S
 
 ;================================================================================================================================================================================
@@ -219,42 +178,6 @@ Y=([Option23:Y]-#Set.P#+(-30/2+8)*[Set.S])
 [Value23]
 Meter=String
 Text=#StartText#
-MeterStyle=Set.String:S | Set.Value:S
-
-[Sound0]
-Meter=Shape
-MeterStyle=Set.Button:S
-OverColor=#Set.Accent_Color_2#,150
-LeaveColor=#Set.Accent_Color_2#,50
-Y=([Option31:Y]-#Set.P#+(-30/2+8)*[Set.S])
-Act=[!CommandMeasure Choose:M "ChooseFile 1"]
-[Value31]
-Meter=String
-Text=Select
-MeterStyle=Set.String:S | Set.Value:S
-
-[Sound1]
-Meter=Shape
-MeterStyle=Set.Button:S
-OverColor=#Set.Accent_Color_2#,150
-LeaveColor=#Set.Accent_Color_2#,50
-Y=([Option32:Y]-#Set.P#+(-30/2+8)*[Set.S])
-Act=[!CommandMeasure Choose:M "ChooseFile 2"]
-[Value32]
-Meter=String
-Text=Select
-MeterStyle=Set.String:S | Set.Value:S
-
-[Remove]
-Meter=Shape
-MeterStyle=Set.Button:S
-Y=([Option33:Y]-#Set.P#+(-30/2+8)*[Set.S])
-OverColor=#Set.Accent_color#,150
-LeaveColor=#Set.Accent_color#,50
-Act=[!WriteKeyvalue Variables Sound0 "" "#Sec.SaveLocatioN#"][!WriteKeyvalue Variables Sound1 "" "#Sec.SaveLocatioN#"][!Refresh]
-[Value33]
-Meter=String
-Text=Remove
 MeterStyle=Set.String:S | Set.Value:S
 
 ; ---------------------------------------------------------------------------- ;

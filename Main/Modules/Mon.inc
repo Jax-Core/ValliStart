@@ -107,3 +107,9 @@ MeterStyle=RegularText | MonTextStyle
 Meter=String
 Text=Second
 MeterStyle=RegularText | MonTextStyle
+
+[MonAnchor]
+Meter=String
+Y=(10*#Scale#)r
+DynamicVariables=1
+Container=Container
