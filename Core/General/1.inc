@@ -131,6 +131,7 @@ Y=([Option12:Y]-#Set.P#+(-20/2+8)*[Set.S])
 [WeatherLocation]
 Meter=Shape
 MeterStyle=Set.Textbox:S
+Type=Txt
 Y=([Option13:Y]-#Set.P#+(-30/2+8)*[Set.S])
 [Value13]
 Meter=String
@@ -140,6 +141,7 @@ MeterStyle=Set.String:S | Set.Value:S
 [WeatherUnits]
 Meter=Shape
 MeterStyle=Set.Textbox:S
+Type=Txt
 Y=([Option14:Y]-#Set.P#+(-30/2+8)*[Set.S])
 [Value14]
 Meter=String
@@ -174,6 +176,7 @@ MeterStyle=Set.String:S | Set.Value:S
 [StartText]
 Meter=Shape
 MeterStyle=Set.TextBox:S
+Type=Txt
 Y=([Option23:Y]-#Set.P#+(-30/2+8)*[Set.S])
 [Value23]
 Meter=String

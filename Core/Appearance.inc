@@ -139,6 +139,7 @@ MeterStyle=Set.String:S | Set.OptionName:S
 [Font]
 Meter=Shape
 MeterStyle=Set.FontBox:S
+Type=Txt
 Y=([Option01:Y]-#Set.P#+(-30/2+8)*[Set.S])
 [Value01]
 Meter=String
@@ -148,6 +149,7 @@ MeterStyle=Set.String:S | Set.Value:S
 [Scale]
 Meter=Shape
 MeterStyle=Set.TextBox:S
+Type=Num|0.5|2
 Y=([Option02:Y]-#Set.P#+(-30/2+8)*[Set.S])
 [Value02]
 Meter=String
@@ -157,6 +159,7 @@ MeterStyle=Set.String:S | Set.Value:S
 [IconScale]
 Meter=Shape
 MeterStyle=Set.TextBox:S
+Type=Num|0.5|2
 Y=([Option07:Y]-#Set.P#+(-30/2+8)*[Set.S])
 [Value07]
 Meter=String
@@ -166,6 +169,7 @@ MeterStyle=Set.String:S | Set.Value:S
 [Edge]
 Meter=Shape
 MeterStyle=Set.TextBox:S
+Type=Num|0|30
 Y=([Option03:Y]-#Set.P#+(-30/2+8)*[Set.S])
 [Value03]
 Meter=String
@@ -238,6 +242,7 @@ MeterStyle=Set.String:S | Set.PickOption3_2:S
 [Alpha]
 Meter=Shape
 MeterStyle=Set.TextBox:S
+Type=Int|0|255
 Y=([Option21:Y]-#Set.P#+(-30/2+8)*[Set.S])
 [Value21]
 Meter=String

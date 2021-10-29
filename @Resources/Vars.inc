@@ -1,5 +1,6 @@
 [Variables]
 ReplaceWin=1
+Mode=1
 2412=H
 StartText=Welcome back!
 IconName=Core

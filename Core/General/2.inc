@@ -38,6 +38,13 @@ Meter=String
 Text=Override the start button#CRLF#- Supports windows 10 + 11 left aligned only.#CRLF#- Hitbox will not sync with taskbar if it's set to autohide, though it still works.)
 FontColor=#Set.Text_Color#,(255-150*(1-#ReplaceWin#))
 MeterStyle=Set.String:S | Set.OptionName:S
+[Set.Div:81231212]
+Meter=Shape
+MeterStyle=Set.Div:S
+[Option04]
+Meter=String
+Text=Start button blocker mode
+MeterStyle=Set.String:S | Set.OptionName:S
 [Set.Div:8]
 Meter=Shape
 MeterStyle=Set.Div:S
@@ -52,8 +59,6 @@ MeterStyle=Set.String:S | Set.OptionName:S
 [ReplaceWin:]
 Meter=Shape
 SecVar=ReplaceWin
-0Act=[!CommandMeasure darkLight.Func "SwitchColor(0)"]
-1Act=[!CommandMeasure darkLight.Func "SwitchColor(1)"]
 MeterStyle=Set.Pick:S
 Y=([Option01:Y]-#Set.P#+(-30/2+8)*[Set.S])
 [ReplaceWin:0]
@@ -98,6 +103,25 @@ Hidden=(1-#ReplaceWin#)
 Leftmouseupaction=[!ActivateConfig "#Skin.Name#\WinBlock"][!Refresh "#Skin.Name#\Main"][!Refresh]
 [WinBlock1]
 Leftmouseupaction=[!DeactivateConfig "#Skin.Name#\WinBlock"][!Refresh "#Skin.Name#\Main"][!Refresh]
+
+[Mode:]
+Meter=Shape
+SecVar=Mode
+MeterStyle=Set.Pick:S
+Shape2=Rectangle ([#[&Func:GroupVar('#CURRENTSECTION#')]] = 1 ? 0 : (150*[Set.S])),0,(150*[Set.S]),(30*[Set.S]),(7*[Set.S]) | Fill Color 255,255,255 | StrokeWidth 0 |
+Y=([Option04:Y]-#Set.P#+(-30/2+8)*[Set.S])
+[Mode:1]
+Meter=String
+Text=Functional
+FontColor=(#Mode# = 1 ? 0 : 255),(#Mode# = 1 ? 0 : 255),(#Mode# = 1 ? 0 : 255)
+MeterStyle=Set.String:S | Set.PickOption_0:S
+LeftMouseUpAction=[!WriteKeyValue Variables [&Func:GroupVar('#CURRENTSECTION#')] 1 "#Sec.SaveLocation#"][&Func:GroupVar('#CURRENTSECTION#', '0Act')][!Refresh][!Refresh "#Skin.Name#\WinBlock"]
+[Mode:2]
+Meter=String
+Text=Edit
+FontColor=(#Mode# = 2 ? 0 : 255),(#Mode# = 2 ? 0 : 255),(#Mode# = 2 ? 0 : 255)
+MeterStyle=Set.String:S | Set.PickOption_1:S
+LeftMouseUpAction=[!WriteKeyValue Variables [&Func:GroupVar('#CURRENTSECTION#')] 2 "#Sec.SaveLocation#"][&Func:GroupVar('#CURRENTSECTION#', '1Act')][!Refresh][!Refresh "#Skin.Name#\WinBlock"]
 
 
 [Button10]
