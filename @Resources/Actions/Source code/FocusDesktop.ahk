@@ -1,0 +1,1 @@
+WinActivate, ahk_class Progman

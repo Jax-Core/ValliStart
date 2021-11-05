@@ -4,12 +4,7 @@ SendMode Input  ; Recommended for new scripts due to its superior speed and reli
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 
-OnMessage(16687, "RainmeterWindowMessage")
-
-RainmeterWindowMessage(wParam, lParam) { 
-     sleep, 2000
-     ExitApp
-}
+OnMessage(16687, ExitApp)
 
 Loop,
    {
@@ -23,6 +18,7 @@ Loop,
         send, %Var%
         ExitApp
    }
+Return
 
 
 

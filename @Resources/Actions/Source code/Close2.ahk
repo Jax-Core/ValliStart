@@ -17,7 +17,5 @@ CloseScript(Name)
 		return Name . " not found"
 	}
 
-sleep, 10
-CloseScript("s")
-MsgBox, Clcosed
+CloseScript("CheckKeyPress.ahk")
 ExitApp
