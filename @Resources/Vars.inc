@@ -7,7 +7,6 @@ IconName=Win
 
 Font=Segoe UI
 Scale=1
-IconScale=1
 Corner=1
 Stroke=1
 Edge=15

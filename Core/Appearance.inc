@@ -20,10 +20,6 @@ MeterStyle=Set.String:S | Set.OptionName:S
 [Set.Div:s121241424143s]
 Meter=Shape
 MeterStyle=Set.Div:S
-[Option07]
-Meter=String
-Text=Icon scale
-MeterStyle=Set.String:S | Set.OptionName:S
 [Set.Div:S19203s8sdsds]
 Meter=Shape
 MeterStyle=Set.Div:S
@@ -70,7 +66,7 @@ MeterStyle=Set.String:S | Set.OptionName:S
 
 [Anim]
 Meter=String
-Text=Colors and filling
+Text=Start menu appearance
 MeterStyle=Set.String:S | Set.OptionCat:S
 
 [Option20]
@@ -154,16 +150,6 @@ Y=([Option02:Y]-#Set.P#+(-30/2+8)*[Set.S])
 [Value02]
 Meter=String
 Text=#Scale#
-MeterStyle=Set.String:S | Set.Value:S
-
-[IconScale]
-Meter=Shape
-MeterStyle=Set.TextBox:S
-Type=Num|0.5|2
-Y=([Option07:Y]-#Set.P#+(-30/2+8)*[Set.S])
-[Value07]
-Meter=String
-Text=#IconScale#
 MeterStyle=Set.String:S | Set.Value:S
 
 [Edge]
