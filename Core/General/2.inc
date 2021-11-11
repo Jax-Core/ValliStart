@@ -45,13 +45,6 @@ MeterStyle=Set.Div:S
 Meter=String
 Text=Start button blocker mode
 MeterStyle=Set.String:S | Set.OptionName:S
-[Set.Div:8]
-Meter=Shape
-MeterStyle=Set.Div:S
-[Option10]
-Meter=String
-Text=Return to main page
-MeterStyle=Set.String:S | Set.OptionName:S
 
 ; ---------------------------------------------------------------------------- ;
 ;                                     Input                                    ;
@@ -127,7 +120,7 @@ LeftMouseUpAction=[!WriteKeyValue Variables [&Func:GroupVar('#CURRENTSECTION#')]
 [Button10]
 Meter=Shape
 MeterStyle=Set.Button:S
-Y=([Option10:Y]-#Set.P#+(-30/2+8)*[Set.S])
+Y=([Header:Y]-#Set.P#+(-20/2+8)*[Set.S])
 OverColor=#Set.Accent_color#,150
 LeaveColor=#Set.Accent_color#,50
 Act=[!WriteKeyvalue Variables page.page 1 "#SKINSPATH##Skin.Name#\Core\General.inc"][!Refresh]

@@ -4,6 +4,8 @@
 ; ---------------------------------------------------------------------------- ;
 
 [Variables]
+ConnectionHeight=180
+
 @includeBT=#@#bluetooth\bluetoothVariables.inc
 
 BTStatus=0
@@ -198,6 +200,6 @@ MeterStyle=RegularText
 
 [ConnectionAnchor]
 Meter=String
-Y=(10*#Scale#*#Stroke#)r
+Y=(10*#Scale#*#Stroke#+(35*#Scale#))r
 DynamicVariables=1
 Container=Container

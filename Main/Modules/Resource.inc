@@ -1,6 +1,8 @@
 ; ---------------------------------------------------------------------------- ;
 ;                                   Function                                   ;
 ; ---------------------------------------------------------------------------- ;
+[Variables]
+ResourceHeight=180
 
 [MeasurePhysMemTotal]
 Measure=PhysicalMemory
@@ -151,6 +153,6 @@ UpdateDivider=1
 
 [ResourceAnchor]
 Meter=String
-Y=(35/2*#Scale#*#Stroke#)r
+Y=(30/2*#Scale#*#Stroke#)r
 DynamicVariables=1
 Container=Container

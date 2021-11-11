@@ -2,6 +2,9 @@
 ;                                   Function                                   ;
 ; ---------------------------------------------------------------------------- ;
 
+[Variables]
+MonHeight=170
+
 [SettingImport3]
 Measure=String
 String=#Monitor#
@@ -110,6 +113,6 @@ MeterStyle=RegularText | MonTextStyle
 
 [MonAnchor]
 Meter=String
-Y=(10*#Scale#)r
+Y=(45*#Scale#)r
 DynamicVariables=1
 Container=Container

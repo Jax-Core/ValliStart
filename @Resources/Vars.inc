@@ -23,7 +23,7 @@ Blur=None
 
 Module1=Connection
 Module2=Music
-Module3=Resource
+Module3=Weather
 
 Monitor=1
 

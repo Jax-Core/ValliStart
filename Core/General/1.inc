@@ -4,7 +4,7 @@ Sec.SaveLocation2=#SKINSPATH##Skin.Name#\Main\Accessories\Unload\Vars.inc
 
 [HotkeysTitle]
 Meter=String
-Text=Activation
+Text=Activation & shortcuts
 MeterStyle=Set.String:S | Set.OptionCat:S
 
 [Option01]
@@ -13,6 +13,13 @@ X=r
 Text=Customize how to activate ValliStart
 MeterStyle=Set.String:S | Set.OptionName:S
 [Set.Div:31238]
+Meter=Shape
+MeterStyle=Set.Div:S
+[Option03]
+Meter=String
+Text=Configure shortcuts
+MeterStyle=Set.String:S | Set.OptionName:S
+[Set.Div:3121238]
 Meter=Shape
 MeterStyle=Set.Div:S
 [Option02]
@@ -58,11 +65,20 @@ MeterStyle=Set.String:S | Set.OptionName:S
 [S12313]
 Meter=String
 Text=Background modification
+FontColor=#Set.Text_Color#,100
 MeterStyle=Set.String:S | Set.OptionCat:S
 
+[Option30]
+Meter=String
+Text=This option had been temporarily disabled along with the showing hidden taskbar feature to preserve performance. You can downgrade the version via the rollback button on the info page.
+W=(#Set.W#-#Set.P#*3-#Set.L#)
+ClipString=2
+FontColor=#Set.Accent_color#
+MeterStyle=Set.String:S | Set.OptionName:S
 [Option31]
 Meter=String
 Text=Background blur
+FontColor=#Set.Text_Color#,100
 MeterStyle=Set.String:S | Set.OptionName:S
 [Set.Div:2131238]
 Meter=Shape
@@ -70,32 +86,7 @@ MeterStyle=Set.Div:S
 [Option32]
 Meter=String
 Text=Background color
-MeterStyle=Set.String:S | Set.OptionName:S
-
-;================================================================================================================================================================================
-
-[S]
-Meter=String
-Text=Configuration
-MeterStyle=Set.String:S | Set.OptionCat:S
-
-[Option21]
-Meter=String
-Text=Pinned shortcuts directory
-MeterStyle=Set.String:S | Set.OptionName:S
-[Set.Div:S190322131238]
-Meter=Shape
-MeterStyle=Set.Div:S
-[Option22]
-Meter=String
-Text=Orb image
-MeterStyle=Set.String:S | Set.OptionName:S
-[Set.Div:S19w2s0328]
-Meter=Shape
-MeterStyle=Set.Div:S
-[Option23]
-Meter=String
-Text=Start text
+FontColor=#Set.Text_Color#,100
 MeterStyle=Set.String:S | Set.OptionName:S
 
 ;================================================================================================================================================================================
@@ -126,6 +117,25 @@ Meter=Shape
 MeterStyle=Set.Bool:S
 Y=([Option02:Y]-#Set.P#+(-20/2+8)*[Set.S])
 
+[Button03]
+Meter=Shape
+MeterStyle=Set.Button:S
+Y=([Option03:Y]-#Set.P#+(-30/2+8)*[Set.S])
+OverColor=#Set.Accent_color#,150
+LeaveColor=#Set.Accent_color#,50
+Act=[!WriteKeyvalue Variables page.page 3 "#SKINSPATH##Skin.Name#\Core\General.inc"][!Refresh]
+[Value03]
+Meter=String
+Text=[\xe895]
+FontFace=Material Icons Round
+FontSize=(14*[Set.S])
+MeterStyle=Set.String:S | Set.Value:S
+[Value031]
+Meter=String
+X=(5*[Set.S])R
+Y=r
+Text=Open
+MeterStyle=Set.String:S | Set.Value:S
 
 [2412:]
 Meter=Shape
@@ -171,75 +181,40 @@ Meter=String
 Text=#WeatherUnits#
 MeterStyle=Set.String:S | Set.Value:S
 
-[Blur:]
-Meter=Shape
-0Act=[!WriteKeyValue Variables Blur "None" "#Sec.SaveLocation2#"]
-1Act=[!WriteKeyValue Variables Blur "Acrylic" "#Sec.SaveLocation2#"]
-2Act=[!WriteKeyValue Variables Blur "Blur" "#Sec.SaveLocation2#"]
-MeterStyle=Set.Pick3:S
-Shape2=Rectangle (100*[Set.S]*([&Func:returnBool('Blur', 'Acrylic')]+[&Func:returnBool('Blur', 'Blur')]*2)),0,(300/3*[Set.S]),(30*[Set.S]),(7*[Set.S]) | Fill Color #Set.Text_Color# | StrokeWidth 0
-Y=([Option31:Y]-#Set.P#+(-30/2+8)*[Set.S])
-[Blur:0]
-Meter=String
-Text=None
-FontColor=([&Func:returnBool('Blur', 'None')] = 1 ? 0 : 255),([&Func:returnBool('Blur', 'None')] = 1 ? 0 : 255),([&Func:returnBool('Blur', 'None')] = 1 ? 0 : 255)
-MeterStyle=Set.String:S | Set.PickOption3_0:S
-[Blur:1]
-Meter=String
-Text=Acrylic
-FontColor=([&Func:returnBool('Blur', 'Acrylic')] = 1 ? 0 : 255),([&Func:returnBool('Blur', 'Acrylic')] = 1 ? 0 : 255),([&Func:returnBool('Blur', 'Acrylic')] = 1 ? 0 : 255)
-MeterStyle=Set.String:S | Set.PickOption3_1:S
-[Blur:2]
-Meter=String
-Text=Standard
-FontColor=([&Func:returnBool('Blur', 'Blur')] = 1 ? 0 : 255),([&Func:returnBool('Blur', 'Blur')] = 1 ? 0 : 255),([&Func:returnBool('Blur', 'Blur')] = 1 ? 0 : 255)
-MeterStyle=Set.String:S | Set.PickOption3_2:S
-[Solid]
-Meter=Shape
-MeterStyle=Set.ColorPacity:S
-LeftMouseUpAction=["#@#Addons\RainRGB4.exe" "VarName=#CURRENTSECTION#Color" "FileName=#Sec.SaveLocation2#" "RefreshConfig=#CURRENTCONFIG# | #Skin.Name#\Main"]
-RightMOuseUpAction=[!SetVariable Editing "#CURRENTSECTION#Opacity"][!SetOption Input2:M X "([#CURRENTSECTION#:X]+5)"][!SetOption Input2:M Y "([#CURRENTSECTION#:Y]+5)"][!CommandMeasure Input2:M "ExecuteBatch 1"]
-Y=([Option32:Y]-#Set.P#+(-30/2+8)*[Set.S])
-Type=Num|1|255
-[Value32]
-Meter=String
-Text=#SolidOpacity#
-MeterStyle=Set.String:S | Set.Pacity:S
-
-[Button21]
-Meter=Shape
-MeterStyle=Set.Button:S
-Act=[!CommandMeasure CheckForDataFolder "Check-Data"]["#SKINSPATH#..\CoreData\ValliStart"]
-Y=([Option21:Y]-[ContentContainer:Y]+(-30/2+8)*[Set.S])
-[Value21]
-Meter=String
-Text=Open
-MeterStyle=Set.String:S | Set.Value:S
-[CheckForDataFolder]
-MEasure=Plugin
-Plugin=PowershellRM
-DynamicVariables=1
-ScriptFile=#@#Powershell\CheckData.ps1
-
-[Button22]
-Meter=Shape
-MeterStyle=Set.Button:S
-Act=[!CommandMEasure Func "startBox('ValliOrb', '#IconName#')"]
-Y=([Option22:Y]-[ContentContainer:Y]+(-30/2+8)*[Set.S])
-[Value22]
-Meter=String
-Text=#IconName#
-MeterStyle=Set.String:S | Set.Value:S
-
-[StartText]
-Meter=Shape
-MeterStyle=Set.TextBox:S
-Type=Txt
-Y=([Option23:Y]-#Set.P#+(-30/2+8)*[Set.S])
-[Value23]
-Meter=String
-Text=#StartText#
-MeterStyle=Set.String:S | Set.Value:S
+; [Blur:]
+; Meter=Shape
+; 0Act=[!WriteKeyValue Variables Blur "None" "#Sec.SaveLocation2#"]
+; 1Act=[!WriteKeyValue Variables Blur "Acrylic" "#Sec.SaveLocation2#"]
+; 2Act=[!WriteKeyValue Variables Blur "Blur" "#Sec.SaveLocation2#"]
+; MeterStyle=Set.Pick3:S
+; Shape2=Rectangle (100*[Set.S]*([&Func:returnBool('Blur', 'Acrylic')]+[&Func:returnBool('Blur', 'Blur')]*2)),0,(300/3*[Set.S]),(30*[Set.S]),(7*[Set.S]) | Fill Color #Set.Text_Color# | StrokeWidth 0
+; Y=([Option31:Y]-#Set.P#+(-30/2+8)*[Set.S])
+; [Blur:0]
+; Meter=String
+; Text=None
+; FontColor=([&Func:returnBool('Blur', 'None')] = 1 ? 0 : 255),([&Func:returnBool('Blur', 'None')] = 1 ? 0 : 255),([&Func:returnBool('Blur', 'None')] = 1 ? 0 : 255)
+; MeterStyle=Set.String:S | Set.PickOption3_0:S
+; [Blur:1]
+; Meter=String
+; Text=Acrylic
+; FontColor=([&Func:returnBool('Blur', 'Acrylic')] = 1 ? 0 : 255),([&Func:returnBool('Blur', 'Acrylic')] = 1 ? 0 : 255),([&Func:returnBool('Blur', 'Acrylic')] = 1 ? 0 : 255)
+; MeterStyle=Set.String:S | Set.PickOption3_1:S
+; [Blur:2]
+; Meter=String
+; Text=Standard
+; FontColor=([&Func:returnBool('Blur', 'Blur')] = 1 ? 0 : 255),([&Func:returnBool('Blur', 'Blur')] = 1 ? 0 : 255),([&Func:returnBool('Blur', 'Blur')] = 1 ? 0 : 255)
+; MeterStyle=Set.String:S | Set.PickOption3_2:S
+; [Solid]
+; Meter=Shape
+; MeterStyle=Set.ColorPacity:S
+; LeftMouseUpAction=["#@#Addons\RainRGB4.exe" "VarName=#CURRENTSECTION#Color" "FileName=#Sec.SaveLocation2#" "RefreshConfig=#CURRENTCONFIG# | #Skin.Name#\Main"]
+; RightMOuseUpAction=[!SetVariable Editing "#CURRENTSECTION#Opacity"][!SetOption Input2:M X "([#CURRENTSECTION#:X]+5)"][!SetOption Input2:M Y "([#CURRENTSECTION#:Y]+5)"][!CommandMeasure Input2:M "ExecuteBatch 1"]
+; Y=([Option32:Y]-#Set.P#+(-30/2+8)*[Set.S])
+; Type=Num|1|255
+; [Value32]
+; Meter=String
+; Text=#SolidOpacity#
+; MeterStyle=Set.String:S | Set.Pacity:S
 
 ; ---------------------------------------------------------------------------- ;
 ;                                    Anchor                                    ;

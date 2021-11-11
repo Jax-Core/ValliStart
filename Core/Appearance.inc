@@ -20,9 +20,6 @@ MeterStyle=Set.String:S | Set.OptionName:S
 [Set.Div:s121241424143s]
 Meter=Shape
 MeterStyle=Set.Div:S
-[Set.Div:S19203s8sdsds]
-Meter=Shape
-MeterStyle=Set.Div:S
 [Option03]
 Meter=String
 Text=Corner roundness
@@ -47,6 +44,20 @@ MeterStyle=Set.Div:S
 [Option06]
 Meter=String
 Text=Draw strokes
+MeterStyle=Set.String:S | Set.OptionName:S
+[Set.Div:S190322131238]
+Meter=Shape
+MeterStyle=Set.Div:S
+[Option07]
+Meter=String
+Text=Orb image
+MeterStyle=Set.String:S | Set.OptionName:S
+[Set.Div:S19w2s0328]
+Meter=Shape
+MeterStyle=Set.Div:S
+[Option08]
+Meter=String
+Text=Start text
 MeterStyle=Set.String:S | Set.OptionName:S
 
 
@@ -195,6 +206,27 @@ MeterStyle=Set.String:S | Set.PickOption3_2:S
 Meter=Shape
 MeterStyle=Set.Bool:S
 Y=([Option06:Y]-#Set.P#+(-20/2+8)*[Set.S])
+
+
+
+[Button07]
+Meter=Shape
+MeterStyle=Set.Button:S
+Act=[!CommandMEasure Func "startBox('ValliOrb', '#IconName#')"]
+Y=([Option07:Y]-[ContentContainer:Y]+(-30/2+8)*[Set.S])
+[Value07]
+Meter=String
+Text=#IconName#
+MeterStyle=Set.String:S | Set.Value:S
+
+[StartText]
+Meter=Shape
+MeterStyle=Set.TextBox:S
+Y=([Option08:Y]-#Set.P#+(-30/2+8)*[Set.S])
+[Value08]
+Meter=String
+Text=#StartText#
+MeterStyle=Set.String:S | Set.Value:S
 
 [FetchImage]
 Meter=Shape
