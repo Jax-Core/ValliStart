@@ -1,5 +1,5 @@
 [Variables]
-Page.Page=3
+Page.Page=1
 
 [DefaultStartActions]
 Custom2=[!SetOption AnchorSuppli Y [AnchorSuppli:Y]][!UpdateMeter AnchorSuppli]
