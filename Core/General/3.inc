@@ -24,7 +24,7 @@ ReturnValue=WholePath
 FileInitialDirectory=
 ImageInitialDirectory=#CurrentPath#IconCache\
 DynamicVariables=1
-Command1=[!CommandMeasure Script:M "Edit('$Name$', '$Path$', '$Ext$', '#Editing#')"]
+Command1=[!CommandMeasure Script:M "Edit([[$Name$]], [[$Path$]], [[$Ext$]], '#Editing#')"]
 
 [Script:M]
 Measure=Script
