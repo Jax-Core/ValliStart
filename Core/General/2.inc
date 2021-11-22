@@ -35,7 +35,7 @@ FontColor=#Set.Text_Color#,(255-150*#ReplaceWin#)
 MeterStyle=Set.String:S | Set.OptionName:S
 [Option03]
 Meter=String
-Text=Override the start button#CRLF#- Supports windows 10 + 11 left aligned only.#CRLF#- Hitbox will not sync with taskbar if it's set to autohide, though it still works.)
+Text=Override the start button#CRLF#- You can edit the button's location by turning on edit mode below#CRLF#- Hitbox will not sync with taskbar if it's set to autohide, though it still works.
 FontColor=#Set.Text_Color#,(255-150*(1-#ReplaceWin#))
 MeterStyle=Set.String:S | Set.OptionName:S
 [Set.Div:81231212]

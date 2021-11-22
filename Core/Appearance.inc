@@ -34,13 +34,13 @@ MeterStyle=Set.String:S | Set.OptionName:S
 [Set.Div:sdsds123s]
 Meter=Shape
 MeterStyle=Set.Div:S
-[Option05]
-Meter=String
-Text=Start location
-MeterStyle=Set.String:S | Set.OptionName:S
-[Set.Div:s123s]
-Meter=Shape
-MeterStyle=Set.Div:S
+; [Option05]
+; Meter=String
+; Text=Start location
+; MeterStyle=Set.String:S | Set.OptionName:S
+; [Set.Div:s123s]
+; Meter=Shape
+; MeterStyle=Set.Div:S
 [Option06]
 Meter=String
 Text=Draw strokes
@@ -178,29 +178,29 @@ Meter=Shape
 MeterStyle=Set.Bool:S
 Y=([Option04:Y]-#Set.P#+(-20/2+8)*[Set.S])
 
-[Location:]
-Meter=Shape
-0Act=[!WriteKeyValue Variables Location "Bottom" "#Sec.SaveLocation#"]
-1Act=[!WriteKeyValue Variables Location "Center" "#Sec.SaveLocation#"]
-2Act=[!WriteKeyValue Variables Location "Corner" "#Sec.SaveLocation#"]
-MeterStyle=Set.Pick3:S
-Shape2=Rectangle (100*[Set.S]*([&Func:returnBool('Location', 'Center')]+[&Func:returnBool('Location', 'Corner')]*2)),0,(300/3*[Set.S]),(30*[Set.S]),(7*[Set.S]) | Fill Color #Set.Text_Color# | StrokeWidth 0
-Y=([Option05:Y]-#Set.P#+(-30/2+8)*[Set.S])
-[Location:0]
-Meter=String
-Text=Bottom
-FontColor=([&Func:returnBool('Location', 'Bottom')] = 1 ? 0 : 255),([&Func:returnBool('Location', 'Bottom')] = 1 ? 0 : 255),([&Func:returnBool('Location', 'Bottom')] = 1 ? 0 : 255)
-MeterStyle=Set.String:S | Set.PickOption3_0:S
-[Location:1]
-Meter=String
-Text=Center
-FontColor=([&Func:returnBool('Location', 'Center')] = 1 ? 0 : 255),([&Func:returnBool('Location', 'Center')] = 1 ? 0 : 255),([&Func:returnBool('Location', 'Center')] = 1 ? 0 : 255)
-MeterStyle=Set.String:S | Set.PickOption3_1:S
-[Location:2]
-Meter=String
-Text=Corner
-FontColor=([&Func:returnBool('Location', 'Corner')] = 1 ? 0 : 255),([&Func:returnBool('Location', 'Corner')] = 1 ? 0 : 255),([&Func:returnBool('Location', 'Corner')] = 1 ? 0 : 255)
-MeterStyle=Set.String:S | Set.PickOption3_2:S
+; [Location:]
+; Meter=Shape
+; 0Act=[!WriteKeyValue Variables Location "Bottom" "#Sec.SaveLocation#"]
+; 1Act=[!WriteKeyValue Variables Location "Center" "#Sec.SaveLocation#"]
+; 2Act=[!WriteKeyValue Variables Location "Corner" "#Sec.SaveLocation#"]
+; MeterStyle=Set.Pick3:S
+; Shape2=Rectangle (100*[Set.S]*([&Func:returnBool('Location', 'Center')]+[&Func:returnBool('Location', 'Corner')]*2)),0,(300/3*[Set.S]),(30*[Set.S]),(7*[Set.S]) | Fill Color #Set.Text_Color# | StrokeWidth 0
+; Y=([Option05:Y]-#Set.P#+(-30/2+8)*[Set.S])
+; [Location:0]
+; Meter=String
+; Text=Bottom
+; FontColor=([&Func:returnBool('Location', 'Bottom')] = 1 ? 0 : 255),([&Func:returnBool('Location', 'Bottom')] = 1 ? 0 : 255),([&Func:returnBool('Location', 'Bottom')] = 1 ? 0 : 255)
+; MeterStyle=Set.String:S | Set.PickOption3_0:S
+; [Location:1]
+; Meter=String
+; Text=Center
+; FontColor=([&Func:returnBool('Location', 'Center')] = 1 ? 0 : 255),([&Func:returnBool('Location', 'Center')] = 1 ? 0 : 255),([&Func:returnBool('Location', 'Center')] = 1 ? 0 : 255)
+; MeterStyle=Set.String:S | Set.PickOption3_1:S
+; [Location:2]
+; Meter=String
+; Text=Corner
+; FontColor=([&Func:returnBool('Location', 'Corner')] = 1 ? 0 : 255),([&Func:returnBool('Location', 'Corner')] = 1 ? 0 : 255),([&Func:returnBool('Location', 'Corner')] = 1 ? 0 : 255)
+; MeterStyle=Set.String:S | Set.PickOption3_2:S
 
 [Stroke]
 Meter=Shape
