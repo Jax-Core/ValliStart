@@ -13,7 +13,7 @@ function check()
         SKIN:Bang('!UpdateMeasure', 'JaxCoreYes')
     else
         print('Update required - '..ParsedVer..'>='..CoreVer)
-        SKIN:Bang('!WriteKeyValue', 'Data', 'DownloadLink', 'https://github.com/EnhancedJax/-JaxCore/releases/download/v'..ParsedVerFull..'/JaxCore_v'..ParsedVerFull..'.rmskin', SavePos)
+        SKIN:Bang('!WriteKeyValue', 'Data', 'DownloadLink', 'https://github.com/Jax-Core/JaxCore/releases/download/v'..ParsedVerFull..'/JaxCore_v'..ParsedVerFull..'.rmskin', SavePos)
         SKIN:Bang('!WriteKeyValue', 'Data', 'SaveLocation', SaveLocation, SavePos)
         SKIN:Bang('!UpdateMeasure', 'JaxCoreNo')
     end

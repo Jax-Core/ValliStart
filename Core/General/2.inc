@@ -132,9 +132,9 @@ FontSize=(14*[Set.S])
 MeterStyle=Set.String:S | Set.Value:S
 [Value101]
 Meter=String
-Text=Return
-X=(5*[Set.S])R
+X=(-25*[Set.S])r
 Y=r
+Text=Return
 MeterStyle=Set.String:S | Set.Value:S
 
 @includeKeys=#SKINSPATH##Skin.Name#\@Resources\Actions\HotKeys.ini

@@ -189,17 +189,17 @@ Y=([Option04:Y]-#Set.P#+(-20/2+8)*[Set.S])
 ; [Location:0]
 ; Meter=String
 ; Text=Bottom
-; FontColor=([&Func:returnBool('Location', 'Bottom')] = 1 ? 0 : 255),([&Func:returnBool('Location', 'Bottom')] = 1 ? 0 : 255),([&Func:returnBool('Location', 'Bottom')] = 1 ? 0 : 255)
+; FontColor=[&Func:returnBool('Location', 'Bottom', '#Set.Pri_color#', '#Set.Text_Color#')]
 ; MeterStyle=Set.String:S | Set.PickOption3_0:S
 ; [Location:1]
 ; Meter=String
 ; Text=Center
-; FontColor=([&Func:returnBool('Location', 'Center')] = 1 ? 0 : 255),([&Func:returnBool('Location', 'Center')] = 1 ? 0 : 255),([&Func:returnBool('Location', 'Center')] = 1 ? 0 : 255)
+; FontColor=[&Func:returnBool('Location', 'Center', '#Set.Pri_color#', '#Set.Text_Color#')]
 ; MeterStyle=Set.String:S | Set.PickOption3_1:S
 ; [Location:2]
 ; Meter=String
 ; Text=Corner
-; FontColor=([&Func:returnBool('Location', 'Corner')] = 1 ? 0 : 255),([&Func:returnBool('Location', 'Corner')] = 1 ? 0 : 255),([&Func:returnBool('Location', 'Corner')] = 1 ? 0 : 255)
+; FontColor=[&Func:returnBool('Location', 'Corner', '#Set.Pri_color#', '#Set.Text_Color#')]
 ; MeterStyle=Set.String:S | Set.PickOption3_2:S
 
 [Stroke]
@@ -244,17 +244,17 @@ Y=([Option20:Y]-#Set.P#+(-30/2+8)*[Set.S])
 [Blur:0]
 Meter=String
 Text=None
-FontColor=([&Func:returnBool('Blur', 'None')] = 1 ? 0 : 255),([&Func:returnBool('Blur', 'None')] = 1 ? 0 : 255),([&Func:returnBool('Blur', 'None')] = 1 ? 0 : 255)
+FontColor=[&Func:returnBool('Blur', 'None', '#Set.Pri_color#', '#Set.Text_Color#')]
 MeterStyle=Set.String:S | Set.PickOption3_0:S
 [Blur:1]
 Meter=String
 Text=Acrylic
-FontColor=([&Func:returnBool('Blur', 'Acrylic')] = 1 ? 0 : 255),([&Func:returnBool('Blur', 'Acrylic')] = 1 ? 0 : 255),([&Func:returnBool('Blur', 'Acrylic')] = 1 ? 0 : 255)
+FontColor=[&Func:returnBool('Blur', 'Acrylic', '#Set.Pri_color#', '#Set.Text_Color#')]
 MeterStyle=Set.String:S | Set.PickOption3_1:S
 [Blur:2]
 Meter=String
 Text=Standard
-FontColor=([&Func:returnBool('Blur', 'Blur')] = 1 ? 0 : 255),([&Func:returnBool('Blur', 'Blur')] = 1 ? 0 : 255),([&Func:returnBool('Blur', 'Blur')] = 1 ? 0 : 255)
+FontColor=[&Func:returnBool('Blur', 'Blur', '#Set.Pri_color#', '#Set.Text_Color#')]
 MeterStyle=Set.String:S | Set.PickOption3_2:S
 
 [Alpha]

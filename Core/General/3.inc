@@ -111,8 +111,8 @@ Y=([Option1:Y]-#Set.P#+(-30/2+8)*[Set.S])
 [EditIcon1]
 Meter=String
 FontFace=Segoe MDL2 Assets
-X=(-15*[Set.S])R
-Y=(-15*[Set.S])R
+X=(13*[Set.S])r
+Y=(13*[Set.S])r
 StringAlign=CenterCenter
 Text=[\xE70F]
 Group=ActionButton | Actions
@@ -124,8 +124,8 @@ Y=([Option2:Y]-#Set.P#+(-30/2+8)*[Set.S])
 [EditIcon2]
 Meter=String
 FontFace=Segoe MDL2 Assets
-X=(-15*[Set.S])R
-Y=(-15*[Set.S])R
+X=(13*[Set.S])r
+Y=(13*[Set.S])r
 StringAlign=CenterCenter
 Text=[\xE70F]
 Group=ActionButton | Actions
@@ -137,8 +137,8 @@ Y=([Option3:Y]-#Set.P#+(-30/2+8)*[Set.S])
 [EditIcon3]
 Meter=String
 FontFace=Segoe MDL2 Assets
-X=(-15*[Set.S])R
-Y=(-15*[Set.S])R
+X=(13*[Set.S])r
+Y=(13*[Set.S])r
 StringAlign=CenterCenter
 Text=[\xE70F]
 Group=ActionButton | Actions
@@ -150,8 +150,8 @@ Y=([Option4:Y]-#Set.P#+(-30/2+8)*[Set.S])
 [EditIcon4]
 Meter=String
 FontFace=Segoe MDL2 Assets
-X=(-15*[Set.S])R
-Y=(-15*[Set.S])R
+X=(13*[Set.S])r
+Y=(13*[Set.S])r
 StringAlign=CenterCenter
 Text=[\xE70F]
 Group=ActionButton | Actions
@@ -163,17 +163,19 @@ Y=([Option5:Y]-#Set.P#+(-30/2+8)*[Set.S])
 [EditIcon5]
 Meter=String
 FontFace=Segoe MDL2 Assets
-X=(-15*[Set.S])R
-Y=(-15*[Set.S])R
+X=(13*[Set.S])r
+Y=(13*[Set.S])r
 StringAlign=CenterCenter
 Text=[\xE70F]
 Group=ActionButton | Actions
 MeterStyle=Set.String:S | Set.Value:S
 [Button6]
 Meter=Shape
+Shape=Rectangle 0,0,150,30,3,3 | StrokeWidth 0 | Extend Fill | Scale [Set.S],[Set.S],0,0
 MeterStyle=Set.Button:S
 OverColor=255,0,50,150
 LeaveColor=255,0,50,100
+X=(#Set.W#-#Set.L#-#Set.P#*2-151*[Set.S])
 Y=([Option6:Y]-#Set.P#+(-30/2+8)*[Set.S])
 Act=[!CommandMeasure Script:M "Remove(1)"]
 [Value6]
@@ -198,9 +200,9 @@ FontSize=(14*[Set.S])
 MeterStyle=Set.String:S | Set.Value:S
 [Value101]
 Meter=String
-Text=Return
-X=(5*[Set.S])R
+X=(-25*[Set.S])r
 Y=r
+Text=Return
 MeterStyle=Set.String:S | Set.Value:S
 
 
