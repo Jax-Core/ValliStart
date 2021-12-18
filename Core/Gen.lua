@@ -1,6 +1,33 @@
 function Initialize()
     saveLocation = SKIN:GetVariable('Sec.SaveLocation2')
-    includeFile = SKIN:GetVariable('SKINSPATH')..'..\\CoreData\\ValliStart\\Include.inc'
+    local function set(...)
+        local ret = {}
+        for _,k in ipairs({...}) do ret[k] = true end
+        return ret
+    end     
+    for i = 1, 5 do
+        if SKIN:GetVariable('Module'..i) == 'SingleRow' then 
+            editingModule = 'Single'
+            editingPrefix = 'S'
+            count = 5
+        elseif SKIN:GetVariable('Module'..i) == 'DoubleRow' then 
+            editingModule = 'Double'
+            editingPrefix = 'D'
+            count = 10
+        elseif SKIN:GetVariable('Module'..i) == 'Win11Row' then 
+            editingModule = 'Win11' 
+            editingPrefix = 'W'
+            count = 12
+        end
+    end
+    for i = 1, count do
+        SKIN:Bang('!SetOption', 'Edit'..i, 'Text', '#'..editingPrefix..i..'#')
+        SKIN:Bang('!ShowMeter', 'Edit'..i)
+        SKIN:Bang('!ShowMeter', 'Set.Div:'..i)
+        SKIN:Bang('!ShowMeter', 'EditButton'..i)
+        SKIN:Bang('!ShowMeter', 'EditIcon'..i)
+    end
+    SKIN:Bang('[!UpdateMeter *][!Redraw]')
 end
 
 -- -------------------------------------------------------------------------- --
@@ -95,9 +122,21 @@ end
 
 function Edit(name, path, ext, editingHandle)
     editingIndex = editingHandle:gsub('^EditButton', '')
-    SKIN:Bang('!WriteKeyValue', 'Variables', 'M'..editingIndex, name, saveLocation)
-    WriteKeyValue('Box'..editingIndex, 'LeftMouseUpAction', '["'..path..'"]', includeFile)
-    WriteKeyValue('Box'..editingIndex..'Icon', 'ImageName', name..'_'..ext, includeFile)
+    editing = editingPrefix..editingIndex
+
+    -- if editingModule == 'S' then editingModule = 'Single' 
+    -- elseif editingModule == 'D' then editingModule = 'Double'
+    -- elseif editingModule == 'W' then editingModule = 'Win11' end 
+    
+    local includeFile = SKIN:GetVariable('SKINSPATH')..'..\\CoreData\\ValliStart\\'..editingModule..'Row.inc'
+
+    SKIN:Bang('!WriteKeyValue', 'Variables', editing, name, saveLocation)
+    WriteKeyValue(editingModule..'Box'..editingIndex, 'LeftMouseUpAction', '["'..path..'"]', includeFile)
+    WriteKeyValue(editingModule..'Box'..editingIndex..'Icon', 'ImageName', '"'..name..'_'..ext..'.png"', includeFile)
+    if editingModule == 'Win11' then
+        WriteKeyValue(editingModule..'Box'..editingIndex..'Text', 'Text', name, includeFile)
+    end
+
     SKIN:Bang('!UpdateMEasure', 'Auto_Refresh:M')
     SKIN:Bang('!Refresh')
 end

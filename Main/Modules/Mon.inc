@@ -3,7 +3,7 @@
 ; ---------------------------------------------------------------------------- ;
 
 [Variables]
-MonHeight=170
+MonHeight=160
 
 [SettingImport3]
 Measure=String

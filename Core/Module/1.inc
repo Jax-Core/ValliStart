@@ -12,17 +12,17 @@ MeterStyle=Set.String:S | Set.OptionCat:S
 ; ---------------------------------------------------------------------------- ;
 
 [Select:S]
-X=r
-Y=(20*[Set.S])R
-W=(600*[Set.S])
-H=(150*[Set.S])
+X=(20*[Set.S])R
+Y=r
+W=([ContentContainer:W]/2-20*[Set.S])
+; H=(150*[Set.S])
 ImageName=#SKINSPATH##Skin.Name#\Core\Module\#CURRENTSECTIOn#.png
 DynamicVariables=1
 ImageAlpha=150
 MouseOverAction=[!SetOption #CURRENTSECTION# ImageAlpha "255"][!UpdateMeter #CURRENTSECTION#][!Redraw]
 MouseLeaveAction=[!SetOption #CURRENTSECTION# ImageAlpha "150"][!UpdateMeter #CURRENTSECTION#][!Redraw]
 Leftmouseupaction=[!WriteKeyValue Variables #page.editing# "#CURRENTSECTION#" "#SEc.SaveLocation#"][!UpdateMeasure Auto_Refresh:M][!WriteKeyvalue Variables page.page 0 "#SKINSPATH##Skin.Name#\Core\Modules.inc"][!Refresh]
-PreserveAspectRatio=2
+; PreserveAspectRatio=2
 DynamicVariables=1
 MaskImageName=#@#Images\LayoutMask.png
 Container=ContentContainer
@@ -45,16 +45,40 @@ MeterStyle=Select:S
 Meter=Image
 MeterStyle=Select:S
 
+[Volume]
+Meter=Image
+X=(20*[Set.S])
+Y=(20*[Set.S])R
+MeterStyle=Select:S
+
 [Connection]
 Meter=Image
 MeterStyle=Select:S
 
 [Music]
 Meter=Image
+X=(20*[Set.S])
+Y=(20*[Set.S])R
 MeterStyle=Select:S
 
 [Mon]
 Meter=Image
+MeterStyle=Select:S
+
+[Win11Row]
+Meter=Image
+X=(20*[Set.S])
+Y=(20*[Set.S])R
+MeterStyle=Select:S
+
+[SingleRow]
+Meter=Image
+MeterStyle=Select:S
+
+[DoubleRow]
+Meter=Image
+X=(20*[Set.S])
+Y=(20*[Set.S])R
 MeterStyle=Select:S
 
 [None]

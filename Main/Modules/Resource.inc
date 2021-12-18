@@ -153,6 +153,6 @@ UpdateDivider=1
 
 [ResourceAnchor]
 Meter=String
-Y=(30/2*#Scale#*#Stroke#)r
+Y=(45*#Scale#*#Stroke#)r
 DynamicVariables=1
 Container=Container

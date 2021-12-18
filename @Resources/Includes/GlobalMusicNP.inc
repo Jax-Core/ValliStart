@@ -5,6 +5,7 @@ ifcondition=(mState = 0)
 iftrueaction=[!HideMeterGroup Music][!UpdateMeter *][!Redraw]
 IfFalseAction=[!ShowMeterGroup Music][!UpdateMeter *][!Redraw]
 UpdateDivider=2
+Group=Music
 
 [mCover]
 Measure=NowPlaying
@@ -13,9 +14,9 @@ PlayerType=Cover
 Substitute="":"#@#Images\Default.png"
 OnChangeAction=[!SetOption MainC Path "[#CURRENTSECTION#]"][!UpdateMeter MusicImg][!Redraw]
 UpdateDivider=1
+Group=Music
 DynamicVariables=1
 Disabled=(1-#FetchImage#)
-
 
 [mState]
 Measure=NowPlaying
@@ -31,6 +32,7 @@ IfConditionMode=0
 OnChangeAction=[!UpdateMeterGroup Music][!Redraw]
 DynamicVariables=1
 UpdateDivider=1
+Group=Music
 
 [mArtist]
 Measure=NowPlaying
@@ -39,6 +41,7 @@ OnchangeAction=[!UpdateMeasureGroup Music][!UpdateMeter *][!Redraw]
 PlayerType=Artist
 Substitute="":"Fetching..."
 UpdateDivider=1
+Group=Music
 DynamicVariables=1
 
 [mTrack]
@@ -48,6 +51,7 @@ PlayerType=Title
 OnChangeAction=[!UpdateMeter *][!Redraw]
 Substitute="":"Fetching..."
 UpdateDivider=1
+Group=Music
 DynamicVariables=1
 
 [mProgress]
@@ -56,6 +60,7 @@ PlayerName=[mState]
 PlayerType=Progress
 Substitute="NaN":"1"
 UpdateDivider=1
+Group=Music
 DynamicVariables=1
 
 [mCurrentPosition]
@@ -63,6 +68,7 @@ Measure=NowPlaying
 PlayerName=[mState]
 PlayerType=Position
 UpdateDivider=1
+Group=Music
 DynamicVariables=1
 
 [mLength]
@@ -70,6 +76,7 @@ Measure=NowPlaying
 PlayerName=[mState]
 PlayerType=Duration
 UpdateDivider=1
+Group=Music
 DynamicVariables=1
 
 [mHeart]
@@ -80,4 +87,5 @@ IfCondition=mHeart = 0
 IfTrueAction=[!SetOption Heart MeterStyle "EmptyHeart"]
 IfFalseAction=[!SetOption Heart MeterStyle "FullHeart"]
 UpdateDivider=1
+Group=Music
 DynamicVariables=1

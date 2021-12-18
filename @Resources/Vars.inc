@@ -2,39 +2,42 @@
 ReplaceWin=1
 Mode=1
 2412=H
-StartText=Start
-IconName=Win
+StartText=Welcome back!
+IconName=Core
+MinimumPanelSize=0
 
 Font=Segoe UI
 Scale=1
 Corner=1
-Stroke=1
+Stroke=0
 Edge=15
 
 Player=WNP
 NPName=Spotify
-FetchImage=1
+FetchImage=0
 
 Location=Center
 ShowSec=0
-Animated=1
+Animated=0
 TypeToSearch=0
 Blur=None
 
-Module1=Connection
-Module2=Music
-Module3=Weather
+Module1=Win11Row
+Module2=Volume
+Module3=Connection
+Module4=Music
+Module5=Mon
 
 Monitor=1
 
-Accent=35,159,255
+Accent=242, 52, 0
 Alpha=255
-Color=36,36,36
-Border=54,54,54
-FontColor=255,255,255
-DarkColor=190,190,190
-BoxBorder=80,80,80
-BoxColor=60,60,60
+Color=12,12,12
+Border=28,28,28
+FontColor=242,240,255
+DarkColor=120,120,120
+BoxBorder=35,35,35
+BoxColor=35,35,35
 
 WeatherLocation=Hong Kong
 WeatherUnits=Metric
