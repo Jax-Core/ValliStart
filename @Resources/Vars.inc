@@ -18,7 +18,7 @@ FetchImage=0
 
 Location=Center
 ShowSec=0
-Animated=1
+Animated=0
 TypeToSearch=0
 Blur=None
 
