@@ -44,7 +44,7 @@ MeterStyle=Set.String:S |  Set.OptionCat:S
 Meter=String
 Text=Time format: 24(H) 12(I)
 MeterStyle=Set.String:S | Set.OptionName:S
-[Set.Div:238]
+[Set.Div:2238]
 Meter=Shape
 MeterStyle=Set.Div:S
 [Option12]
