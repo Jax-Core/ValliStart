@@ -4,7 +4,6 @@
 
 [Variables]
 MonHeight=160
-Monitor=1
 
 [SettingImport3]
 Measure=String
@@ -59,7 +58,7 @@ Container=Container
 Meter=Shape
 x=r
 y=(10*#Scale#)R
-LeftMouseUpAction=["DisplaySwitch.exe" "/internal"][!SetVariable Monitor 1][!WriteKeyValue Variables Monitor 1 "#ROOTCONFIGPATH#Main\Modules\Mon.inc"][!UpdateMeasure SettingImport4][!UpdateMeterGroup MonBoxes][!Redraw]
+LeftMouseUpAction=["DisplaySwitch.exe" "/internal"][!SetVariable Monitor 1][!WriteKeyValue Variables Monitor 1 "#@#Vars.inc"][!UpdateMeasure SettingImport4][!UpdateMeterGroup MonBoxes][!Redraw]
 meterstyle=monstyle
 [MonIcon1]
 Meter=Image
@@ -69,7 +68,7 @@ MeterStyle=MonIconStyle
 [MonBox2]
 Meter=Shape
 meterstyle=monstyle
-LeftMouseUpAction=["DisplaySwitch.exe" "/double"][!SetVariable Monitor 2][!WriteKeyValue Variables Monitor 2 "#ROOTCONFIGPATH#Main\Modules\Mon.inc"][!UpdateMeasure SettingImport4][!UpdateMeterGroup MonBoxes][!Redraw]
+LeftMouseUpAction=["DisplaySwitch.exe" "/double"][!SetVariable Monitor 2][!WriteKeyValue Variables Monitor 2 "#@#Vars.inc"][!UpdateMeasure SettingImport4][!UpdateMeterGroup MonBoxes][!Redraw]
 [MonIcon2]
 Meter=Image
 ImageTint=#FontColor#
@@ -77,7 +76,7 @@ ImageName=#@#Icons\Duplicate.png
 MeterStyle=MonIconStyle
 [MonBox3]
 Meter=Shape
-LeftMouseUpAction=["DisplaySwitch.exe" "/extend"][!SetVariable Monitor 3][!WriteKeyValue Variables Monitor 3 "#ROOTCONFIGPATH#Main\Modules\Mon.inc"][!UpdateMeasure SettingImport4][!UpdateMeterGroup MonBoxes][!Redraw]
+LeftMouseUpAction=["DisplaySwitch.exe" "/extend"][!SetVariable Monitor 3][!WriteKeyValue Variables Monitor 3 "#@#Vars.inc"][!UpdateMeasure SettingImport4][!UpdateMeterGroup MonBoxes][!Redraw]
 meterstyle=monstyle
 [MonIcon3]
 Meter=Image
@@ -86,7 +85,7 @@ ImageName=#@#Icons\Extend.png
 MeterStyle=MonIconStyle
 [MonBox4]
 Meter=Shape
-LeftMouseUpAction=["DisplaySwitch.exe" "/external"][!SetVariable Monitor 4][!WriteKeyValue Variables Monitor 4 "#ROOTCONFIGPATH#Main\Modules\Mon.inc"][!UpdateMeasure SettingImport4][!UpdateMeterGroup MonBoxes][!Redraw]
+LeftMouseUpAction=["DisplaySwitch.exe" "/external"][!SetVariable Monitor 4][!WriteKeyValue Variables Monitor 4 "#@#Vars.inc"][!UpdateMeasure SettingImport4][!UpdateMeterGroup MonBoxes][!Redraw]
 meterstyle=monstyle
 [MonIcon4]
 Meter=Image

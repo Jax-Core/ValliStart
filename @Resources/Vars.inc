@@ -16,9 +16,7 @@ Player=WNP
 NPName=Spotify
 FetchImage=0
 
-Position=CC
-ScreenPadding=30
-
+Location=Center
 ShowSec=0
 Animated=1
 TypeToSearch=0
@@ -27,8 +25,10 @@ Blur=None
 Module1=Win11Row
 Module2=Volume
 Module3=Connection
-Module4=None
-Module5=None
+Module4=Music
+Module5=Mon
+
+Monitor=1
 
 Accent=242, 52, 0
 Alpha=255
