@@ -4,7 +4,7 @@
 Measure=Plugin
 Plugin=ActionTimer
 DynamicVariables=1
-ActionList1=Show | Custom0 | Repeat In,4,10 | BlurOn
+ActionList1=Show | Repeat In,4,10 | BlurOn
 ActionList2=BlurOff | Repeat Out,4,10 | Hide
 In=[!SetVariable TweenNode1 "(Clamp((#TweenNode1#-10),0,100))"][!UpdateMeter Container][!UpdateMeasure ActionTimer][!Redraw]
 Out=[!SetVariable TweenNode1 "(Clamp((#TweenNode1#+10),0,100))"][!UpdateMeter Container][!UpdateMeasure ActionTimer][!Redraw]
@@ -20,7 +20,7 @@ BlurOff=[!SetVariable ActualBlur None][!UpdateMeasure FrostedGlass][!UpdateMeasu
 
 [ACTIONLOAD]
 Measure=String
-OnUpdateAction=[!CommandMeasure ActionTimer "Stop 2"][!CommandMeasure ActionTimer "Execute 1"]
+OnUpdateAction=[!CommandMeasure ActionTimer "Stop 2"][!CommandMeasure ActionTimer "Execute 1"][!Setvariable SliderX ([MeasureWin7Audio:0]/100*#SliderW#+#SliderM#)]#BT_CheckBluetooth#[!UpdateMeterGroup VolumeElements][!Redraw]
 Disabled=1
 Group=NUOL
 

@@ -4,7 +4,7 @@
 ; ---------------------------------------------------------------------------- ;
 
 [Variables]
-ConnectionHeight=205
+ConnectionHeight=180
 
 @includeBT=#@#bluetooth\bluetoothVariables.inc
 
@@ -62,7 +62,7 @@ State=Hide
 [ConnectionsSubititle]
 Meter=String
 X=(25*#Scale#)
-Y=(25*#Scale#)r
+Y=(10*#Scale#)r
 MeterStyle=RegularText
 Text=Connections and Network
 FontColor=#DarkColor#,200

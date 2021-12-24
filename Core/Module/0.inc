@@ -11,6 +11,11 @@ Meter=String
 X=r
 Text=Select a slot to choose between modules
 MeterStyle=Set.String:S | Set.OptionName:S
+[Option02]
+Meter=String
+X=r
+Text=Click if you don't have music module selected
+MeterStyle=Set.String:S | Set.OptionName:S
 [Set.Div:31238]
 Meter=Shape
 MeterStyle=Set.Div:S
@@ -53,14 +58,6 @@ MeterStyle=Select:S
 Meter=Image
 MeterStyle=Select:S
 
-[Module4]
-Meter=Image
-MeterStyle=Select:S
-
-[Module5]
-Meter=Image
-MeterStyle=Select:S
-
 ; ---------------------------------------------------------------------------- ;
 ;                                    Anchor                                    ;
 ; ---------------------------------------------------------------------------- ;
@@ -75,3 +72,15 @@ Y=R
 ; ---------------------------------------------------------------------------- ;
 ;                                     Input                                    ;
 ; ---------------------------------------------------------------------------- ;
+
+[Button02]
+Meter=Shape
+MeterStyle=Set.Button:S
+Act=[!WriteKeyValue Variables Player "" "#Sec.SaveLocation#"][!WriteKeyValue Variables NPName "" "#Sec.SaveLocation#"][!Refresh][!UpdateMeasure Auto_Refresh:M]
+Y=([Option02:Y]-[ContentContainer:Y]+(-30/2+8)*[Set.S])
+[Value02]
+Meter=String
+Text=[\xe440]
+FontFace=Material Icons Round
+FontSize=(14*[Set.S])
+MeterStyle=Set.String:S | Set.Value:S

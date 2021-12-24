@@ -3,7 +3,7 @@
 [ActionTimer]
 Measure=Plugin
 Plugin=ActionTimer
-ActionList1=Showfade | Custom0
+ActionList1=Showfade
 ActionList2=Hidefade
 Showfade=[!SHowFade]
 HideFade=[!HideFade]
@@ -15,7 +15,7 @@ HideFade=[!HideFade]
 
 [ACTIONLOAD]
 Measure=String
-OnUpdateAction=[!CommandMeasure ActionTimer "Execute 1"]
+OnUpdateAction=[!CommandMeasure ActionTimer "Execute 1"][!Setvariable SliderX ([MeasureWin7Audio:0]/100*#SliderW#+#SliderM#)]#BT_CheckBluetooth#[!UpdateMeterGroup VolumeElements][!Redraw]
 Disabled=1
 Group=NUOL
 

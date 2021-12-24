@@ -6,20 +6,20 @@ IniRead, RainmeterPath, Hotkeys.ini, Variables, RMPATH
 
 if (Variable = 0)
 {
-    Hotkey,%OutputVar%,Button
-    Return
+	Hotkey,%OutputVar%,Button
+	Return
 }
 else
 {
-    HotKey,$LWin,Button
-    HotKey,LWin & F1,DisabledWin
-    Return
+	HotKey,$LWin,Button
+	HotKey,LWin & F1,DisabledWin
+	Return
 }
 
 Button:
-    Run "%RainmeterPath% "!UpdateMeasure "mToggle" "ValliStart\Main" "
+Run "%RainmeterPath% "!UpdateMeasure "mToggle" "ValliStart\Main" "
 Return
 
 DisabledWin:
-    MsgBox, Windows key + F1
+MsgBox, Windows key + F1
 Return
