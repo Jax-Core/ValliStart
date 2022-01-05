@@ -1,5 +1,3 @@
-
-
 [ActionTimer]
 Measure=Plugin
 Plugin=ActionTimer
@@ -27,7 +25,7 @@ Group=NUOL
 
 [ImportAnimated]
 Measure=String
-OnUpdateAction=[!SetVariable AnimatedA "255"][!SetVariable ActualBlur #Blur#][!UpdateMeasure FrostedGlass]
+OnUpdateAction=[!SetVariable ActualBlur #Blur#][!UpdateMeasure FrostedGlass]
 
 ; ---------------------------------------------------------------------------- ;
 ;                                    Content                                   ;

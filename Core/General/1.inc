@@ -1,6 +1,31 @@
 [Variables]
 @includeVars=#SKINSPATH##Skin.Name#\Main\Accessories\Unload\Vars.inc
+@includeWeatherVars=#SKINSPATH##Skin.Name#\Main\Modules\Vars\Weather.inc
 Sec.SaveLocation2=#SKINSPATH##Skin.Name#\Main\Accessories\Unload\Vars.inc
+
+; ---------------------------------------------------------------------------- ;
+;                                   Function                                   ;
+; ---------------------------------------------------------------------------- ;
+
+[Sec.DirButton:S]
+X=((26+5)*[Set.S])r
+Y=r
+Shape=Rectangle 0,0,26,26,3 | StrokeWidth 0 | Extend Fill | Scale [Set.S],[Set.S],0,0
+Shape2=Path Arrow | StrokeWidth (2*[Set.S]) | StrokeStartCap Round | StrokeEndCap Round | Fill Color 0,0,0,1 | Stroke Color #Set.Text_Color# | Scale [Set.S],[Set.S],0,0 | Extend Rotation
+Arrow=8,6 | LineTo 18,12 | LineTo 8,18
+OverColor=[&Func:returnBool('AniDir', '#CURRENTSECTION#', '#Set.Accent_Color#', '#Set.Text_Color#')],200
+LeaveColor=[&Func:returnBool('AniDir', '#CURRENTSECTION#', '#Set.Accent_Color#', '#Set.Text_Color#')],150
+LeftMouseUpAction=[!WriteKeyValue Variables AniDir "#CURRENTSECTION#" #Sec.SaveLocation#][!UpdateMeasure Auto_Refresh:M][!Refresh]
+Fill=Fill Color [&Func:LocalVar('#CURRENTSECTION#', 'LeaveColor')]
+MouseOverAction=[!SetOption #CURRENTSECTION# Fill "Fill Color [&Func:LocalVar('#CURRENTSECTION#', 'OverColor')]"][!UpdateMeter #CURRENTSECTION#][!Redraw]
+MouseLeaveAction=[!SetOption #CURRENTSECTION# Fill "Fill Color [&Func:LocalVar('#CURRENTSECTION#', 'LeaveColor')]"][!UpdateMeter #CURRENTSECTION#][!Redraw]
+Container=ContentContainer
+DynamicVariables=1
+Hidden=(#Animated# = 2 ? 0 : 1)
+
+; ---------------------------------------------------------------------------- ;
+;                                    Content                                   ;
+; ---------------------------------------------------------------------------- ;
 
 [HotkeysTitle]
 Meter=String
@@ -26,6 +51,7 @@ MeterStyle=Set.Div:S
 Meter=String
 Text=Type to search when menu is active
 MeterStyle=Set.String:S | Set.OptionName:S
+
 ;================================================================================================================================================================================
 
 [Time]
@@ -59,6 +85,40 @@ Meter=String
 Text=Unit (Metric/Imperial)
 MeterStyle=Set.String:S | Set.OptionName:S
 
+;================================================================================================================================================================================
+
+[HotkeysTitle3]
+Meter=String
+Text=Animation
+MeterStyle=Set.String:S | Set.OptionCat:S
+[Option31]
+Meter=String
+Text=Slide animations
+MeterStyle=Set.String:S | Set.OptionName:S
+[Set.Div:S132]
+Meter=Shape
+MeterStyle=Set.Div:S
+[Option32]
+Meter=String
+Text=Animation easing type
+FontColor=#Set.Text_Color#,(#Animated# = 2 ? 255 : 150)
+MeterStyle=Set.String:S | Set.OptionName:S
+[Set.Div:S1342]
+Meter=Shape
+MeterStyle=Set.Div:S
+[Option33]
+Meter=String
+Text=Animation direction
+FontColor=#Set.Text_Color#,(#Animated# = 2 ? 255 : 150)
+MeterStyle=Set.String:S | Set.OptionName:S
+[Set.Div:S21342]
+Meter=Shape
+MeterStyle=Set.Div:S
+[Option34]
+Meter=String
+Text=Animation steps
+FontColor=#Set.Text_Color#,(#Animated# = 2 ? 255 : 150)
+MeterStyle=Set.String:S | Set.OptionName:S
 
 ;================================================================================================================================================================================
 
@@ -68,14 +128,14 @@ Text=Background modification
 FontColor=#Set.Text_Color#,100
 MeterStyle=Set.String:S | Set.OptionCat:S
 
-[Option30]
+[Option40]
 Meter=String
 Text=This option had been temporarily disabled along with the showing hidden taskbar feature to preserve performance. You can downgrade the version via the rollback button on the info page.
 W=(#Set.W#-#Set.P#*3-#Set.L#)
 ClipString=2
 FontColor=#Set.Accent_color#
 MeterStyle=Set.String:S | Set.OptionName:S
-[Option31]
+[Option41]
 Meter=String
 Text=Background blur
 FontColor=#Set.Text_Color#,100
@@ -83,7 +143,7 @@ MeterStyle=Set.String:S | Set.OptionName:S
 [Set.Div:2131238]
 Meter=Shape
 MeterStyle=Set.Div:S
-[Option32]
+[Option42]
 Meter=String
 Text=Background color
 FontColor=#Set.Text_Color#,100
@@ -166,6 +226,7 @@ Meter=Shape
 MeterStyle=Set.Textbox:S
 Type=Txt
 Y=([Option13:Y]-#Set.P#+(-30/2+8)*[Set.S])
+SaveLocation="#SKINSPATH##Skin.Name#\Main\Modules\Vars\Weather.inc"
 [Value13]
 Meter=String
 Text=#WeatherLocation#
@@ -176,10 +237,75 @@ Meter=Shape
 MeterStyle=Set.Textbox:S
 Type=Txt
 Y=([Option14:Y]-#Set.P#+(-30/2+8)*[Set.S])
+SaveLocation="#SKINSPATH##Skin.Name#\Main\Modules\Vars\Weather.inc"
 [Value14]
 Meter=String
 Text=#WeatherUnits#
 MeterStyle=Set.String:S | Set.Value:S
+
+
+[Animated:]
+Meter=Shape
+0Act=[!WriteKeyValue Variables Animated "0" "#Sec.SaveLocation#"]
+1Act=[!WriteKeyValue Variables Animated "1" "#Sec.SaveLocation#"]
+2Act=[!WriteKeyValue Variables Animated "2" "#Sec.SaveLocation#"]
+MeterStyle=Set.Pick3:S
+Shape2=Rectangle (100*[Set.S]*([&Func:returnBool('Animated', '1')]+[&Func:returnBool('Animated', '2')]*2)),0,(300/3*[Set.S]),(30*[Set.S]),(7*[Set.S]) | Fill Color #Set.Text_Color# | StrokeWidth 0
+Y=([Option31:Y]-#Set.P#+(-30/2+8)*[Set.S])
+[Animated:0]
+Meter=String
+Text=Off
+FontColor=[&Func:returnBool('Animated', '0', '#Set.Pri_color#', '#Set.Text_Color#')]
+MeterStyle=Set.String:S | Set.PickOption3_0:S
+[Animated:1]
+Meter=String
+Text=Legacy
+FontColor=[&Func:returnBool('Animated', '1', '#Set.Pri_color#', '#Set.Text_Color#')]
+MeterStyle=Set.String:S | Set.PickOption3_1:S
+[Animated:2]
+Meter=String
+Text=Modern
+FontColor=[&Func:returnBool('Animated', '2', '#Set.Pri_color#', '#Set.Text_Color#')]
+MeterStyle=Set.String:S | Set.PickOption3_2:S
+[Easetype]
+Meter=Shape
+MeterStyle=Set.Button:S
+Y=([Option32:Y]-#Set.P#+(-30/2+8)*[Set.S])
+Act=[!CommandMeasure Func "startSide('Ease')"]
+Hidden=(#Animated# = 2 ? 0 : 1)
+[Value32]
+Meter=String
+Text=#Easetype#
+MeterStyle=Set.String:S | Set.Value:S
+Hidden=(#Animated# = 2 ? 0 : 1)
+[Left]
+Meter=Shape
+X=(#Set.W#-#Set.L#-#Set.P#*2-((26*4+5*3)*[Set.S]))
+Y=([Option33:Y]-#Set.P#+(-26/2+8)*[Set.S])
+MeterStyle=Sec.DirButton:S
+[Right]
+Meter=Shape
+Rotation=Rotate 180
+MeterStyle=Sec.DirButton:S
+[Top]
+Meter=Shape
+Rotation=Rotate 90
+MeterStyle=Sec.DirButton:S
+[Bottom]
+Meter=Shape
+Rotation=Rotate 270
+MeterStyle=Sec.DirButton:S
+[AniSteps]
+Meter=Shape
+MeterStyle=Set.Textbox:S
+Type=Int|10|40
+Y=([Option34:Y]-#Set.P#+(-30/2+8)*[Set.S])
+Hidden=(#Animated# = 2 ? 0 : 1)
+[Value34]
+Meter=String
+Text=#AniSteps#
+MeterStyle=Set.String:S | Set.Value:S
+Hidden=(#Animated# = 2 ? 0 : 1)
 
 ; [Blur:]
 ; Meter=Shape

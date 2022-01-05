@@ -34,7 +34,7 @@ Group=Pinned
 ImagePath=#SKINSPATH#..\CoreData\ValliStart\IconCache\
 
 [SingleBox1]
-X=(#scale#*25)
+X=(#W# >= 600 ? ((#W#)/2-(#BoxW#*5+10*4*#scale#)/2) : (25*#Scale#))
 Y=(#scale#*30)r
 
 @includeSingleRow=#SKINSPATH#..\CoreData\ValliStart\SingleRow.inc

@@ -4,7 +4,9 @@ Mode=1
 2412=H
 StartText=Welcome back!
 IconName=Core
-MinimumPanelSize=0
+
+FixW=590
+MinH=0
 
 Font=Segoe UI
 Scale=1
@@ -12,22 +14,23 @@ Corner=1
 Stroke=0
 Edge=15
 
-Player=WNP
-NPName=Spotify
-FetchImage=0
-
 Position=CC
 ScreenPadding=30
 
 ShowSec=0
-Animated=1
+
+Animated=2
+EaseType=OutSine
+AniDir=Bottom
+AniSteps=10
+
 TypeToSearch=0
 Blur=None
 
 Module1=Win11Row
 Module2=Volume
 Module3=Connection
-Module4=None
+Module4=Music
 Module5=None
 
 Accent=242, 52, 0
@@ -38,10 +41,7 @@ FontColor=242,240,255
 DarkColor=120,120,120
 BoxBorder=35,35,35
 BoxColor=35,35,35
-
-WeatherLocation=Hong Kong
-WeatherUnits=Metric
-Language=en
+FetchImage=0
 
 ;;╔══════════════════════════════════════════════════════════════════════════════════════════════════════╗
 ;;║ METERSTYLES                                                                                          ║

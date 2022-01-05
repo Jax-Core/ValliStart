@@ -9,7 +9,7 @@ Custom0=[!Setvariable SliderX ([MeasureWin7Audio:0]/100*#SliderW#+#SliderM#)]#BT
 VolumeHeight=120
 SliderM=(70*#Scale#)
 SliderX=#SliderM#
-SliderW=(280*#Scale#)
+SliderW=((#FixW#-313)*#Scale#)
 SliderH=(3*#Scale#)
 
 [MeasureWin7Audio]

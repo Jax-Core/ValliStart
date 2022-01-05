@@ -1,5 +1,3 @@
-
-
 [ActionTimer]
 Measure=Plugin
 Plugin=ActionTimer

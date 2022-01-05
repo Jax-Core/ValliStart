@@ -8,14 +8,14 @@ MeterStyle=Set.String:S | Set.OptionCat:S
 
 [Option01]
 Meter=String
-Text=Font Face
+Text=Skin scale
 MeterStyle=Set.String:S | Set.OptionName:S
 [Set.Div:sdsds]
 Meter=Shape
 MeterStyle=Set.Div:S
 [Option02]
 Meter=String
-Text=Skin scale
+Text=Font face
 MeterStyle=Set.String:S | Set.OptionName:S
 [Set.Div:s121241424143s]
 Meter=Shape
@@ -29,18 +29,18 @@ Meter=Shape
 MeterStyle=Set.Div:S
 [Option04]
 Meter=String
-Text=Slide animations
+Text=Skin Width
 MeterStyle=Set.String:S | Set.OptionName:S
 [Set.Div:sdsds123s]
 Meter=Shape
 MeterStyle=Set.Div:S
-; [Option05]
-; Meter=String
-; Text=Start location
-; MeterStyle=Set.String:S | Set.OptionName:S
-; [Set.Div:s123s]
-; Meter=Shape
-; MeterStyle=Set.Div:S
+[Option05]
+Meter=String
+Text=Minimum skin height
+MeterStyle=Set.String:S | Set.OptionName:S
+[Set.Div:s123s]
+Meter=Shape
+MeterStyle=Set.Div:S
 [Option06]
 Meter=String
 Text=Draw strokes
@@ -58,19 +58,6 @@ MeterStyle=Set.Div:S
 [Option08]
 Meter=String
 Text=Start text
-MeterStyle=Set.String:S | Set.OptionName:S
-
-
-; ;================================================================================================================================================================================
-
-[Padding]
-Meter=String
-Text=Media
-MeterStyle=Set.String:S | Set.OptionCat:S
-
-[Option10]
-Meter=String
-Text=Retrive and display song thumbnail
 MeterStyle=Set.String:S | Set.OptionName:S
 
 ;================================================================================================================================================================================
@@ -143,24 +130,24 @@ MeterStyle=Set.String:S | Set.OptionName:S
 
 ;================================================================================================================================================================================
 
-[Font]
-Meter=Shape
-MeterStyle=Set.FontBox:S
-Type=Txt
-Y=([Option01:Y]-#Set.P#+(-30/2+8)*[Set.S])
-[Value01]
-Meter=String
-Text=#Font#
-MeterStyle=Set.String:S | Set.Value:S
-
 [Scale]
 Meter=Shape
 MeterStyle=Set.TextBox:S
 Type=Num|0.5|2
+Y=([Option01:Y]-#Set.P#+(-30/2+8)*[Set.S])
+[Value01]
+Meter=String
+Text=#Scale#
+MeterStyle=Set.String:S | Set.Value:S
+
+[Font]
+Meter=Shape
+MeterStyle=Set.FontBox:S
+Type=Txt
 Y=([Option02:Y]-#Set.P#+(-30/2+8)*[Set.S])
 [Value02]
 Meter=String
-Text=#Scale#
+Text=#Font#
 MeterStyle=Set.String:S | Set.Value:S
 
 [Edge]
@@ -173,40 +160,30 @@ Meter=String
 Text=#Edge#
 MeterStyle=Set.String:S | Set.Value:S
 
-[Animated]
+[FixW]
 Meter=Shape
-MeterStyle=Set.Bool:S
-Y=([Option04:Y]-#Set.P#+(-20/2+8)*[Set.S])
+MeterStyle=Set.TextBox:S
+Type=Num|400|#SCREENAREAWIDTH#
+Y=([Option04:Y]-#Set.P#+(-30/2+8)*[Set.S])
+[Value04]
+Meter=String
+Text=#FixW#
+MeterStyle=Set.String:S | Set.Value:S
 
-; [Location:]
-; Meter=Shape
-; 0Act=[!WriteKeyValue Variables Location "Bottom" "#Sec.SaveLocation#"]
-; 1Act=[!WriteKeyValue Variables Location "Center" "#Sec.SaveLocation#"]
-; 2Act=[!WriteKeyValue Variables Location "Corner" "#Sec.SaveLocation#"]
-; MeterStyle=Set.Pick3:S
-; Shape2=Rectangle (100*[Set.S]*([&Func:returnBool('Location', 'Center')]+[&Func:returnBool('Location', 'Corner')]*2)),0,(300/3*[Set.S]),(30*[Set.S]),(7*[Set.S]) | Fill Color #Set.Text_Color# | StrokeWidth 0
-; Y=([Option05:Y]-#Set.P#+(-30/2+8)*[Set.S])
-; [Location:0]
-; Meter=String
-; Text=Bottom
-; FontColor=[&Func:returnBool('Location', 'Bottom', '#Set.Pri_color#', '#Set.Text_Color#')]
-; MeterStyle=Set.String:S | Set.PickOption3_0:S
-; [Location:1]
-; Meter=String
-; Text=Center
-; FontColor=[&Func:returnBool('Location', 'Center', '#Set.Pri_color#', '#Set.Text_Color#')]
-; MeterStyle=Set.String:S | Set.PickOption3_1:S
-; [Location:2]
-; Meter=String
-; Text=Corner
-; FontColor=[&Func:returnBool('Location', 'Corner', '#Set.Pri_color#', '#Set.Text_Color#')]
-; MeterStyle=Set.String:S | Set.PickOption3_2:S
+[MinH]
+Meter=Shape
+MeterStyle=Set.TextBox:S
+Type=Num|0|#SCREENAREAHEIGHT#
+Y=([Option05:Y]-#Set.P#+(-30/2+8)*[Set.S])
+[Value05]
+Meter=String
+Text=#MinH#
+MeterStyle=Set.String:S | Set.Value:S
 
 [Stroke]
 Meter=Shape
 MeterStyle=Set.Bool:S
 Y=([Option06:Y]-#Set.P#+(-20/2+8)*[Set.S])
-
 
 
 [Button07]
@@ -227,11 +204,6 @@ Y=([Option08:Y]-#Set.P#+(-30/2+8)*[Set.S])
 Meter=String
 Text=#StartText#
 MeterStyle=Set.String:S | Set.Value:S
-
-[FetchImage]
-Meter=Shape
-MeterStyle=Set.Bool:S
-Y=([Option10:Y]-#Set.P#+(-20/2+8)*[Set.S])
 
 [Blur:]
 Meter=Shape
