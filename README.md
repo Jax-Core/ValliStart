@@ -45,7 +45,8 @@
       </li></li>
       </ul>
     </li>
-
+    <li> <a href="#custom-color-schemes">Custom Color Schemes</a></li>
+    <li> <a href="#help-&-credits">Help & Credits</a></li>
 
   </ol>
 </details>
@@ -98,8 +99,6 @@ Now that you've installed and setup ValliStart, let's begin setting up some modu
 
 That's all there is to it. Your shortcuts will now be visible in the pinned applications section. **Please keep in mind that you can only pin up to 5 shortcuts at a time.**
 
-### Weather
-
 ### Media Controls
 
 #### For Spotify:
@@ -143,7 +142,21 @@ Once you've installed the extension, you can now proceed to configure media cont
 5. Ignore the alert for WebNowPlaying Companion extension(we've already installed this in the previous step) and press **confirm** on the bottom right.
 6. Refresh ValliStart and your media controls for any website should work.
 
-**The other modules, on the other hand, do not necessitate the installation of any additional applications or extensions. So, you can simply enable them using the same method as described above for the Media Controls module**
+**The other modules, on the other hand, do not necessitate the installation of any additional applications or extensions. So, you can simply enable them using the same method as described above for the Media Controls module.**
+
+## Custom Color Schemes
+
+ValliStart includes 8 color scheme presets. These are their names:
+- Dark
+- Blur
+- CoreUI
+- Dracula
+- Amarena
+- LoveLace
+- Nord
+- Light (If you use this, you will be facing the council)
+
+You can also make your own custom schemes through the **Appearance** tab.
 
 ## Help & Credits
 - Spicetify installation guide by [khanhas](https://github.com/khanhas).
