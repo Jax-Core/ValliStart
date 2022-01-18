@@ -65,8 +65,6 @@ ValliStart is a Rainmeter skin that replaces the standard Windows start menu wit
 
 ## Getting Started
 
-A quick tutorial on how to install JaxCore. More detailed instructions can be found on the wiki.
-
 ### Prerequisites
 
 - **Rainmeter v4.5 or newer.** Rainmeter can be installed by downloading the `.exe` file [from Rainmeter's official website.](https://www.rainmeter.net/).
@@ -100,27 +98,28 @@ That's all there is to it. Your shortcuts will now be visible in the pinned appl
 
 ### Media Controls
 
-* For media controls to work with **Spotify**, you will have to setup and install **[Spicetify](https://spicetify.app/).** Follow the steps below to do so.
+#### Spotify
+For media controls to work with, you will have to setup and install **[Spicetify](https://spicetify.app/).** Follow the steps below to do so.
 
-  1. Open Powershell (Windows 10) or Windows Terminal (Windows 11) and run the commands that follow:
-      ```
+1. Open Powershell (Windows 10) or Windows Terminal (Windows 11) and run the commands that follow:
+    ```
       Invoke-WebRequest -UseBasicParsing "https://raw.githubusercontent.com/khanhas/spicetify-cli/master/install.ps1" | Invoke-Expression
 
       spicetify
 
       spicetify config extensions webnowplaying.js
-      ```
-  **If you would like to install `webnowplaying.js` only without having to install the custom themes, run the following command:**
-  ```
-  spicetify config inject_css 0 replace_colors 0
-  ```
-  2. And finally, run the following command to save and apply all your changes:
-  ```
-  spicetify backup apply
-  ```
+    ```
+**If you would like to install `webnowplaying.js` only without having to install the custom themes, run the following command:**
+    ```
+    spicetify config inject_css 0 replace_colors 0
+    ```
+2. And finally, run the following command to save and apply all your changes:
+    ```
+    spicetify backup apply
+    ```
 
 Now, you can proceed to setting up the media controls. Simply, follow the stesp below:
-1. 
+  1. 
 
 
 
