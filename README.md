@@ -42,8 +42,8 @@
         <li><a href="#weather">Weather</a></li>
          <li><a href="#media-controls">Media Controls</a>
           <ul>
-            <li><a href="#spotify">Spotify</a></li>
-            <li><a href="#web-players">Web Players</a></li>
+            <li><a href="#for-spotify">Spotify</a></li>
+            <li><a href="#for-web-players">Web Players</a></li>
           </ul>
       </li></li>
       </ul>
