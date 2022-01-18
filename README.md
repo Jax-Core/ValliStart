@@ -144,7 +144,7 @@ Once you've installed the extension, you can now proceed to configure media cont
 
 **The other modules, on the other hand, do not necessitate the installation of any additional applications or extensions. So, you can simply enable them using the same method as described above for the Media Controls module.**
 
-## Custom Color Schemes
+### Custom Color Schemes
 
 ValliStart includes 8 color scheme presets. These are their names:
 - Dark
