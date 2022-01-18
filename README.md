@@ -98,28 +98,28 @@ That's all there is to it. Your shortcuts will now be visible in the pinned appl
 
 ### Media Controls
 
-#### Spotify
+#### Spotify:
 For media controls to work with, you will have to setup and install **[Spicetify](https://spicetify.app/).** Follow the steps below to do so.
 
 1. Open Powershell (Windows 10) or Windows Terminal (Windows 11) and run the commands that follow:
-    ```
-      Invoke-WebRequest -UseBasicParsing "https://raw.githubusercontent.com/khanhas/spicetify-cli/master/install.ps1" | Invoke-Expression
+  ```
+    Invoke-WebRequest -UseBasicParsing "https://raw.githubusercontent.com/khanhas/spicetify-cli/master/install.ps1" | Invoke-Expression
 
-      spicetify
+    spicetify
 
-      spicetify config extensions webnowplaying.js
-    ```
-**If you would like to install `webnowplaying.js` only without having to install the custom themes, run the following command:**
-    ```
+    spicetify config extensions webnowplaying.js
+  ```
+**If you only want to install `webnowplaying.js` without the custom themes, use the following command:**
+  ```
     spicetify config inject_css 0 replace_colors 0
-    ```
+  ```
 2. And finally, run the following command to save and apply all your changes:
-    ```
+  ```
     spicetify backup apply
-    ```
+  ```
 
 Now, you can proceed to setting up the media controls. Simply, follow the stesp below:
-  1. 
+1. 
 
 
 
