@@ -75,7 +75,7 @@ ValliStart is a Rainmeter skin that replaces the standard Windows start menu wit
 
 ### Prerequisites
 
-- **Rainmeter v4.5 or newer.** Rainmeter can be installed by downloading the `.exe` file [from Rainmeter's official website.](https://www.rainmeter.net/).
+- **Rainmeter v4.5 or newer.** Rainmeter can be installed by downloading the `.exe` file [from Rainmeter's official website.](https://www.rainmeter.net/)
 - **JaxCore v40005.** JaxCore can be installed by downloading the `.rmskin` file from [JaxCore's official website.](https://jax-core.github.io/)
 
 ### Installation
@@ -147,9 +147,10 @@ Once you've installed the extension, you can now proceed to configure media cont
 
 **The other modules, on the other hand, do not necessitate the installation of any additional applications or extensions. So, you can simply enable them using the same method as described above for the Media Controls module.**
 
-### Custom Color Schemes
+## Custom Color Schemes
 
-ValliStart includes 8 color scheme presets. These are their names:
+ValliStart includes 8 color scheme presets. You enable them by just selecting them within the **Color Scheme** tab. These are their names:
+
 - Dark
 - Blur
 - CoreUI
