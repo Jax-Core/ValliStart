@@ -49,7 +49,7 @@
       </ul>
     </li>
     <li> <a href="#custom-color-schemes">Custom Color Schemes</a></li>
-    <li> <a href="#help-&-credits">Help & Credits</a></li>
+    <li> <a href="#help-and-credits">Help & Credits</a></li>
 
   </ol>
 </details>
@@ -161,6 +161,6 @@ ValliStart includes 8 color scheme presets. These are their names:
 
 You can also make your own custom schemes through the **Appearance** tab.
 
-## Help & Credits
+## Help and Credits
 - Spicetify installation guide by [khanhas](https://github.com/khanhas).
 - Join the [Core Community Discord Server](https://discord.gg/JmgehPSDD6) for more help.
