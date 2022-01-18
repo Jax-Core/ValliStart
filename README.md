@@ -30,7 +30,6 @@
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
-        <li><a href="#media-controls">Media Controls</a></li>
       </ul>
     </li>
     <li>
@@ -38,7 +37,12 @@
     <ul>
         <li><a href="#pinned-shortcuts">Pinned Shortcuts</a></li>
         <li><a href="#weather">Weather</a></li>
-        <li><a href="#media-controls">Media Controls</a></li>
+         <li><a href="#media-controls">Media Controls</a>
+          <ul>
+            <li><a href="#spotify">Spotify</a></li>
+            <li><a href="#web-players">Web Players</a></li>
+          </ul>
+      </li></li>
       </ul>
     </li>
 
@@ -99,31 +103,48 @@ That's all there is to it. Your shortcuts will now be visible in the pinned appl
 ### Media Controls
 
 #### Spotify:
-For media controls to work with, you will have to setup and install **[Spicetify](https://spicetify.app/).** Follow the steps below to do so.
+For media controls to work with Spotify, you will have to setup and install **[Spicetify](https://spicetify.app/).** Follow the steps below to do so.
 
 1. Open Powershell (Windows 10) or Windows Terminal (Windows 11) and run the commands that follow:
-  ```
-    Invoke-WebRequest -UseBasicParsing "https://raw.githubusercontent.com/khanhas/spicetify-cli/master/install.ps1" | Invoke-Expression
+    ```
+      Invoke-WebRequest -UseBasicParsing "https://raw.githubusercontent.com/khanhas/spicetify-cli/master/install.ps1" | Invoke-Expression
 
-    spicetify
+      spicetify
 
-    spicetify config extensions webnowplaying.js
-  ```
+      spicetify config extensions webnowplaying.js
+    ```
 **If you only want to install `webnowplaying.js` without the custom themes, use the following command:**
   ```
     spicetify config inject_css 0 replace_colors 0
   ```
 2. And finally, run the following command to save and apply all your changes:
-  ```
-    spicetify backup apply
-  ```
+    ```
+      spicetify backup apply
+    ```
 
-Now, you can proceed to setting up the media controls. Simply, follow the stesp below:
-1. 
+You can now proceed to configure media controls for Spotify. Simply follow the steps outlined below:
 
+1. Open Core and head over to the **Modules** section.
+2. Select **ValliStart** from the list and proceed to the **Modules** tab.
+3. Select the Media Control module and enable it.
+4. Go to the **Media** tab and select **Spotify**
+5. Ignore the alert for Spicetify(we've already installed this in the previous step) and press **confirm** on the bottom right.
+6. Refresh ValliStart and your media controls for Spotify should work.
 
+#### Web Players:
+For media controls to work with any website, you will have to install the **[WebNowPlaying Companion](https://chrome.google.com/webstore/detail/webnowplaying-companion/jfakgfcdgpghbbefmdfjkbdlibjgnbli) extension for your browser.** 
 
+Once you've installed the extension, you can now proceed to configure media controls for Spotify. Simply follow the steps outlined below:
 
+1. Open Core and head over to the **Modules** section.
+2. Select **ValliStart** from the list and proceed to the **Modules** tab.
+3. Select the Media Control module and enable it.
+4. Go to the **Media** tab and select **Web**
+5. Ignore the alert for WebNowPlaying Companion extension(we've already installed this in the previous step) and press **confirm** on the bottom right.
+6. Refresh ValliStart and your media controls for any website should work.
 
-## Help
+**The other modules, on the other hand, do not necessitate the installation of any additional applications or extensions. So, you can simply enable them using the same method as described above for Spotify.**
+
+## Help & Credits
+- Spicetify installation guide by [khanhas](https://github.com/khanhas).
 - Join the [Core Community Discord Server](https://discord.gg/JmgehPSDD6) for more help.
