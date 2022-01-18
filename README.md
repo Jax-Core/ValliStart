@@ -102,7 +102,7 @@ That's all there is to it. Your shortcuts will now be visible in the pinned appl
 
 ### Media Controls
 
-#### Spotify:
+#### For Spotify:
 For media controls to work with Spotify, you will have to setup and install **[Spicetify](https://spicetify.app/).** Follow the steps below to do so.
 
 1. Open Powershell (Windows 10) or Windows Terminal (Windows 11) and run the commands that follow:
@@ -113,10 +113,10 @@ For media controls to work with Spotify, you will have to setup and install **[S
 
       spicetify config extensions webnowplaying.js
     ```
-**If you only want to install `webnowplaying.js` without the custom themes, use the following command:**
-  ```
-    spicetify config inject_css 0 replace_colors 0
-  ```
+   **If you only want to install `webnowplaying.js` without the custom themes, use the following command:**
+      ```
+        spicetify config inject_css 0 replace_colors 0
+      ```
 2. And finally, run the following command to save and apply all your changes:
     ```
       spicetify backup apply
@@ -131,10 +131,10 @@ You can now proceed to configure media controls for Spotify. Simply follow the s
 5. Ignore the alert for Spicetify(we've already installed this in the previous step) and press **confirm** on the bottom right.
 6. Refresh ValliStart and your media controls for Spotify should work.
 
-#### Web Players:
+#### For Web Players:
 For media controls to work with any website, you will have to install the **[WebNowPlaying Companion](https://chrome.google.com/webstore/detail/webnowplaying-companion/jfakgfcdgpghbbefmdfjkbdlibjgnbli) extension for your browser.** 
 
-Once you've installed the extension, you can now proceed to configure media controls for Spotify. Simply follow the steps outlined below:
+Once you've installed the extension, you can now proceed to configure media controls for Web Players. Simply follow the steps outlined below:
 
 1. Open Core and head over to the **Modules** section.
 2. Select **ValliStart** from the list and proceed to the **Modules** tab.
@@ -143,7 +143,7 @@ Once you've installed the extension, you can now proceed to configure media cont
 5. Ignore the alert for WebNowPlaying Companion extension(we've already installed this in the previous step) and press **confirm** on the bottom right.
 6. Refresh ValliStart and your media controls for any website should work.
 
-**The other modules, on the other hand, do not necessitate the installation of any additional applications or extensions. So, you can simply enable them using the same method as described above for Spotify.**
+**The other modules, on the other hand, do not necessitate the installation of any additional applications or extensions. So, you can simply enable them using the same method as described above for the Media Controls module**
 
 ## Help & Credits
 - Spicetify installation guide by [khanhas](https://github.com/khanhas).
