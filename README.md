@@ -26,6 +26,9 @@
       <a href="#about">About</a>
     </li>
     <li>
+      <a href="#Features">Features</a>
+    </li>
+    <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
@@ -33,7 +36,7 @@
       </ul>
     </li>
     <li>
-    <a href="#setup">Modules Setup</a>
+    <a href="#modules-setup">Modules Setup</a>
     <ul>
         <li><a href="#pinned-shortcuts">Pinned Shortcuts</a></li>
         <li><a href="#weather">Weather</a></li>
