@@ -1,7 +1,7 @@
 
 [MeasureTime]
 Measure=Time
-Format=%#2412#:%M
+Format=%#gVar.2412#:%M
 UpdateDivider=1
 [MeasureSec]
 Measure=Time

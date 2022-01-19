@@ -1,7 +1,6 @@
 [Variables]
 ReplaceWin=1
 Mode=1
-2412=H
 StartText=Start
 IconName=Win
 
@@ -35,10 +34,6 @@ FontColor=255,255,255
 DarkColor=190,190,190
 BoxBorder=80,80,80
 BoxColor=60,60,60
-
-WeatherLocation=Hong Kong
-WeatherUnits=Metric
-Language=en
 
 ;;╔══════════════════════════════════════════════════════════════════════════════════════════════════════╗
 ;;║ METERSTYLES                                                                                          ║

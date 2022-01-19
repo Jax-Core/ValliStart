@@ -168,48 +168,69 @@ Y=r
 Text=Open
 MeterStyle=Set.String:S | Set.Value:S
 
-[2412:]
+[Button11]
 Meter=Shape
-Shape2=Rectangle ([&Func:returnBool('2412', 'H')] = 0 ? 0 : (150*[Set.S])),0,(150*[Set.S]),(30*[Set.S]),(7*[Set.S]) | Fill Color #Set.Text_Color# | StrokeWidth 0 |
-0Act=[!WriteKeyValue Variables 2412 "I" "#Sec.SaveLocation#"]
-1Act=[!WriteKeyValue Variables 2412 "H" "#Sec.SaveLocation#"]
-MeterStyle=Set.Pick:S
+MeterStyle=Set.Button:S
 Y=([Option11:Y]-#Set.P#+(-30/2+8)*[Set.S])
-[2412:0]
+Act=[!WriteKeyvalue Variables Skin.Name """#JaxCore""" "#@#SecVar.inc"][!WriteKeyvalue Variables Skin.Set_Page GlobalVars "#@#SecVar.inc"][!Refresh]
+[Icon11]
 Meter=String
-Text=12-Hour
-FontColor=[&Func:returnBool('2412', 'H', '#Set.Text_Color#', '#Set.Pri_color#')]
-LeftMouseUpAction=[&Func:GroupVar('#CURRENTSECTION#', '0Act')][!Refresh][!UpdateMeasure Auto_Refresh:M]
-MeterStyle=Set.String:S | Set.PickOption_0:S
-[2412:1]
+Text=[\xe895]
+FontFace=Material Icons Round
+FontSize=(14*[Set.S])
+FontColor=#Set.Subtext_Color#
+MeterStyle=Set.String:S | Set.Value:S
+[Value11]
 Meter=String
-Text=24-hour
-FontColor=[&Func:returnBool('2412', 'H', '#Set.Pri_color#', '#Set.Text_Color#')]
-LeftMouseUpAction=[&Func:GroupVar('#CURRENTSECTION#', '1Act')][!Refresh][!UpdateMeasure Auto_Refresh:M]
-MeterStyle=Set.String:S | Set.PickOption_1:S
+X=(-25*[Set.S])r
+Y=r
+Text=Change global variable
+FontColor=#Set.Subtext_Color#
+MeterStyle=Set.String:S | Set.Value:S
+
 [ShowSec]
 Meter=Shape
 MeterStyle=Set.Bool:S
 Y=([Option12:Y]-#Set.P#+(-20/2+8)*[Set.S])
 
-[WeatherLocation]
+[Button13]
 Meter=Shape
-MeterStyle=Set.Textbox:S
-Type=Txt
+MeterStyle=Set.Button:S
 Y=([Option13:Y]-#Set.P#+(-30/2+8)*[Set.S])
+Act=[!WriteKeyvalue Variables Skin.Name """#JaxCore""" "#@#SecVar.inc"][!WriteKeyvalue Variables Skin.Set_Page GlobalVars "#@#SecVar.inc"][!Refresh]
+[Icon13]
+Meter=String
+Text=[\xe895]
+FontFace=Material Icons Round
+FontColor=#Set.Subtext_Color#
+FontSize=(14*[Set.S])
+MeterStyle=Set.String:S | Set.Value:S
 [Value13]
 Meter=String
-Text=#WeatherLocation#
+X=(-25*[Set.S])r
+Y=r
+Text=Change global variable
+FontColor=#Set.Subtext_Color#
 MeterStyle=Set.String:S | Set.Value:S
 
-[WeatherUnits]
+[Button14]
 Meter=Shape
-MeterStyle=Set.Textbox:S
-Type=Txt
+MeterStyle=Set.Button:S
 Y=([Option14:Y]-#Set.P#+(-30/2+8)*[Set.S])
+Act=[!WriteKeyvalue Variables Skin.Name """#JaxCore""" "#@#SecVar.inc"][!WriteKeyvalue Variables Skin.Set_Page GlobalVars "#@#SecVar.inc"][!Refresh]
+[Icon14]
+Meter=String
+Text=[\xe895]
+FontFace=Material Icons Round
+FontSize=(14*[Set.S])
+FontColor=#Set.Subtext_Color#
+MeterStyle=Set.String:S | Set.Value:S
 [Value14]
 Meter=String
-Text=#WeatherUnits#
+X=(-25*[Set.S])r
+Y=r
+Text=Change global variable
+FontColor=#Set.Subtext_Color#
 MeterStyle=Set.String:S | Set.Value:S
 
 ; [Blur:]
