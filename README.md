@@ -93,7 +93,7 @@ Assuming you successfully downloaded and installed Rainmeter as well as JaxCore,
 2. Leave the installation settings at their defaults and click Install.
 3. When the installation is finished, a startup pop-up should appear. Follow through the pop-up to finish installing ValliStart.
 
-* Note:  If you find that the JaxCore option is red on the startup pop-up, please press the red button and Core will be installed automatically. Perchance this fails, you can manually install Core by downloading the `.rmskin` file from [JaxCore's official website.](https://jax-core.github.io/)
+> Note:  If you find that the JaxCore option is red on the startup pop-up, please press the red button and Core will be installed automatically. Perchance this fails, you can manually install Core by downloading the `.rmskin` file from [JaxCore's official website.](https://jax-core.github.io/)
 
 ### Customization
 
@@ -197,7 +197,10 @@ Once you've installed the extension, you can now proceed to configure media cont
 </p>
 
 
-
 ## Help and Credits
 - Spicetify installation guide by [khanhas](https://github.com/khanhas).
 - Join the [Core Community Discord Server](https://discord.gg/JmgehPSDD6) for more help.
+
+<p align="right">
+    <b><a href="#top">↥ back to top</a></b>
+</p>
