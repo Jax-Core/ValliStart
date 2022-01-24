@@ -135,12 +135,10 @@ That's all there is to it. Your shortcuts will now be visible in the pinned appl
 2. Select **ValliStart** from the list and proceed to the **General** tab.
 3. Under **Time & Weather** press the **Change global variable** button next to the `Weather Location` text.
     > **Note:** **It's highlighted in grey.** For reference, see the image below. 
-
     >  <img src ="https://imgur.com/Owb2n5l.png" alt = "ref" width="870" height ="54">
       
 4. Once the **Global Variables** configuration window opens, change the weather location to the location you want the weather status of.
     > **Note:** **It's the text that says "Hong Kong".** For reference, see the image below. 
-
     >  <img src ="https://imgur.com/ycI4Qp4.png" alt = "ref" width="867" height ="55">
 
 5. Refresh ValliStart by deactivating and activating again using the toggle on the bottom left.
