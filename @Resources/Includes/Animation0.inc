@@ -3,8 +3,8 @@ Measure=Plugin
 Plugin=ActionTimer
 ActionList1=Showfade | Custom0
 ActionList2=Hidefade
-Showfade=[!SHowFade]
-HideFade=[!HideFade]
+Showfade=[!SHowFade][!CommandMeasure Func "initActions(1)"]
+HideFade=[!HideFade][!CommandMeasure Func "initActions(-1)"]
 
 
 ; ---------------------------------------------------------------------------- ;

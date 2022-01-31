@@ -3,11 +3,12 @@ Measure=Plugin
 Plugin=ActionTimer
 DynamicVariables=1
 ActionList1=Show | Custom0 | Repeat In,2,#AniSteps#
-ActionList2=Repeat Out,2,#AniSteps# | Hide
-Show=[!Show]
+ActionList2=SaveLocation | Repeat Out,2,#AniSteps# | Hide
+Show=[!CommandMeasure Func "initActions(1)"][!Show]
 Hide=[!Hide]
 In=[!CommandMeasure Func "tweenAnimation('in')"]
 Out=[!CommandMeasure Func "tweenAnimation('out')"]
+SaveLocation=[!CommandMeasure Func "initActions(-1)"][!CommandMeasure Func "saveLocation()"]
 
 
 ; ---------------------------------------------------------------------------- ;

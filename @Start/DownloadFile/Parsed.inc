@@ -104,7 +104,6 @@ Container=BC
 H=#Sec.H#
 W=#Sec.L#
 PreserveAspectRatio=2
-Leftmouseupaction=[!Refresh]
 ImageName=#ROOTCONFIG#.png
 
 [Esc]
@@ -136,7 +135,7 @@ MeterStyle=String:S
 
 [Des]
 Meter=String
-Text=Here you can find the list of dependencies. Click on any one of them to install, make sure you are connected to the internet. Refresh this page by clicking on the right.
+Text=Here you can find the list of dependencies. Click on any one of them to install, make sure you are connected to the internet.
 W=(#SEc.W#-#Sec.L#-#Sec.P#*2)
 clipString=2
 MeterStyle=String:S
@@ -150,7 +149,7 @@ Y=20R
 MEterStyle=Dep.Shape:S
 [DepText1]
 Meter=String
-Text=JaxCore3 // Checking...
+Text=JaxCore // Checking...
 MeterStyle=Dep.Text:S
 
 [Dep3]
@@ -199,12 +198,19 @@ Group=Button
 ; ---------------------------------------------------------------------------- ;
 
 [WebParser]
-Measure=WebParser
-URL=https://raw.githubusercontent.com/Jax-Core/JaxCore/main/%40Resources/Version.inc
-RegExp==(.*)$
-FinishAction=[!Delay 1000][!CommandMeasure LogicalScript "check()"]
+Measure=Calc
+Formula=40000
+;URL=https://raw.githubusercontent.com/Jax-Core/JaxCore/main/%40Resources/Version.inc
+;RegExp==(.*)$
+OnUpdateAction=[!Delay 1000][!CommandMeasure LogicalScript "check()"]
 OnConnectionErrorAction=[!SetOption Dep1 MeterStyle "Dep.Shape:S | Dep.ShapeNo:S"][!SetOption DepText1 Text "//Failed to connect to JaxCore github, if this is an issue please report to me"][!UpdateMEter *][!Redraw]
 OnRegExpErrorAction=[!Log Developer:RegExpFalse]
+Disabled=1
+
+[WebParserCheck]
+Measure=Calc
+IfCondition=#Parsed# = 1
+IfTrueAction=[!EnableMeasure WebParser][!UpdateMeasure WebParser][!CommandMeasure WebParser "Reset"]
 
 [InternetStatus]
 Measure=PLUGIN
@@ -214,9 +220,11 @@ IfCondition=InternetStatus = -1
 ifTrueaction=[!SetOption Dep1 MeterStyle "Dep.Shape:S | Dep.ShapeNo:S"][!SetOption DepText1 Text "JaxCore // connection error, please check internet connection"][!UpdateMEter *][!Redraw]
 
 [mVer]
-Measure=WebParser
-URL=[WebParser]
-StringIndex=1
+Measure=Calc
+Formula=40000
+;Measure=WebParser
+;URL=[WebParser]
+;StringIndex=1
 
 [LogicalScript]
 Measure=Script
@@ -226,10 +234,10 @@ ScriptFile=Logic.lua
 Measure=String
 Group=NUOL
 Disabled=1
-OnUpdateAction=[!SetOption Dep1 MeterStyle "Dep.Shape:S | Dep.ShapeYes:S"][!SetOption DepText1 Text "JaxCore3 // v#Core.Ver# installed"][!ShowMeterGroup Button][!UpdateMEter *][!Redraw]
+OnUpdateAction=[!SetOption Dep1 MeterStyle "Dep.Shape:S | Dep.ShapeYes:S"][!SetOption DepText1 Text "JaxCore // v#Core.Ver# installed"][!ShowMeterGroup Button][!UpdateMEter *][!Redraw]
 
 [JaxCoreNo]
 Measure=String
 Group=NUOL
 Disabled=1
-OnUpdateAction=[!SetOption Dep1 MeterStyle "Dep.Shape:S | Dep.ShapeNo:S"][!SetOption DepText1 Text "JaxCore3 // click here to install"][!SetOption Dep1 Leftmouseupaction """["#@#Actions\AHKv1.exe" "#@#Actions\Installer.ahk"][!SetOption DepText1 Text "JaxCore3 // download here if it doesn't automatically install"][!SetOption Dep1 Leftmouseupaction """["https://github.com/Jax-Core/JaxCore/releases/latest"][!UpdateMEter *][!Redraw]"""][!UpdateMEter *][!Redraw]"""][!UpdateMEter *][!Redraw]
+OnUpdateAction=[!SetOption Dep1 MeterStyle "Dep.Shape:S | Dep.ShapeNo:S"][!SetOption DepText1 Text "JaxCore // click here to install"][!SetOption Dep1 Leftmouseupaction """["#@#Actions\AHKv1.exe" "#@#Actions\Installer.ahk"][!SetOption DepText1 Text "JaxCore // download here if it doesn't automatically install"][!SetOption Dep1 Leftmouseupaction """["https://github.com/Jax-Core/JaxCore/releases/latest"][!UpdateMEter *][!Redraw]"""][!UpdateMEter *][!Redraw]"""][!UpdateMEter *][!Redraw]

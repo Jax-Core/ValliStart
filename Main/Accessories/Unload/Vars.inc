@@ -1,4 +1,4 @@
 [Variables]
-Blur=None
+Blur=Blur
 SolidColor=0,0,0
-SolidOpacity=1
+SolidOpacity=20

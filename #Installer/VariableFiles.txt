@@ -1,1 +1,3 @@
-@Resources\Vars.inc | @Resources\Shortcuts.inc
+@Resources\Vars.inc
+@Resources\Shortcuts.inc
+@Resources\Actions\Hotkeys.ini

@@ -62,7 +62,7 @@ X=(25*#scale#)
 Y=(25*#Scale#*#Stroke#)r
 Container=container
 Shape=Rectangle 0,0,(#W#-50*#scale#),(35*#Scale#),(#Corner#*5),(#Corner#*5) | StrokeWidth 0 | Extend This
-Shape2=Rectangle 0,0,((#W#-(25*#scale#)*2-1)*[MeasureRAM:]*0.01),(35*#Scale#),(#Corner#*5),(#Corner#*5) | Fill Color #DarkColor#,(#Alpha#*0.3) | StrokeWidth 0
+Shape2=Rectangle 0,0,(Clamp((#W#-(25*#scale#)*2-1)*[MeasureRAM:]*0.01,0,(#W#-(25*#scale#)*2-1))),(35*#Scale#),(#Corner#*5),(#Corner#*5) | Fill Color #DarkColor#,(#Alpha#*0.3) | StrokeWidth 0
 this=Fill Color #DarkColor#,(#Alpha#*0.1)
 DynamicVariables=1
 UpdateDivider=1
@@ -107,7 +107,7 @@ UpdateDivider=5
 MEter=Shape
 Y=(30*#scale#)r
 UpdateDivider=1
-Shape2=Rectangle 0,0,((#W#-(25*#scale#)*2-1)*[MeasureCPU:]*0.01),(35*#Scale#),(#Corner#*5),(#Corner#*5) | Fill Color #DarkColor#,(#Alpha#*0.3) | StrokeWidth 0
+Shape2=Rectangle 0,0,(Clamp((#W#-(25*#scale#)*2-1)*[MeasureCPU:]*0.01,0,(#W#-(25*#scale#)*2-1))),(35*#Scale#),(#Corner#*5),(#Corner#*5) | Fill Color #DarkColor#,(#Alpha#*0.3) | StrokeWidth 0
 MeterStyle=RAMBox
 
 [MeterCPULabel]
@@ -131,7 +131,7 @@ UpdateDivider=1
 MEter=Shape
 Y=(30*#scale#)r
 UpdateDivider=1
-Shape2=Rectangle 0,0,((#W#-(25*#scale#)*2-1)*[MeasureGPU:]*0.01),(35*#Scale#),(#Corner#*5),(#Corner#*5) | Fill Color #DarkColor#,(#Alpha#*0.3) | StrokeWidth 0
+Shape2=Rectangle 0,0,(Clamp((#W#-(25*#scale#)*2-1)*[MeasureCPU:]*0.01,0,(#W#-(25*#scale#)*2-1))),(35*#Scale#),(#Corner#*5),(#Corner#*5) | Fill Color #DarkColor#,(#Alpha#*0.3) | StrokeWidth 0
 MeterStyle=RAMBox
 
 [MeterGPULabel]

@@ -1,3 +1,3 @@
 [Variables]
-MediaType=Auto
+MediaType=Modern
 FetchImage=1

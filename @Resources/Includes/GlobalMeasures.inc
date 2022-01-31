@@ -1,17 +1,25 @@
 
 [MeasureTime]
 Measure=Time
-Format=%#2412#:%M
+Format=%#gVar.2412#:%M
 UpdateDivider=1
+Disabled=#CustomFormat#
 [MeasureSec]
 Measure=Time
 Format=:%S
 UpdateDivider=1
 Disabled=(#ShowSEc#-1)
+Disabled=#CustomFormat#
 [MeasureAP]
 Measure=Time
 Format=%p
 UpdateDivider=1
+Disabled=#CustomFormat#
+[MeasureCustomFormat]
+Measure=Time
+Format=#CustomTimeFormat#
+UpdateDivider=1
+Disabled=(1-#CustomFormat#)
 ; [MeasureDate]
 ; Measure=Time
 ; Format=%a, %#b %#d

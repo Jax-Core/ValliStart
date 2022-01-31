@@ -1,7 +1,10 @@
 [Variables]
 ReplaceWin=1
 Mode=1
-2412=H
+CustomFormat=0
+CustomTimeFormat=%c
+ShowSec=0
+
 StartText=Welcome back!
 IconName=Core
 
@@ -15,9 +18,7 @@ Stroke=0
 Edge=15
 
 Position=CC
-ScreenPadding=30
-
-ShowSec=0
+ScreenPadding=10
 
 Animated=2
 EaseType=OutSine
@@ -26,11 +27,12 @@ AniSteps=10
 
 TypeToSearch=0
 Blur=None
+BlurCorner=RoundSmall
 
-Module1=Win11Row
+Module1=Weather
 Module2=Volume
-Module3=Connection
-Module4=Music
+Module3=Resource
+Module4=None
 Module5=None
 
 Accent=242, 52, 0
@@ -42,6 +44,8 @@ DarkColor=120,120,120
 BoxBorder=35,35,35
 BoxColor=35,35,35
 FetchImage=0
+
+BackgroundMod=0
 
 ;;╔══════════════════════════════════════════════════════════════════════════════════════════════════════╗
 ;;║ METERSTYLES                                                                                          ║

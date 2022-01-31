@@ -56,12 +56,12 @@ MeterStyle=Set.String:S | Set.OptionName:S
 
 [Time]
 Meter=String
-Text=Time & weather
+Text=Time format
 MeterStyle=Set.String:S |  Set.OptionCat:S
 
 [Option11]
 Meter=String
-Text=Time format: 24(H) 12(I)
+Text=Time format
 MeterStyle=Set.String:S | Set.OptionName:S
 [Set.Div:2238]
 Meter=Shape
@@ -75,14 +75,8 @@ Meter=Shape
 MeterStyle=Set.Div:S
 [Option13]
 Meter=String
-Text=Weather location
-MeterStyle=Set.String:S | Set.OptionName:S
-[Set.Div:23124125158]
-Meter=Shape
-MeterStyle=Set.Div:S
-[Option14]
-Meter=String
-Text=Unit (Metric/Imperial)
+Text=Custom format
+FontColor=#Set.Text_Color#,(105+150*#CustomFormat#)
 MeterStyle=Set.String:S | Set.OptionName:S
 
 ;================================================================================================================================================================================
@@ -125,20 +119,19 @@ MeterStyle=Set.String:S | Set.OptionName:S
 [S12313]
 Meter=String
 Text=Background modification
-FontColor=#Set.Text_Color#,100
 MeterStyle=Set.String:S | Set.OptionCat:S
 
 [Option40]
 Meter=String
-Text=This option had been temporarily disabled along with the showing hidden taskbar feature to preserve performance. You can downgrade the version via the rollback button on the info page.
-W=(#Set.W#-#Set.P#*3-#Set.L#)
-ClipString=2
-FontColor=#Set.Accent_color#
+Text=Modify launched background
 MeterStyle=Set.String:S | Set.OptionName:S
+[Set.Div:8]
+Meter=Shape
+MeterStyle=Set.Div:S
 [Option41]
 Meter=String
 Text=Background blur
-FontColor=#Set.Text_Color#,100
+FontColor=#Set.Text_Color#,(#BackgroundMod# = 1 ? 255 : 150)
 MeterStyle=Set.String:S | Set.OptionName:S
 [Set.Div:2131238]
 Meter=Shape
@@ -146,7 +139,7 @@ MeterStyle=Set.Div:S
 [Option42]
 Meter=String
 Text=Background color
-FontColor=#Set.Text_Color#,100
+FontColor=#Set.Text_Color#,(#BackgroundMod# = 1 ? 255 : 150)
 MeterStyle=Set.String:S | Set.OptionName:S
 
 ;================================================================================================================================================================================
@@ -197,51 +190,42 @@ Y=r
 Text=Open
 MeterStyle=Set.String:S | Set.Value:S
 
-[2412:]
+[CustomFormat:]
 Meter=Shape
-Shape2=Rectangle ([&Func:returnBool('2412', 'H')] = 0 ? 0 : (150*[Set.S])),0,(150*[Set.S]),(30*[Set.S]),(7*[Set.S]) | Fill Color #Set.Text_Color# | StrokeWidth 0 |
-0Act=[!WriteKeyValue Variables 2412 "I" "#Sec.SaveLocation#"]
-1Act=[!WriteKeyValue Variables 2412 "H" "#Sec.SaveLocation#"]
+Shape2=Rectangle ([&Func:returnBool('CustomFormat', '1')] = 0 ? 0 : (150*[Set.S])),0,(150*[Set.S]),(30*[Set.S]),(7*[Set.S]) | Fill Color #Set.Text_Color# | StrokeWidth 0 |
+0Act=[!WriteKeyValue Variables CustomFormat "0" "#Sec.SaveLocation#"]
+1Act=[!WriteKeyValue Variables CustomFormat "1" "#Sec.SaveLocation#"]
 MeterStyle=Set.Pick:S
 Y=([Option11:Y]-#Set.P#+(-30/2+8)*[Set.S])
-[2412:0]
+[CustomFormat:0]
 Meter=String
-Text=12-Hour
-FontColor=[&Func:returnBool('2412', 'H', '#Set.Text_Color#', '#Set.Pri_color#')]
+Text=Time
+FontColor=[&Func:returnBool('CustomFormat', '1', '#Set.Text_Color#', '#Set.Pri_color#')]
 LeftMouseUpAction=[&Func:GroupVar('#CURRENTSECTION#', '0Act')][!Refresh][!UpdateMeasure Auto_Refresh:M]
 MeterStyle=Set.String:S | Set.PickOption_0:S
-[2412:1]
+[CustomFormat:1]
 Meter=String
-Text=24-hour
-FontColor=[&Func:returnBool('2412', 'H', '#Set.Pri_color#', '#Set.Text_Color#')]
+Text=Custom
+FontColor=[&Func:returnBool('CustomFormat', '1', '#Set.Pri_color#', '#Set.Text_Color#')]
 LeftMouseUpAction=[&Func:GroupVar('#CURRENTSECTION#', '1Act')][!Refresh][!UpdateMeasure Auto_Refresh:M]
 MeterStyle=Set.String:S | Set.PickOption_1:S
+
 [ShowSec]
 Meter=Shape
 MeterStyle=Set.Bool:S
 Y=([Option12:Y]-#Set.P#+(-20/2+8)*[Set.S])
 
-[WeatherLocation]
+[CustomTimeFormat]
 Meter=Shape
 MeterStyle=Set.Textbox:S
 Type=Txt
 Y=([Option13:Y]-#Set.P#+(-30/2+8)*[Set.S])
-SaveLocation="#SKINSPATH##Skin.Name#\Main\Modules\Vars\Weather.inc"
+Hidden=(1-#CustomFOrmat#)
 [Value13]
 Meter=String
-Text=#WeatherLocation#
+Text=#CustomTimeFormat#
 MeterStyle=Set.String:S | Set.Value:S
-
-[WeatherUnits]
-Meter=Shape
-MeterStyle=Set.Textbox:S
-Type=Txt
-Y=([Option14:Y]-#Set.P#+(-30/2+8)*[Set.S])
-SaveLocation="#SKINSPATH##Skin.Name#\Main\Modules\Vars\Weather.inc"
-[Value14]
-Meter=String
-Text=#WeatherUnits#
-MeterStyle=Set.String:S | Set.Value:S
+Hidden=(1-#CustomFOrmat#)
 
 
 [Animated:]
@@ -307,40 +291,51 @@ Text=#AniSteps#
 MeterStyle=Set.String:S | Set.Value:S
 Hidden=(#Animated# = 2 ? 0 : 1)
 
-; [Blur:]
-; Meter=Shape
-; 0Act=[!WriteKeyValue Variables Blur "None" "#Sec.SaveLocation2#"]
-; 1Act=[!WriteKeyValue Variables Blur "Acrylic" "#Sec.SaveLocation2#"]
-; 2Act=[!WriteKeyValue Variables Blur "Blur" "#Sec.SaveLocation2#"]
-; MeterStyle=Set.Pick3:S
-; Shape2=Rectangle (100*[Set.S]*([&Func:returnBool('Blur', 'Acrylic')]+[&Func:returnBool('Blur', 'Blur')]*2)),0,(300/3*[Set.S]),(30*[Set.S]),(7*[Set.S]) | Fill Color #Set.Text_Color# | StrokeWidth 0
-; Y=([Option31:Y]-#Set.P#+(-30/2+8)*[Set.S])
-; [Blur:0]
-; Meter=String
-; Text=None
-; FontColor=[&Func:returnBool('Blur', 'None', '#Set.Pri_color#', '#Set.Text_Color#')]
-; MeterStyle=Set.String:S | Set.PickOption3_0:S
-; [Blur:1]
-; Meter=String
-; Text=Acrylic
-; FontColor=[&Func:returnBool('Blur', 'Acrylic', '#Set.Pri_color#', '#Set.Text_Color#')]
-; MeterStyle=Set.String:S | Set.PickOption3_1:S
-; [Blur:2]
-; Meter=String
-; Text=Standard
-; FontColor=[&Func:returnBool('Blur', 'Blur', '#Set.Pri_color#', '#Set.Text_Color#')]
-; MeterStyle=Set.String:S | Set.PickOption3_2:S
-; [Solid]
-; Meter=Shape
-; MeterStyle=Set.ColorPacity:S
-; LeftMouseUpAction=["#@#Addons\RainRGB4.exe" "VarName=#CURRENTSECTION#Color" "FileName=#Sec.SaveLocation2#" "RefreshConfig=#CURRENTCONFIG# | #Skin.Name#\Main"]
-; RightMOuseUpAction=[!SetVariable Editing "#CURRENTSECTION#Opacity"][!SetOption Input2:M X "([#CURRENTSECTION#:X]+5)"][!SetOption Input2:M Y "([#CURRENTSECTION#:Y]+5)"][!CommandMeasure Input2:M "ExecuteBatch 1"]
-; Y=([Option32:Y]-#Set.P#+(-30/2+8)*[Set.S])
-; Type=Num|1|255
-; [Value32]
-; Meter=String
-; Text=#SolidOpacity#
-; MeterStyle=Set.String:S | Set.Pacity:S
+[BackgroundMod]
+Meter=Shape
+MeterStyle=Set.Bool:S
+Y=([Option40:Y]-#Set.P#+(-20/2+8)*[Set.S])
+
+[Blur:]
+Meter=Shape
+0Act=[!WriteKeyValue Variables Blur "None" "#Sec.SaveLocation2#"]
+1Act=[!WriteKeyValue Variables Blur "Acrylic" "#Sec.SaveLocation2#"]
+2Act=[!WriteKeyValue Variables Blur "Blur" "#Sec.SaveLocation2#"]
+MeterStyle=Set.Pick3:S
+Shape2=Rectangle (100*[Set.S]*([&Func:returnBool('Blur', 'Acrylic')]+[&Func:returnBool('Blur', 'Blur')]*2)),0,(300/3*[Set.S]),(30*[Set.S]),(7*[Set.S]) | Fill Color #Set.Text_Color# | StrokeWidth 0
+Y=([Option41:Y]-#Set.P#+(-30/2+8)*[Set.S])
+Hidden=(1-#BackgroundMod#)
+[Blur:0]
+Meter=String
+Text=None
+FontColor=[&Func:returnBool('Blur', 'None', '#Set.Pri_color#', '#Set.Text_Color#')]
+MeterStyle=Set.String:S | Set.PickOption3_0:S
+Hidden=(1-#BackgroundMod#)
+[Blur:1]
+Meter=String
+Text=Acrylic
+FontColor=[&Func:returnBool('Blur', 'Acrylic', '#Set.Pri_color#', '#Set.Text_Color#')]
+MeterStyle=Set.String:S | Set.PickOption3_1:S
+Hidden=(1-#BackgroundMod#)
+[Blur:2]
+Meter=String
+Text=Standard
+FontColor=[&Func:returnBool('Blur', 'Blur', '#Set.Pri_color#', '#Set.Text_Color#')]
+MeterStyle=Set.String:S | Set.PickOption3_2:S
+Hidden=(1-#BackgroundMod#)
+[Solid]
+Meter=Shape
+MeterStyle=Set.ColorPacity:S
+LeftMouseUpAction=["#@#Addons\RainRGB4.exe" "VarName=#CURRENTSECTION#Color" "FileName=#Sec.SaveLocation2#" "RefreshConfig=#CURRENTCONFIG# | #Skin.Name#\Main"]
+SaveLocation=#Sec.SaveLocation2#
+Y=([Option42:Y]-#Set.P#+(-30/2+8)*[Set.S])
+Type=Num|1|255
+Hidden=(1-#BackgroundMod#)
+[Value41]
+Meter=String
+Text=#SolidOpacity#
+MeterStyle=Set.String:S | Set.Pacity:S
+Hidden=(1-#BackgroundMod#)
 
 ; ---------------------------------------------------------------------------- ;
 ;                                    Anchor                                    ;

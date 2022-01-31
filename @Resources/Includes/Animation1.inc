@@ -6,10 +6,10 @@ ActionList1=Show | Custom0 | Repeat In,4,10 | BlurOn
 ActionList2=BlurOff | Repeat Out,4,10 | Hide
 In=[!SetVariable TweenNode1 "(Clamp((#TweenNode1#-10),0,100))"][!UpdateMeter Container][!UpdateMeasure ActionTimer][!Redraw]
 Out=[!SetVariable TweenNode1 "(Clamp((#TweenNode1#+10),0,100))"][!UpdateMeter Container][!UpdateMeasure ActionTimer][!Redraw]
-Show=[!Show][!SetVariable TweenNode1 100][!UpdateMeasure ActionTimer]
+Show=[!CommandMeasure Func "initActions(1)"][!Show][!SetVariable TweenNode1 100][!UpdateMeasure ActionTimer]
 Hide=[!Hide]
 BlurON=[!SetVariable ActualBlur #Blur#][!UpdateMeasure FrostedGlass][!UpdateMeasure ActionTimer]
-BlurOff=[!SetVariable ActualBlur None][!UpdateMeasure FrostedGlass][!UpdateMeasure ActionTimer]
+BlurOff=[!SetVariable ActualBlur None][!UpdateMeasure FrostedGlass][!UpdateMeasure ActionTimer][!CommandMeasure Func "initActions(-1)"]
 
 
 ; ---------------------------------------------------------------------------- ;
