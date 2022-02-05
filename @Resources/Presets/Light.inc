@@ -1,4 +1,4 @@
-[Values]
+[@Resources\Vars.inc]
 Accent=212,212,212
 Alpha=255
 Color=247,247,247

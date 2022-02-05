@@ -12,8 +12,9 @@ MeterStyle=Set.String:S | Set.OptionName:S
 ; ---------------------------------------------------------------------------- ;
 
 [Preset:M]
-Measure=Script
-ScriptFile=#@#Lua\PresetLoad.lua
+Measure=Plugin
+Plugin=powershellrm
+ScriptFile=#@#Powershell\PresetLoad.ps1
 
 [Select:S]
 X=r
@@ -25,7 +26,7 @@ DynamicVariables=1
 ImageAlpha=200
 MouseOverAction=[!SetOption #CURRENTSECTION# ImageAlpha "255"][!UpdateMeter #CURRENTSECTION#][!Redraw]
 MouseLeaveAction=[!SetOption #CURRENTSECTION# ImageAlpha "200"][!UpdateMeter #CURRENTSECTION#][!Redraw]
-Leftmouseupaction=[!CommandMeasure Preset:M "ChangeTo('#CURRENTSECTION#')"] [!UpdateMeasure Auto_Refresh:M][!Refresh]
+Leftmouseupaction=[!CommandMeasure Preset:M "ChangeToFiles -theme '#CURRENTSECTION#'"] [!UpdateMeasure Auto_Refresh:M][!Refresh]
 PreserveAspectRatio=2
 DynamicVariables=1
 MaskImageName=#@#Images\LayoutMask.png
