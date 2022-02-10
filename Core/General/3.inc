@@ -2,14 +2,6 @@
 WinBlock=0
 Sec.SaveLocation2=#SKINSPATH##Skin.Name#\@Resources\Shortcuts.inc
 
-
-[CheckForDataFolder]
-MEasure=Plugin
-Plugin=PowershellRM
-DynamicVariables=1
-OnUpdateAction=[!Delay 20][!CommandMeasure CheckForDataFolder "Check-Data"]
-ScriptFile=#@#Powershell\CheckData.ps1
-
 [Choose:M]
 Measure=Plugin
 Plugin=FileChoose
