@@ -35,6 +35,6 @@ Group=NUOL
 Meter=Shape
 Y=#TweenNode1#
 DynamicVariables=1
-Shape=Rectangle 0,0,#W#,(#H#),(#edge#*#scale#),(#edge#*#scale#) | StrokeWidth 1 | Stroke Color #Border# | Fill Color 255,255,255,(255*(100-#TweenNode1#)/100)
+Shape=Rectangle 0,0,#W#,(#H#),(#R#*#scale#),(#R#*#scale#) | StrokeWidth 1 | Stroke Color #Border# | Fill Color 255,255,255,(255*(100-#TweenNode1#)/100)
 MeterStyle=#Location#:BackgroundS
 

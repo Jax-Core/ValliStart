@@ -3,7 +3,7 @@ Measure=Plugin
 Plugin=ActionTimer
 ActionList1=Showfade | Custom0
 ActionList2=Hidefade
-Showfade=[!SHowFade][!CommandMeasure Func "initActions(1)"]
+Showfade=[!FadeDuration 100][!SHowFade][!CommandMeasure Func "initActions(1)"]
 HideFade=[!HideFade][!CommandMeasure Func "initActions(-1)"]
 
 
@@ -35,5 +35,5 @@ OnUpdateAction=[!SetVariable ActualBlur #Blur#][!UpdateMeasure FrostedGlass]
 Meter=Shape
 Y=#TweenNode1#
 DynamicVariables=1
-Shape=Rectangle 0,0,#W#,(#H#),(#edge#*#scale#),(#edge#*#scale#) | StrokeWidth 1 | Stroke Color #Border#
+Shape=Rectangle 0,0,#W#,(#H#),(#R#*#scale#),(#R#*#scale#) | StrokeWidth 1 | Stroke Color #Border#
 

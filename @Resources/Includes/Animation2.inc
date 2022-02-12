@@ -4,7 +4,7 @@ Plugin=ActionTimer
 DynamicVariables=1
 ActionList1=Show | Custom0 | Repeat In,2,#AniSteps#
 ActionList2=SaveLocation | Repeat Out,2,#AniSteps# | Hide
-Show=[!CommandMeasure Func "initActions(1)"][!Show]
+Show=[!FadeDuration 0][!CommandMeasure Func "initActions(1)"][!Show]
 Hide=[!Hide]
 In=[!CommandMeasure Func "tweenAnimation('in')"]
 Out=[!CommandMeasure Func "tweenAnimation('out')"]
@@ -38,5 +38,5 @@ OnUpdateAction=[!SetVariable ActualBlur #Blur#][!UpdateMeasure FrostedGlass]
 [Container]
 Meter=Shape
 DynamicVariables=1
-Shape=Rectangle 0,0,#W#,(#H#),(#edge#*#scale#),(#edge#*#scale#) | StrokeWidth 1 | Stroke Color #Border#
+Shape=Rectangle 0,0,#W#,(#H#),(#R#*#scale#),(#R#*#scale#) | StrokeWidth 1 | Stroke Color #Border#
 
