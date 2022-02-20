@@ -60,7 +60,6 @@ UpdateDivider=1
 MEter=Shape
 X=(25*#scale#)
 Y=(25*#Scale#*#Stroke#)r
-Container=container
 Shape=Rectangle 0,0,(#W#-50*#scale#),(35*#Scale#),(#Corner#*5),(#Corner#*5) | StrokeWidth 0 | Extend This
 Shape2=Rectangle 0,0,(Clamp((#W#-(25*#scale#)*2-1)*[MeasureRAM:]*0.01,0,(#W#-(25*#scale#)*2-1))),(35*#Scale#),(#Corner#*5),(#Corner#*5) | Fill Color #DarkColor#,(#Alpha#*0.3) | StrokeWidth 0
 this=Fill Color #DarkColor#,(#Alpha#*0.1)
@@ -76,7 +75,6 @@ X=(10*#Scale#)r
 Y=(35/2*#Scale#)r
 StringAlign=leftcenter
 MeterStyle=RegularText
-Container=container
 
 ; [RAMTOP]
 ; Meter=String
@@ -100,7 +98,6 @@ Y=r
 FontSize=(10*#scale#)
 StringAlign=RightCenter
 MeterStyle=RegularText
-Container=container
 UpdateDivider=5
 
 [CPUBox]
@@ -155,4 +152,3 @@ UpdateDivider=1
 Meter=String
 Y=(45*#Scale#*#Stroke#)r
 DynamicVariables=1
-Container=Container

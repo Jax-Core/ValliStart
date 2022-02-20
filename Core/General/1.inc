@@ -21,7 +21,7 @@ MouseOverAction=[!SetOption #CURRENTSECTION# Fill "Fill Color [&Func:LocalVar('#
 MouseLeaveAction=[!SetOption #CURRENTSECTION# Fill "Fill Color [&Func:LocalVar('#CURRENTSECTION#', 'LeaveColor')]"][!UpdateMeter #CURRENTSECTION#][!Redraw]
 Container=ContentContainer
 DynamicVariables=1
-Hidden=(#Animated# = 2 ? 0 : 1)
+Hidden=(#Animated# = 1 ? 0 : 1)
 
 ; ---------------------------------------------------------------------------- ;
 ;                                    Content                                   ;
@@ -29,20 +29,13 @@ Hidden=(#Animated# = 2 ? 0 : 1)
 
 [HotkeysTitle]
 Meter=String
-Text=Activation & shortcuts
+Text=Activation
 MeterStyle=Set.String:S | Set.OptionCat:S
 
 [Option01]
 Meter=String
 X=r
 Text=Customize how to activate ValliStart
-MeterStyle=Set.String:S | Set.OptionName:S
-[Set.Div:31238]
-Meter=Shape
-MeterStyle=Set.Div:S
-[Option03]
-Meter=String
-Text=Configure shortcuts
 MeterStyle=Set.String:S | Set.OptionName:S
 [Set.Div:3121238]
 Meter=Shape
@@ -95,7 +88,7 @@ MeterStyle=Set.Div:S
 [Option32]
 Meter=String
 Text=Animation easing type
-FontColor=#Set.Text_Color#,(#Animated# = 2 ? 255 : 150)
+FontColor=#Set.Text_Color#,(#Animated# = 1 ? 255 : 150)
 MeterStyle=Set.String:S | Set.OptionName:S
 [Set.Div:S1342]
 Meter=Shape
@@ -103,7 +96,7 @@ MeterStyle=Set.Div:S
 [Option33]
 Meter=String
 Text=Animation direction
-FontColor=#Set.Text_Color#,(#Animated# = 2 ? 255 : 150)
+FontColor=#Set.Text_Color#,(#Animated# = 1 ? 255 : 150)
 MeterStyle=Set.String:S | Set.OptionName:S
 [Set.Div:S21342]
 Meter=Shape
@@ -111,7 +104,7 @@ MeterStyle=Set.Div:S
 [Option34]
 Meter=String
 Text=Animation steps
-FontColor=#Set.Text_Color#,(#Animated# = 2 ? 255 : 150)
+FontColor=#Set.Text_Color#,(#Animated# = 1 ? 255 : 150)
 MeterStyle=Set.String:S | Set.OptionName:S
 
 ;================================================================================================================================================================================
@@ -170,26 +163,6 @@ Meter=Shape
 MeterStyle=Set.Bool:S
 Y=([Option02:Y]-#Set.P#+(-20/2+8)*[Set.S])
 
-[Button03]
-Meter=Shape
-MeterStyle=Set.Button:S
-Y=([Option03:Y]-#Set.P#+(-30/2+8)*[Set.S])
-OverColor=#Set.Accent_color#,150
-LeaveColor=#Set.Accent_color#,50
-Act=[!WriteKeyvalue Variables page.page 3 "#SKINSPATH##Skin.Name#\Core\General.inc"][!Refresh]
-[Value03]
-Meter=String
-Text=[\xe895]
-FontFace=Material Icons Round
-FontSize=(14*[Set.S])
-MeterStyle=Set.String:S | Set.Value:S
-[Value031]
-Meter=String
-X=(-25*[Set.S])r
-Y=r
-Text=Open
-MeterStyle=Set.String:S | Set.Value:S
-
 [CustomFormat:]
 Meter=Shape
 Shape2=Rectangle ([&Func:returnBool('CustomFormat', '1')] = 0 ? 0 : (150*[Set.S])),0,(150*[Set.S]),(30*[Set.S]),(7*[Set.S]) | Fill Color #Set.Text_Color# | StrokeWidth 0 |
@@ -227,41 +200,22 @@ Text=#CustomTimeFormat#
 MeterStyle=Set.String:S | Set.Value:S
 Hidden=(1-#CustomFOrmat#)
 
-
-[Animated:]
+[Animated]
 Meter=Shape
-0Act=[!WriteKeyValue Variables Animated "0" "#Sec.SaveLocation#"]
-1Act=[!WriteKeyValue Variables Animated "1" "#Sec.SaveLocation#"]
-2Act=[!WriteKeyValue Variables Animated "2" "#Sec.SaveLocation#"]
-MeterStyle=Set.Pick3:S
-Shape2=Rectangle (100*[Set.S]*([&Func:returnBool('Animated', '1')]+[&Func:returnBool('Animated', '2')]*2)),0,(300/3*[Set.S]),(30*[Set.S]),(7*[Set.S]) | Fill Color #Set.Text_Color# | StrokeWidth 0
-Y=([Option31:Y]-#Set.P#+(-30/2+8)*[Set.S])
-[Animated:0]
-Meter=String
-Text=Off
-FontColor=[&Func:returnBool('Animated', '0', '#Set.Pri_color#', '#Set.Text_Color#')]
-MeterStyle=Set.String:S | Set.PickOption3_0:S
-[Animated:1]
-Meter=String
-Text=Legacy
-FontColor=[&Func:returnBool('Animated', '1', '#Set.Pri_color#', '#Set.Text_Color#')]
-MeterStyle=Set.String:S | Set.PickOption3_1:S
-[Animated:2]
-Meter=String
-Text=Modern
-FontColor=[&Func:returnBool('Animated', '2', '#Set.Pri_color#', '#Set.Text_Color#')]
-MeterStyle=Set.String:S | Set.PickOption3_2:S
+MeterStyle=Set.Bool:S
+Y=([Option31:Y]-#Set.P#+(-20/2+8)*[Set.S])
+
 [Easetype]
 Meter=Shape
 MeterStyle=Set.Button:S
 Y=([Option32:Y]-#Set.P#+(-30/2+8)*[Set.S])
 Act=[!CommandMeasure Func "startSide('Ease')"]
-Hidden=(#Animated# = 2 ? 0 : 1)
+Hidden=(#Animated# = 1 ? 0 : 1)
 [Value32]
 Meter=String
 Text=#Easetype#
 MeterStyle=Set.String:S | Set.Value:S
-Hidden=(#Animated# = 2 ? 0 : 1)
+Hidden=(#Animated# = 1 ? 0 : 1)
 [Left]
 Meter=Shape
 X=(#Set.W#-#Set.L#-#Set.P#*2-((26*4+5*3)*[Set.S]))
@@ -284,12 +238,12 @@ Meter=Shape
 MeterStyle=Set.Textbox:S
 Type=Int|10|40
 Y=([Option34:Y]-#Set.P#+(-30/2+8)*[Set.S])
-Hidden=(#Animated# = 2 ? 0 : 1)
+Hidden=(#Animated# = 1 ? 0 : 1)
 [Value34]
 Meter=String
 Text=#AniSteps#
 MeterStyle=Set.String:S | Set.Value:S
-Hidden=(#Animated# = 2 ? 0 : 1)
+Hidden=(#Animated# = 1 ? 0 : 1)
 
 [BackgroundMod]
 Meter=Shape

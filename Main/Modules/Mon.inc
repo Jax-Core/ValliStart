@@ -30,7 +30,6 @@ Shape=Rectangle 0,0,#MonW#,(#MonW#/2.2),(#Corner#*3),(#Corner#*3) | StrokeWidth 
 Shape2=Rectangle (8*#Scale#),(7*#Scale#),(4*#Scale#),(#MonW#/2.2-7*2*#Scale#),(#Corner#*2),(#Corner#*2) | StrokeWidth 0 | Extend Monitor
 Monitor=Fill Color 0,0,0,0
 This=Fill Color #DarkColor#,(#Alpha#*0.1)
-Container=Container
 Group=Monboxes
 MouseOverAction=[!SetOption #CURRENTSECTION# This "Fill Color #DarkColor#,(#Alpha#*0.4)"][!UpdateMeter #CURRENTSECTION#][!Redraw]
 MouseLeaveAction=[!SetOption #CURRENTSECTION# This "Fill Color #DarkColor#,(#Alpha#*0.1)"][!UpdateMeter #CURRENTSECTION#][!Redraw]
@@ -38,14 +37,12 @@ MouseLeaveAction=[!SetOption #CURRENTSECTION# This "Fill Color #DarkColor#,(#Alp
 X=(#MonW#/2-64*#Scale#/2)r
 Y=(#MonW#/2.2/2-64*#Scale#/2)r
 W=(64*#Scale#)
-Container=Container
 [MonTextStyle]
 X=(20*#Scale#+#MonW#)r
 Y=r
 StringAlign=Center
 FontColor=#DarkColor#
 FontSize=(10*#Scale#)
-Container=Container
 
 [MonSubtitle]
 Meter=String
@@ -54,7 +51,6 @@ Y=(25*#Scale#)R
 MeterStyle=RegularText
 Text=Monitor Configuration
 FontColor=#DarkColor#,200
-Container=Container
 [MonBox1]
 Meter=Shape
 x=r
@@ -116,4 +112,3 @@ MeterStyle=RegularText | MonTextStyle
 Meter=String
 Y=(45*#Scale#)r
 DynamicVariables=1
-Container=Container

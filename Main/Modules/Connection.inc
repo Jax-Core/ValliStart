@@ -66,7 +66,6 @@ Y=(25*#Scale#)r
 MeterStyle=RegularText
 Text=Connections and Network
 FontColor=#DarkColor#,200
-Container=Container
 
 [WifiIcon]
 Meter=Image
@@ -74,7 +73,6 @@ X=(3*#Scale#)r
 ImageTint=#FontColor#
 Y=(20*#Scale#)R
 W=(20*#Scale#)
-Container=Container
 Imagename=#@#Icons\Wifi.png
 Group=VolumeElements
 [WifiText]
@@ -83,7 +81,6 @@ X=(25*#Scale#)R
 Y=(8*#Scale#)r
 StringAlign=LeftCenter
 Text=Wi-Fi
-Container=Container
 MeterStyle=RegularText
 [WifiStatus1]
 Meter=Shape
@@ -96,7 +93,6 @@ This=Stroke Color #Darkcolor#
 dat=4,9 | LineTo 8,13 | LineTo 15,5
 MouseOverAction=[!SetOption #CURRENTSECTION# This "Stroke Color #FontColor#"][!UpdateMeter #CURRENTSECTION#][!Redraw]
 MouseLeaveAction=[!SetOption #CURRENTSECTION# This "Stroke Color #Darkcolor#"][!UpdateMeter #CURRENTSECTION#][!Redraw]
-Container=Container
 DynamicVariables=1
 LeftMouseUpAction=["ms-availablenetworks:"]
 [WifiName1]
@@ -108,7 +104,6 @@ MeasureName=WifiName
 Text=%1
 FontSize=(10*#Scale#)
 FontColor=#DarkColor#
-Container=Container
 MeterStyle=RegularText
 
 [BTIcon]
@@ -117,7 +112,6 @@ ImageTint=#FontColor#
 X=[WifiIcon:X]
 Y=(35*#Scale#)r
 W=(20*#Scale#)
-Container=Container
 Imagename=#@#Icons\Bluetooth.png
 Group=VolumeElements
 [BTText]
@@ -126,7 +120,6 @@ X=(25*#Scale#)R
 Y=(8*#Scale#)r
 StringAlign=LeftCenter
 Text=Bluetooth
-Container=Container
 MeterStyle=RegularText
 [BTStatus]
 Meter=Shape
@@ -139,7 +132,6 @@ This=Stroke Color #Darkcolor#
 dat=4,9 | LineTo 8,13 | LineTo 15,5
 MouseOverAction=[!SetOption #CURRENTSECTION# This "Stroke Color #FontColor#"][!UpdateMeter #CURRENTSECTION#][!Redraw]
 MouseLeaveAction=[!SetOption #CURRENTSECTION# This "Stroke Color #Darkcolor#"][!UpdateMeter #CURRENTSECTION#][!Redraw]
-Container=Container
 DynamicVariables=1
 LeftMouseUpAction=#BT_ToggleBluetooth#
 MiddleMouseUpAction=["Ms-settings:bluetooth"]
@@ -151,7 +143,6 @@ StringAlign=RightCenter
 Text=
 FontSize=(10*#Scale#)
 FontColor=#DarkColor#
-Container=Container
 MeterStyle=RegularText
 
 [InternetIcon]
@@ -160,7 +151,6 @@ ImageTint=#FontColor#
 X=[WifiIcon:X]
 Y=(35*#Scale#)r
 W=(20*#Scale#)
-Container=Container
 Imagename=#@#Icons\Ethernet-1.png
 Group=VolumeElements
 [InternetText]
@@ -169,7 +159,6 @@ X=(25*#Scale#)R
 Y=(8*#Scale#)r
 StringAlign=LeftCenter
 Text=Internet
-Container=Container
 MeterStyle=RegularText
 [InternetStatus1]
 Meter=Shape
@@ -183,7 +172,6 @@ This=Stroke Color #Darkcolor#
 dat=4,9 | LineTo 8,13 | LineTo 15,5
 MouseOverAction=[!SetOption #CURRENTSECTION# This "Stroke Color #FontColor#"][!UpdateMeter #CURRENTSECTION#][!Redraw]
 MouseLeaveAction=[!SetOption #CURRENTSECTION# This "Stroke Color #Darkcolor#"][!UpdateMeter #CURRENTSECTION#][!Redraw]
-Container=Container
 DynamicVariables=1
 LeftMouseUpAction=
 [InternetName1]
@@ -195,11 +183,9 @@ MeasureName=InternetStatus
 Text=%1
 FontSize=(10*#Scale#)
 FontColor=#DarkColor#
-Container=Container
 MeterStyle=RegularText
 
 [ConnectionAnchor]
 Meter=String
 Y=(10*#Scale#*#Stroke#+(35*#Scale#))r
 DynamicVariables=1
-Container=Container

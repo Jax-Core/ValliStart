@@ -31,9 +31,3 @@ OnUpdateAction=[!SetVariable ActualBlur #Blur#][!UpdateMeasure FrostedGlass]
 ;                                    Content                                   ;
 ; ---------------------------------------------------------------------------- ;
 
-[Container]
-Meter=Shape
-Y=#TweenNode1#
-DynamicVariables=1
-Shape=Rectangle 0,0,#W#,(#H#),(#R#*#scale#),(#R#*#scale#) | StrokeWidth 1 | Stroke Color #Border#
-

@@ -1,0 +1,2 @@
+[Variables]
+SearchKey=LWin+S

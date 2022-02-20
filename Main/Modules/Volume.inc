@@ -47,6 +47,17 @@ RelativeToSkin=1
 RequireDragging=1
 DynamicVariables=1
 
+
+[MeasureAudio]
+Measure=Plugin
+Plugin=AudioLevel
+Port=Output
+[MeasureDeviceList]
+Measure=Plugin
+Plugin=AudioLevel
+Parent=MeasureAudio
+Type=DeviceList
+
 ; ---------------------------------------------------------------------------- ;
 ;                                    Content                                   ;
 ; ---------------------------------------------------------------------------- ;
@@ -58,7 +69,6 @@ Y=(25*#Scale#)r
 MeterStyle=RegularText
 Text=Media control
 FontColor=#DarkColor#,200
-Container=Container
 
 [SoundIcon]
 Meter=Image
@@ -66,7 +76,6 @@ ImageTint=#FontColor#
 X=(3*#Scale#)r
 Y=(20*#Scale#)R
 W=(20*#Scale#)
-Container=Container
 Imagename=
 LeftMouseUpAction=[!CommandMeasure "MeasureWin7Audio" "ToggleMute"][!UpdateMeasure MeasureWin7Audio][!Redraw]
 Group=VolumeElements
@@ -80,8 +89,9 @@ Shape2=Rectangle 0,0,(#SliderX#-#SliderM#),#SliderH#,(#Corner#),(#Corner#) | Fil
 Shape3=Ellipse (#SliderX#-#SliderM#),(#SliderH#/2),(8*#Scale#),(8*#Scale#) | Fill Color #Accent# | StrokeWidth 0
 Shape4=Rectangle 0,(-#SliderH#*3),#SliderW#,(#SliderH#*6) | Fill Color 0,0,0,1 | StrokeWidth 0
 LeftMouseDownAction=[!CommandMeasure MeasureMouse "Start"]
+MouseScrollUpAction=[!CommandMeasure MeasureWin7Audio "ChangeVolume +#VolumeChangeLevel#"][!UpdateMeasure MeasureWin7Audio][!UpdateMeterGroup VolumeElements][!Redraw]
+MouseScrollDownAction=[!CommandMeasure MeasureWin7Audio "ChangeVolume -#VolumeChangeLevel#"][!UpdateMeasure MeasureWin7Audio][!UpdateMeterGroup VolumeElements][!Redraw]
 DynamicVariables=1
-Container=Container
 Group=VolumeElements
 
 [VolumeText]
@@ -92,7 +102,6 @@ Text=[MeasureWin7Audio:0]
 StringAlign=CenterCenter
 DynamicVariables=1
 MeterStyle=RegularText
-Container=Container
 Group=VolumeElements
 
 [VolumeDevice]
@@ -101,11 +110,9 @@ X=(#scale#*35)r
 Y=r
 Shape=Rectangle 0,(-#scale#*20),(#scale#*150),(#scale#*40),(#Corner#*5),(#Corner#*5) | StrokeWidth (#Stroke#*2) | Fill Color #DarkColor#,(#Alpha#*0.3) | Extend This
 This=Stroke Color #BoxBorder#,(#Alpha#*0.5)
-Container=Container
 MouseOverAction=[!SetOption #CURRENTSECTION# This "Stroke Color #FontColor#,(#Alpha#*0.5)"][!UpdateMeter #CURRENTSECTION#][!Redraw]
 MouseLeaveAction=[!SetOption #CURRENTSECTION# This "Stroke Color #BoxBorder#,(#Alpha#*0.5)"][!UpdateMeter #CURRENTSECTION#][!Redraw]
-LeftMouseDownAction=[!CommandMeasure "MeasureWin7Audio" "TogglePrevious"][!UpdateMeasure MeasureWin7Audio][!Redraw]
-RightMouseDownAction=[!CommandMeasure "MeasureWin7Audio" "ToggleNext"][!UpdateMeasure MeasureWin7Audio][!Redraw]
+LeftMouseUpAction=[!SkinCustomMenu]
 MiddleMouseUpAction=[!Refresh]
 
 [VolumeDeviceText]
@@ -118,11 +125,9 @@ Measurename=MeasureWin7Audio
 Text=%1
 StringAlign=CenterCenter
 MeterStyle=RegularText
-Container=Container
 Group=VolumeElements
 
 [VolumeAnchor]
 Meter=String
 Y=(10*#Scale#*#Stroke#+(35*#Scale#))r
 DynamicVariables=1
-Container=Container

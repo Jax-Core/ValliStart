@@ -15,7 +15,6 @@ MeterStyle=RegularText
 Text=Pinned applications
 FontColor=#DarkColor#,200
 StringAlign=[&Func:returnCenterString(600)]Center
-Container=Container
 DynamicVariables=1
 
 [Win11BoxStyle]
@@ -23,7 +22,6 @@ X=(10*#Scale#+(#Win11BoxW#/2))r
 Y=(-#Win11BoxW#/2-(32/2+5)*#Scale#)r
 Shape=Rectangle 0,0,#Win11BoxW#,#Win11BoxW#,(#Corner#*5),(#Corner#*5) | StrokeWidth 0 | Extend This
 This=Fill Color #DarkColor#,(#Alpha#*0.0)
-Container=Container
 MouseOverAction=[!SetOption #CURRENTSECTION# This "Fill Color #DarkColor#,(#Alpha#*0.3)"][!UpdateMeter #CURRENTSECTION#][!Redraw]
 MouseLeaveAction=[!SetOption #CURRENTSECTION# This "Fill Color #DarkColor#,(#Alpha#*0.0)"][!UpdateMeter #CURRENTSECTION#][!Redraw]
 [Win11BoxNewRowStyle]
@@ -35,7 +33,6 @@ Y=(#Win11BoxW#/2-32*#Scale#/2)r
 W=(32*#Scale#)
 H=(32*#Scale#)
 DynamicVariables=1
-Container=Container
 Group=Pinned
 ImagePath=#SKINSPATH#..\CoreData\ValliStart\IconCache\
 [Win11TextStyle]
@@ -46,7 +43,6 @@ W=(#Win11BoxW#)
 ClipString=1
 StringAlign=Center
 FontSize=(9*#Scale#)
-Container=Container
 Group=Pinned
 
 [Win11Box1]
@@ -59,4 +55,3 @@ Y=(#scale#*30)r
 Meter=String
 Y=(60*#Scale#)r
 DynamicVariables=1
-Container=Container
