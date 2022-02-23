@@ -3,7 +3,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/Jax-Core/ValliStart">
-    <img src="https://imgur.com/hjElZ0W.png" alt="Logo" width="200" height="200">
+    <img src="https://cdn.discordapp.com/attachments/936246521807138816/945920749259075684/ValliStartColored.png" alt="Logo" width="200" height="200">
   </a>
   <h3 align="center">ValliStart</h3>
   <p align="center">
@@ -16,6 +16,16 @@
     <a href="https://discord.gg/JmgehPSDD6">Report Bugs & Request Features</a>
   </p>
 </div>
+
+<p align="center">
+  <img alt="Latest by date" src="https://img.shields.io/github/v/tag/Jax-Core/ValliStart?label=Version&style=for-the-badge" />
+  <img alt="Releases" src="https://img.shields.io/github/downloads/Jax-Core/ValliStart/total?style=for-the-badge" />
+  <img alt="Release date" src="https://img.shields.io/github/release-date/Jax-Core/ValliStart?label=Last%20Core%20Update&style=for-the-badge" />
+  <img alt="Discord" src="https://img.shields.io/discord/880445067754610688?label=Discord%20server&style=for-the-badge" />
+  <img alt="Github" src="https://img.shields.io/github/license/Jax-Core/ValliStart?style=for-the-badge" />
+  
+  
+</p>
 
 <!-- TABLE OF CONTENTS -->
 <details>
