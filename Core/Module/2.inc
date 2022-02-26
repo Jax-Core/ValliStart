@@ -22,6 +22,22 @@ X=(#Set.P#/2)R
 Y=r
 StringAlign=LeftCenter
 Container=ContentContainer
+[Item.Button.Shape:S]
+X=([ContentContainer:W]-#Set.P#-30*[SEt.S])
+Y=(-15*[Set.S])r
+Shape=Rectangle 0,0,(30*[Set.S]),(30*[Set.S]),(5*[Set.S]) | StrokeWidth 0 | Extend Stroke
+Stroke=Fill Color #Set.Positive_color#,100
+MouseOverAction=[!SetOption #CURRENTSECTION# Stroke "Fill Color #Set.Positive_color#,200"][!UpdateMeter #CURRENTSECTION#][!Redraw]
+MouseLeaveAction=[!SetOption #CURRENTSECTION# Stroke "Fill Color #Set.Positive_color#,100"][!UpdateMeter #CURRENTSECTION#][!Redraw]
+DynamicVariables=1
+Container=ContentContainer
+[Item.Button.StringIcon:S]
+X=(30*[Set.S]/2)r
+Y=(30*[Set.S]/2)r
+StringAlign=CenterCEnter
+Text=[\xe5ce]
+FontFace=Material Icons Round
+Container=ContentContainer
 
 ; ---------------------------------------------------------------------------- ;
 ;                                    Content                                   ;

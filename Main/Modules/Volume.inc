@@ -3,20 +3,16 @@
 ;                                   Function                                   ;
 ; ---------------------------------------------------------------------------- ;
 [ActionTimer]
-Custom0=[!Setvariable SliderX ([MeasureWin7Audio:0]/100*#SliderW#+#SliderM#)]#BT_CheckBluetooth#[!UpdateMeterGroup VolumeElements][!Redraw]
+@includeModuleVariable=Vars\Volume.inc
+Custom0=[!UpdateMeasureGroup VolumeElements][!UpdateMeterGroup VolumeElements][!Redraw]#BT_CheckBluetooth#
 
 [Variables]
 VolumeHeight=120
-SliderM=(70*#Scale#)
-SliderX=#SliderM#
-SliderW=((#FixW#-313)*#Scale#)
-SliderH=(3*#Scale#)
 
 [MeasureWin7Audio]
 Measure=Plugin
 Plugin=Win7AudioPlugin
 DynamicVariables=1
-OnChangeAction=[!Setvariable SliderX ([MeasureWin7Audio:0]/100*#SliderW#+#SliderM#)][!UpdateMeterGroup VolumeElements][!Redraw]
 IfCondition=MeasureWin7Audio < 1
 IfTrueAction=[!SetOption SoundIcon ImageName "#@#Icons\Sound0.png"][!UpdateMeter SoundIcon]
 IfCondition2=(MeasureWin7Audio > 0) && (MeasureWin7Audio < 33)
@@ -26,26 +22,16 @@ IfTrueAction3=[!SetOption SoundIcon ImageName "#@#Icons\Sound2.png"][!UpdateMete
 IfCondition4=MeasureWin7Audio > 80
 IfTrueAction4=[!SetOption SoundIcon ImageName "#@#Icons\Sound.png"][!UpdateMeter SoundIcon]
 UpdateDivider=1
+Group=VolumeElements
 
-[SliderPercent]
+[VolumeSliderPercent]
 Measure=Calc
-Formula=((#SliderX#-(#SliderM#))*100/(((#SliderM#)+#SliderW#)-(#SliderM#)))
-OnUpdateAction=[!CommandMeasure "MeasureWin7Audio" "SetVolume [#CURRENTSECTION#]"][!UpdateMeasure MeasureWin7Audio]
+Formula=MeasureWin7Audio
 DynamicVariables=1
-Disabled=1
-Group=NUOL
+Group=VolumeElements
 
 [MeasureMouse]
 Measure=Plugin
-Plugin=Mouse
-; this measure uses the Plugin:Mouse
-LeftMouseDragAction=[!SetVariable SliderX "(Clamp(($MouseX$),(#SliderM#),((#SliderM#)+#SliderW#)))"][!UpdateMeasure SliderPercent][!UpdateMeterGroup VolumeElements][!Redraw]
-; actions to be executed when the mouse drags. The first bang gets the mouse value and make sure it's in the slider. The bangs after that updates the required measures and the slider.
-LeftMouseUpAction=[!CommandMeasure MeasureMouse "Stop"]
-; actions to be executed after the mouse click is lifted. The first bang stops the measure to retrieve information from mouse dragging.
-RelativeToSkin=1
-RequireDragging=1
-DynamicVariables=1
 
 
 [MeasureAudio]
@@ -68,36 +54,41 @@ X=(25*#Scale#)
 Y=(25*#Scale#)r
 MeterStyle=RegularText
 Text=Media control
-FontColor=#DarkColor#,200
+FontColor=#Dark_Color#,200
 
 [SoundIcon]
 Meter=Image
-ImageTint=#FontColor#
+ImageTint=#Font_Color#
 X=(3*#Scale#)r
 Y=(20*#Scale#)R
 W=(20*#Scale#)
 Imagename=
-LeftMouseUpAction=[!CommandMeasure "MeasureWin7Audio" "ToggleMute"][!UpdateMeasure MeasureWin7Audio][!Redraw]
+LeftMouseUpAction=[!CommandMeasure "MeasureWin7Audio" "ToggleMute"][!UpdateMeasureGroup VolumeElements][!UpdateMeterGroup VolumeElements][!Redraw]
 Group=VolumeElements
 
 [VolumeSlider]
 Meter=Shape
-X=#SliderM#
+X=(70*#Scale#)
 Y=(8*#Scale#)r
-Shape=Rectangle 0,0,#SliderW#,#SliderH#,(#Corner#),(#Corner#) | Fill Color #Border# | StrokeWidth 0
-Shape2=Rectangle 0,0,(#SliderX#-#SliderM#),#SliderH#,(#Corner#),(#Corner#) | Fill Color #Accent# | StrokeWidth 0
-Shape3=Ellipse (#SliderX#-#SliderM#),(#SliderH#/2),(8*#Scale#),(8*#Scale#) | Fill Color #Accent# | StrokeWidth 0
-Shape4=Rectangle 0,(-#SliderH#*3),#SliderW#,(#SliderH#*6) | Fill Color 0,0,0,1 | StrokeWidth 0
-LeftMouseDownAction=[!CommandMeasure MeasureMouse "Start"]
-MouseScrollUpAction=[!CommandMeasure MeasureWin7Audio "ChangeVolume +#VolumeChangeLevel#"][!UpdateMeasure MeasureWin7Audio][!UpdateMeterGroup VolumeElements][!Redraw]
-MouseScrollDownAction=[!CommandMeasure MeasureWin7Audio "ChangeVolume -#VolumeChangeLevel#"][!UpdateMeasure MeasureWin7Audio][!UpdateMeterGroup VolumeElements][!Redraw]
+Shape=Rectangle 0,0,[VolumeSliderW],(3*#Scale#),(#R#) | Fill Color #Border# | StrokeWidth 0
+Shape2=Rectangle 0,0,([VolumeSliderW]*[VolumeSliderPercent]/100),(3*#Scale#),(#R#) | Fill Color Accent_Color | StrokeWidth 0
+Shape3=Ellipse ([VolumeSliderW]*[VolumeSliderPercent]/100),((3*#Scale#)/2),(8*#Scale#),(8*#Scale#) | Fill Color Accent_Color | StrokeWidth 0
+Shape4=Rectangle 0,(-(3*#Scale#)*3),[VolumeSliderW],((3*#Scale#)*6) | Fill Color 0,0,0,1 | StrokeWidth 0
+MouseScrollUpAction=[!CommandMeasure MeasureWin7Audio "ChangeVolume +#VolumeChangeLevel#"][!UpdateMeasureGroup VolumeElements][!UpdateMeterGroup VolumeElements][!Redraw]
+MouseScrollDownAction=[!CommandMeasure MeasureWin7Audio "ChangeVolume -#VolumeChangeLevel#"][!UpdateMeasureGroup VolumeElements][!UpdateMeterGroup VolumeElements][!Redraw]
+LeftMouseDownAction=[!CommandMeasure Func "InitMultiSlider('#CURRENTSECTION#')"]
+SliderProperties=X|VolumeSliderW|1|1|MeasureWin7Audio|VolumeSliderPercent|VolumeElements|[!CommandMeasure $MeasureName$ "SetVolume $DragPercentage$"]|
+;SliderProperties: Orientation, W/H, Invert, MeasureName, PercentMeasureName, GroupToUpdate, ActionWhenMouseDrag, ActionWhenMouseUp
 DynamicVariables=1
 Group=VolumeElements
+[VolumesliderW]
+Measure=Calc
+Formula=((#FixW#-313)*#Scale#)
 
 [VolumeText]
 Meter=String
-X=(30*#Scale#+#SliderW#)r
-Y=(#SliderH#/2)r
+X=(30*#Scale#+[VolumeSliderW])r
+Y=((3*#Scale#)/2)r
 Text=[MeasureWin7Audio:0]
 StringAlign=CenterCenter
 DynamicVariables=1
@@ -108,9 +99,9 @@ Group=VolumeElements
 MEter=Shape
 X=(#scale#*35)r
 Y=r
-Shape=Rectangle 0,(-#scale#*20),(#scale#*150),(#scale#*40),(#Corner#*5),(#Corner#*5) | StrokeWidth (#Stroke#*2) | Fill Color #DarkColor#,(#Alpha#*0.3) | Extend This
+Shape=Rectangle 0,(-#scale#*20),(#scale#*150),(#scale#*40),(#R#*#Scale#),(#R#*#Scale#) | StrokeWidth (#Stroke#*2) | Fill Color #Dark_Color#,(#Alpha#*0.3) | Extend This
 This=Stroke Color #BoxBorder#,(#Alpha#*0.5)
-MouseOverAction=[!SetOption #CURRENTSECTION# This "Stroke Color #FontColor#,(#Alpha#*0.5)"][!UpdateMeter #CURRENTSECTION#][!Redraw]
+MouseOverAction=[!SetOption #CURRENTSECTION# This "Stroke Color #Font_Color#,(#Alpha#*0.5)"][!UpdateMeter #CURRENTSECTION#][!Redraw]
 MouseLeaveAction=[!SetOption #CURRENTSECTION# This "Stroke Color #BoxBorder#,(#Alpha#*0.5)"][!UpdateMeter #CURRENTSECTION#][!Redraw]
 LeftMouseUpAction=[!SkinCustomMenu]
 MiddleMouseUpAction=[!Refresh]

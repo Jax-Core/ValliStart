@@ -60,13 +60,13 @@ UpdateDivider=1
 MEter=Shape
 X=(25*#scale#)
 Y=(25*#Scale#*#Stroke#)r
-Shape=Rectangle 0,0,(#W#-50*#scale#),(35*#Scale#),(#Corner#*5),(#Corner#*5) | StrokeWidth 0 | Extend This
-Shape2=Rectangle 0,0,(Clamp((#W#-(25*#scale#)*2-1)*[MeasureRAM:]*0.01,0,(#W#-(25*#scale#)*2-1))),(35*#Scale#),(#Corner#*5),(#Corner#*5) | Fill Color #DarkColor#,(#Alpha#*0.3) | StrokeWidth 0
-this=Fill Color #DarkColor#,(#Alpha#*0.1)
+Shape=Rectangle 0,0,(#W#-50*#scale#),(35*#Scale#),(#R#*#Scale#),(#R#*#Scale#) | StrokeWidth 0 | Extend This
+Shape2=Rectangle 0,0,(Clamp((#W#-(25*#scale#)*2-1)*[MeasureRAM:]*0.01,0,(#W#-(25*#scale#)*2-1))),(35*#Scale#),(#R#*#Scale#),(#R#*#Scale#) | Fill Color #Dark_Color#,(#Alpha#*0.3) | StrokeWidth 0
+this=Fill Color #Dark_Color#,(#Alpha#*0.1)
 DynamicVariables=1
 UpdateDivider=1
-MouseOverAction=[!SetOption #CURRENTSECTION# This "Fill Color #DarkColor#,(#Alpha#*0.3)"][!UpdateMEter #CURRENTSECTION#][!redraw]
-MouseLeaveAction=[!SetOption #CURRENTSECTION# This "Fill Color #DarkColor#,(#Alpha#*0.1)"][!UpdateMEter #CURRENTSECTION#][!redraw]
+MouseOverAction=[!SetOption #CURRENTSECTION# This "Fill Color #Dark_Color#,(#Alpha#*0.3)"][!UpdateMEter #CURRENTSECTION#][!redraw]
+MouseLeaveAction=[!SetOption #CURRENTSECTION# This "Fill Color #Dark_Color#,(#Alpha#*0.1)"][!UpdateMEter #CURRENTSECTION#][!redraw]
 
 [MeterRAMLabel]
 Meter=String
@@ -86,7 +86,7 @@ MeterStyle=RegularText
 ; FontSize=(10*#scale#)
 ; Container=container
 ; StringAlign=CenterCenter
-; FontColor=#FontColor#,200
+; FontColor=#Font_Color#,200
 ; MeterStyle=RegularText
 
 [RAMPER]
@@ -104,7 +104,7 @@ UpdateDivider=5
 MEter=Shape
 Y=(30*#scale#)r
 UpdateDivider=1
-Shape2=Rectangle 0,0,(Clamp((#W#-(25*#scale#)*2-1)*[MeasureCPU:]*0.01,0,(#W#-(25*#scale#)*2-1))),(35*#Scale#),(#Corner#*5),(#Corner#*5) | Fill Color #DarkColor#,(#Alpha#*0.3) | StrokeWidth 0
+Shape2=Rectangle 0,0,(Clamp((#W#-(25*#scale#)*2-1)*[MeasureCPU:]*0.01,0,(#W#-(25*#scale#)*2-1))),(35*#Scale#),(#R#*#Scale#),(#R#*#Scale#) | Fill Color #Dark_Color#,(#Alpha#*0.3) | StrokeWidth 0
 MeterStyle=RAMBox
 
 [MeterCPULabel]
@@ -128,7 +128,7 @@ UpdateDivider=1
 MEter=Shape
 Y=(30*#scale#)r
 UpdateDivider=1
-Shape2=Rectangle 0,0,(Clamp((#W#-(25*#scale#)*2-1)*[MeasureCPU:]*0.01,0,(#W#-(25*#scale#)*2-1))),(35*#Scale#),(#Corner#*5),(#Corner#*5) | Fill Color #DarkColor#,(#Alpha#*0.3) | StrokeWidth 0
+Shape2=Rectangle 0,0,(Clamp((#W#-(25*#scale#)*2-1)*[MeasureGPU:]*0.01,0,(#W#-(25*#scale#)*2-1))),(35*#Scale#),(#R#*#Scale#),(#R#*#Scale#) | Fill Color #Dark_Color#,(#Alpha#*0.3) | StrokeWidth 0
 MeterStyle=RAMBox
 
 [MeterGPULabel]
@@ -150,5 +150,5 @@ UpdateDivider=1
 
 [ResourceAnchor]
 Meter=String
-Y=(45*#Scale#*#Stroke#)r
+Y=((25+20*#Stroke#)*#Scale#)r
 DynamicVariables=1

@@ -57,13 +57,13 @@ Y=([Option01:Y]-#Set.P#+(-30/2+8)*[Set.S])
 [ReplaceWin:0]
 Meter=String
 Text=Separate module
-FontColor=(#ReplaceWin# = 0 ? 0 : 255),(#ReplaceWin# = 0 ? 0 : 255),(#ReplaceWin# = 0 ? 0 : 255)
+Font_Color=(#ReplaceWin# = 0 ? 0 : 255),(#ReplaceWin# = 0 ? 0 : 255),(#ReplaceWin# = 0 ? 0 : 255)
 MeterStyle=Set.String:S | Set.PickOption_0:S
 LeftMouseUpAction=[!WriteKeyValue Variables [&Func:GroupVar('#CURRENTSECTION#')] 0 "#Sec.SaveLocation#"][&Func:GroupVar('#CURRENTSECTION#', '0Act')][!Refresh][!Refresh "#Skin.Name#\Main"]
 [ReplaceWin:1]
 Meter=String
 Text=Replace Start
-FontColor=(#ReplaceWin# = 1 ? 0 : 255),(#ReplaceWin# = 1 ? 0 : 255),(#ReplaceWin# = 1 ? 0 : 255)
+Font_Color=(#ReplaceWin# = 1 ? 0 : 255),(#ReplaceWin# = 1 ? 0 : 255),(#ReplaceWin# = 1 ? 0 : 255)
 MeterStyle=Set.String:S | Set.PickOption_1:S
 LeftMouseUpAction=[!WriteKeyValue Variables [&Func:GroupVar('#CURRENTSECTION#')] 1 "#Sec.SaveLocation#"][&Func:GroupVar('#CURRENTSECTION#', '1Act')][!Refresh][!Refresh "#Skin.Name#\Main"]
 
@@ -106,13 +106,13 @@ Y=([Option04:Y]-#Set.P#+(-30/2+8)*[Set.S])
 [Mode:1]
 Meter=String
 Text=Functional
-FontColor=(#Mode# = 1 ? 0 : 255),(#Mode# = 1 ? 0 : 255),(#Mode# = 1 ? 0 : 255)
+Font_Color=(#Mode# = 1 ? 0 : 255),(#Mode# = 1 ? 0 : 255),(#Mode# = 1 ? 0 : 255)
 MeterStyle=Set.String:S | Set.PickOption_0:S
 LeftMouseUpAction=[!WriteKeyValue Variables [&Func:GroupVar('#CURRENTSECTION#')] 1 "#Sec.SaveLocation#"][&Func:GroupVar('#CURRENTSECTION#', '0Act')][!Refresh][!Refresh "#Skin.Name#\WinBlock"]
 [Mode:2]
 Meter=String
 Text=Edit
-FontColor=(#Mode# = 2 ? 0 : 255),(#Mode# = 2 ? 0 : 255),(#Mode# = 2 ? 0 : 255)
+Font_Color=(#Mode# = 2 ? 0 : 255),(#Mode# = 2 ? 0 : 255),(#Mode# = 2 ? 0 : 255)
 MeterStyle=Set.String:S | Set.PickOption_1:S
 LeftMouseUpAction=[!WriteKeyValue Variables [&Func:GroupVar('#CURRENTSECTION#')] 2 "#Sec.SaveLocation#"][&Func:GroupVar('#CURRENTSECTION#', '1Act')][!Refresh][!Refresh "#Skin.Name#\WinBlock"]
 

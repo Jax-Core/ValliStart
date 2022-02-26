@@ -13,14 +13,14 @@ X=(25*#Scale#)
 Y=(25*#Scale#)r
 MeterStyle=RegularText
 Text=Pinned applications
-FontColor=#DarkColor#,200
+FontColor=#Dark_Color#,200
 
 [BoxStyle]
 X=(10*#Scale#+#BoxW#-(#BoxW#/2-48*#Scale#/2))r
 Y=(-#BoxW#/2+48*#Scale#/2)r
-Shape=Rectangle 0,0,#BoxW#,#BoxW#,(#Corner#*5),(#Corner#*5) | StrokeWidth (#Stroke#*2) | Fill Color #DarkColor#,(#Alpha#*0.3) | Extend This
+Shape=Rectangle 0,0,#BoxW#,#BoxW#,(#R#*#Scale#),(#R#*#Scale#) | StrokeWidth (#Stroke#*2) | Fill Color #Dark_Color#,(#Alpha#*0.3) | Extend This
 This=Stroke Color #BoxBorder#,(#Alpha#*0.5)
-MouseOverAction=[!SetOption #CURRENTSECTION# This "Stroke Color #FontColor#,(#Alpha#*0.5)"][!UpdateMeter #CURRENTSECTION#][!Redraw]
+MouseOverAction=[!SetOption #CURRENTSECTION# This "Stroke Color #Font_Color#,(#Alpha#*0.5)"][!UpdateMeter #CURRENTSECTION#][!Redraw]
 MouseLeaveAction=[!SetOption #CURRENTSECTION# This "Stroke Color #BoxBorder#,(#Alpha#*0.5)"][!UpdateMeter #CURRENTSECTION#][!Redraw]
 [IconStyle]
 X=(#BoxW#/2-48*#Scale#/2)r

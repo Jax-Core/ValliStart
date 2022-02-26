@@ -5,19 +5,20 @@
 [Variables]
 MonHeight=160
 Monitor=1
+MonW=((#W#-(50+3*20)*#Scale#)/4)
 
 [SettingImport3]
 Measure=String
 String=#Monitor#
 DynamicVariables=1
 IfMatch=1
-IfMatchAction=[!SetOption MonBox1 Monitor "Fill Color #Accent#"][!SetOption MonBox2 Monitor "Fill Color 0,0,0,0"][!SetOption MonBox3 Monitor "Fill Color 0,0,0,0"][!SetOption MonBox4 Monitor "Fill Color 0,0,0,0"]
+IfMatchAction=[!SetOption MonBox1 Monitor "Fill Color Accent_Color"][!SetOption MonBox2 Monitor "Fill Color 0,0,0,0"][!SetOption MonBox3 Monitor "Fill Color 0,0,0,0"][!SetOption MonBox4 Monitor "Fill Color 0,0,0,0"]
 IfMatch2=2
-IfMatchAction2=[!SetOption MonBox2 Monitor "Fill Color #Accent#"][!SetOption MonBox1 Monitor "Fill Color 0,0,0,0"][!SetOption MonBox3 Monitor "Fill Color 0,0,0,0"][!SetOption MonBox4 Monitor "Fill Color 0,0,0,0"]
+IfMatchAction2=[!SetOption MonBox2 Monitor "Fill Color Accent_Color"][!SetOption MonBox1 Monitor "Fill Color 0,0,0,0"][!SetOption MonBox3 Monitor "Fill Color 0,0,0,0"][!SetOption MonBox4 Monitor "Fill Color 0,0,0,0"]
 IfMatch3=3
-IfMatchAction3=[!SetOption MonBox3 Monitor "Fill Color #Accent#"][!SetOption MonBox2 Monitor "Fill Color 0,0,0,0"][!SetOption MonBox1 Monitor "Fill Color 0,0,0,0"][!SetOption MonBox4 Monitor "Fill Color 0,0,0,0"]
+IfMatchAction3=[!SetOption MonBox3 Monitor "Fill Color Accent_Color"][!SetOption MonBox2 Monitor "Fill Color 0,0,0,0"][!SetOption MonBox1 Monitor "Fill Color 0,0,0,0"][!SetOption MonBox4 Monitor "Fill Color 0,0,0,0"]
 IfMatch4=4
-IfMatchAction4=[!SetOption MonBox4 Monitor "Fill Color #Accent#"][!SetOption MonBox2 Monitor "Fill Color 0,0,0,0"][!SetOption MonBox3 Monitor "Fill Color 0,0,0,0"][!SetOption MonBox1 Monitor "Fill Color 0,0,0,0"]
+IfMatchAction4=[!SetOption MonBox4 Monitor "Fill Color Accent_Color"][!SetOption MonBox2 Monitor "Fill Color 0,0,0,0"][!SetOption MonBox3 Monitor "Fill Color 0,0,0,0"][!SetOption MonBox1 Monitor "Fill Color 0,0,0,0"]
 
 ; ---------------------------------------------------------------------------- ;
 ;                                    Content                                   ;
@@ -25,32 +26,32 @@ IfMatchAction4=[!SetOption MonBox4 Monitor "Fill Color #Accent#"][!SetOption Mon
 
 [MonStyle]
 X=((#MonW#/2-64*#Scale#/2)+20*#Scale#)R
-Y=(-#MonW#/2.2/2+64*#Scale#/2)r
-Shape=Rectangle 0,0,#MonW#,(#MonW#/2.2),(#Corner#*3),(#Corner#*3) | StrokeWidth (#Stroke#*2) | Stroke Color #BoxBorder#,(#Alpha#*0.5) | Extend This
-Shape2=Rectangle (8*#Scale#),(7*#Scale#),(4*#Scale#),(#MonW#/2.2-7*2*#Scale#),(#Corner#*2),(#Corner#*2) | StrokeWidth 0 | Extend Monitor
+Y=(-55*#scale#/2+64*#Scale#/2)r
+Shape=Rectangle 0,0,#MonW#,(55*#scale#),(#R#*3),(#R#*3) | StrokeWidth (#Stroke#*2) | Stroke Color #BoxBorder#,(#Alpha#*0.5) | Extend This
+Shape2=Rectangle (8*#Scale#),(7*#Scale#),(4*#Scale#),(55*#scale#-7*2*#Scale#),(#R#*2),(#R#*2) | StrokeWidth 0 | Extend Monitor
 Monitor=Fill Color 0,0,0,0
-This=Fill Color #DarkColor#,(#Alpha#*0.1)
+This=Fill Color #Dark_Color#,(#Alpha#*0.1)
 Group=Monboxes
-MouseOverAction=[!SetOption #CURRENTSECTION# This "Fill Color #DarkColor#,(#Alpha#*0.4)"][!UpdateMeter #CURRENTSECTION#][!Redraw]
-MouseLeaveAction=[!SetOption #CURRENTSECTION# This "Fill Color #DarkColor#,(#Alpha#*0.1)"][!UpdateMeter #CURRENTSECTION#][!Redraw]
+MouseOverAction=[!SetOption #CURRENTSECTION# This "Fill Color #Dark_Color#,(#Alpha#*0.4)"][!UpdateMeter #CURRENTSECTION#][!Redraw]
+MouseLeaveAction=[!SetOption #CURRENTSECTION# This "Fill Color #Dark_Color#,(#Alpha#*0.1)"][!UpdateMeter #CURRENTSECTION#][!Redraw]
 [MonIconStyle]
 X=(#MonW#/2-64*#Scale#/2)r
-Y=(#MonW#/2.2/2-64*#Scale#/2)r
+Y=(55*#scale#/2-64*#Scale#/2)r
 W=(64*#Scale#)
 [MonTextStyle]
 X=(20*#Scale#+#MonW#)r
 Y=r
 StringAlign=Center
-FontColor=#DarkColor#
+FontColor=#Dark_Color#
 FontSize=(10*#Scale#)
 
 [MonSubtitle]
 Meter=String
 X=(25*#Scale#)
-Y=(25*#Scale#)R
+Y=(25*#Scale#)r
 MeterStyle=RegularText
 Text=Monitor Configuration
-FontColor=#DarkColor#,200
+FontColor=#Dark_Color#,200
 [MonBox1]
 Meter=Shape
 x=r
@@ -59,7 +60,7 @@ LeftMouseUpAction=["DisplaySwitch.exe" "/internal"][!SetVariable Monitor 1][!Wri
 meterstyle=monstyle
 [MonIcon1]
 Meter=Image
-ImageTint=#FontColor#
+ImageTint=#Font_Color#
 ImageName=#@#Icons\Single.png
 MeterStyle=MonIconStyle
 [MonBox2]
@@ -68,7 +69,7 @@ meterstyle=monstyle
 LeftMouseUpAction=["DisplaySwitch.exe" "/double"][!SetVariable Monitor 2][!WriteKeyValue Variables Monitor 2 "#ROOTCONFIGPATH#Main\Modules\Mon.inc"][!UpdateMeasure SettingImport4][!UpdateMeterGroup MonBoxes][!Redraw]
 [MonIcon2]
 Meter=Image
-ImageTint=#FontColor#
+ImageTint=#Font_Color#
 ImageName=#@#Icons\Duplicate.png
 MeterStyle=MonIconStyle
 [MonBox3]
@@ -77,7 +78,7 @@ LeftMouseUpAction=["DisplaySwitch.exe" "/extend"][!SetVariable Monitor 3][!Write
 meterstyle=monstyle
 [MonIcon3]
 Meter=Image
-ImageTint=#FontColor#
+ImageTint=#Font_Color#
 ImageName=#@#Icons\Extend.png
 MeterStyle=MonIconStyle
 [MonBox4]
@@ -86,7 +87,7 @@ LeftMouseUpAction=["DisplaySwitch.exe" "/external"][!SetVariable Monitor 4][!Wri
 meterstyle=monstyle
 [MonIcon4]
 Meter=Image
-ImageTint=#FontColor#
+ImageTint=#Font_Color#
 ImageName=#@#Icons\Second.png
 MeterStyle=MonIconStyle
 [MonText1]

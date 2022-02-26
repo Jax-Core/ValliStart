@@ -44,32 +44,13 @@ MeterStyle=Set.Div:S
 Meter=String
 Text=Type to search when menu is active
 MeterStyle=Set.String:S | Set.OptionName:S
-
-;================================================================================================================================================================================
-
-[Time]
-Meter=String
-Text=Time format
-MeterStyle=Set.String:S |  Set.OptionCat:S
-
-[Option11]
-Meter=String
-Text=Time format
-MeterStyle=Set.String:S | Set.OptionName:S
-[Set.Div:2238]
+[Set.Div:21238]
 Meter=Shape
 MeterStyle=Set.Div:S
-[Option12]
+[Option03]
 Meter=String
-Text=Show seconds
-MeterStyle=Set.String:S | Set.OptionName:S
-[Set.Div:23123]
-Meter=Shape
-MeterStyle=Set.Div:S
-[Option13]
-Meter=String
-Text=Custom format
-FontColor=#Set.Text_Color#,(105+150*#CustomFormat#)
+Text=Key to run after key input is captured
+FontColor=#Set.Text_Color#,(105+150*#TypeToSearch#)
 MeterStyle=Set.String:S | Set.OptionName:S
 
 ;================================================================================================================================================================================
@@ -156,49 +137,23 @@ X=(-25*[Set.S])r
 Y=r
 Text=Open
 MeterStyle=Set.String:S | Set.Value:S
-
+[Button03]
+Meter=Shape
+MeterStyle=Set.Button:S
+Y=([Option03:Y]-#Set.P#+(-30/2+8)*[Set.S])
+Act=[!CommandMeasure Func "startSide('Hotkey', '2')"]
+Hidden=(1-#TypeToSearch#)
+[Value03]
+Meter=String
+Text=#Key2InString#
+Hidden=(1-#TypeToSearch#)
+MeterStyle=Set.String:S | Set.Value:S
 
 [TypeToSearch]
 Meter=Shape
 MeterStyle=Set.Bool:S
 Y=([Option02:Y]-#Set.P#+(-20/2+8)*[Set.S])
 
-[CustomFormat:]
-Meter=Shape
-Shape2=Rectangle ([&Func:returnBool('CustomFormat', '1')] = 0 ? 0 : (150*[Set.S])),0,(150*[Set.S]),(30*[Set.S]),(7*[Set.S]) | Fill Color #Set.Text_Color# | StrokeWidth 0 |
-0Act=[!WriteKeyValue Variables CustomFormat "0" "#Sec.SaveLocation#"]
-1Act=[!WriteKeyValue Variables CustomFormat "1" "#Sec.SaveLocation#"]
-MeterStyle=Set.Pick:S
-Y=([Option11:Y]-#Set.P#+(-30/2+8)*[Set.S])
-[CustomFormat:0]
-Meter=String
-Text=Time
-FontColor=[&Func:returnBool('CustomFormat', '1', '#Set.Text_Color#', '#Set.Pri_color#')]
-LeftMouseUpAction=[&Func:GroupVar('#CURRENTSECTION#', '0Act')][!Refresh][!UpdateMeasure Auto_Refresh:M]
-MeterStyle=Set.String:S | Set.PickOption_0:S
-[CustomFormat:1]
-Meter=String
-Text=Custom
-FontColor=[&Func:returnBool('CustomFormat', '1', '#Set.Pri_color#', '#Set.Text_Color#')]
-LeftMouseUpAction=[&Func:GroupVar('#CURRENTSECTION#', '1Act')][!Refresh][!UpdateMeasure Auto_Refresh:M]
-MeterStyle=Set.String:S | Set.PickOption_1:S
-
-[ShowSec]
-Meter=Shape
-MeterStyle=Set.Bool:S
-Y=([Option12:Y]-#Set.P#+(-20/2+8)*[Set.S])
-
-[CustomTimeFormat]
-Meter=Shape
-MeterStyle=Set.Textbox:S
-Type=Txt
-Y=([Option13:Y]-#Set.P#+(-30/2+8)*[Set.S])
-Hidden=(1-#CustomFOrmat#)
-[Value13]
-Meter=String
-Text=#CustomTimeFormat#
-MeterStyle=Set.String:S | Set.Value:S
-Hidden=(1-#CustomFOrmat#)
 
 [Animated]
 Meter=Shape
@@ -315,3 +270,5 @@ Meter=String
 Container=ContentContainer
 x=r
 Y=R
+
+@includeKeys=#SKINSPATH##Skin.Name#\@Resources\Actions\HotKeys.ini

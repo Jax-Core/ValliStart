@@ -13,17 +13,17 @@ X=(#W# >= 600 ? (#W#/2) : (25*#Scale#))
 Y=(25*#Scale#)r
 MeterStyle=RegularText
 Text=Pinned applications
-FontColor=#DarkColor#,200
+FontColor=#Dark_Color#,200
 StringAlign=[&Func:returnCenterString(600)]Center
 DynamicVariables=1
 
 [Win11BoxStyle]
 X=(10*#Scale#+(#Win11BoxW#/2))r
 Y=(-#Win11BoxW#/2-(32/2+5)*#Scale#)r
-Shape=Rectangle 0,0,#Win11BoxW#,#Win11BoxW#,(#Corner#*5),(#Corner#*5) | StrokeWidth 0 | Extend This
-This=Fill Color #DarkColor#,(#Alpha#*0.0)
-MouseOverAction=[!SetOption #CURRENTSECTION# This "Fill Color #DarkColor#,(#Alpha#*0.3)"][!UpdateMeter #CURRENTSECTION#][!Redraw]
-MouseLeaveAction=[!SetOption #CURRENTSECTION# This "Fill Color #DarkColor#,(#Alpha#*0.0)"][!UpdateMeter #CURRENTSECTION#][!Redraw]
+Shape=Rectangle 0,0,#Win11BoxW#,#Win11BoxW#,(#R#*#Scale#),(#R#*#Scale#) | StrokeWidth 0 | Extend This
+This=Fill Color #Dark_Color#,(#Alpha#*0.0)
+MouseOverAction=[!SetOption #CURRENTSECTION# This "Fill Color #Dark_Color#,(#Alpha#*0.3)"][!UpdateMeter #CURRENTSECTION#][!Redraw]
+MouseLeaveAction=[!SetOption #CURRENTSECTION# This "Fill Color #Dark_Color#,(#Alpha#*0.0)"][!UpdateMeter #CURRENTSECTION#][!Redraw]
 [Win11BoxNewRowStyle]
 X=(#W# >= 600 ? ((#W#)/2-(#Win11BoxW#*6+10*5*#scale#)/2) : (25*#Scale#))
 Y=(#Win11BoxW#/2-10*#Scale#)r
