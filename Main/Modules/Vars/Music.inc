@@ -1,3 +1,3 @@
 [Variables]
 MediaType=Auto
-FetchImage=1
+FetchImage=0

@@ -1,8 +1,8 @@
 [Variables]
 StartIconBool=1
 StartTextBool=1
-StartText=Welcome back!
-IconName=Core
+StartText=Start
+IconName=Win
 CustomFormat=0
 CustomTimeFormat=%c
 ShowSec=0

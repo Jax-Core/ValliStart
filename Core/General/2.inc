@@ -1,6 +1,18 @@
 [Variables]
+@includeWinBlockVars=#SKINSPATH##Skin.Name#\WinBlock\Vars\Winblock.inc
+Sec.SaveLocation2=#SKINSPATH##Skin.Name#\WinBlock\Vars\Winblock.inc
 WinBlock=0
 
+; ---------------------------------------------------------------------------- ;
+;                                   Function                                   ;
+; ---------------------------------------------------------------------------- ;
+
+[Auto_Refresh:M]
+OnUpdateAction=[!Refresh "#Skin.Name#\Main"][!Refresh "ValliStart\WinBlock"]
+
+; ---------------------------------------------------------------------------- ;
+;                                    Content                                   ;
+; ---------------------------------------------------------------------------- ;
 
 [HotkeysTitle]
 Meter=String
@@ -35,15 +47,39 @@ FontColor=#Set.Text_Color#,(255-150*#ReplaceWin#)
 MeterStyle=Set.String:S | Set.OptionName:S
 [Option03]
 Meter=String
-Text=Override the start button#CRLF#- You can edit the button's location by turning on edit mode below#CRLF#- Hitbox will not sync with taskbar if it's set to autohide, though it still works.
+Text=Override the start button#CRLF#- This button is just an overlay, it does not follow the taskbar#CRLF#- To edit the position of the blocker, turn on edit mode below#CRLF#- To use the blocker after editing, turn on functional mode
 FontColor=#Set.Text_Color#,(255-150*(1-#ReplaceWin#))
+MeterStyle=Set.String:S | Set.OptionName:S
+
+[BlockerTitle]
+Meter=String
+Text=WinBlock settings
+MeterStyle=Set.String:S | Set.OptionCat:S
+
+[Option11]
+Meter=String
+Text=Win block behavior
 MeterStyle=Set.String:S | Set.OptionName:S
 [Set.Div:81231212]
 Meter=Shape
 MeterStyle=Set.Div:S
-[Option04]
+[Option12]
 Meter=String
-Text=Start button blocker mode
+Text=Win block width
+MeterStyle=Set.String:S | Set.OptionName:S
+[Set.Div:2]
+Meter=Shape
+MeterStyle=Set.Div:S
+[Option13]
+Meter=String
+Text=Win block height
+MeterStyle=Set.String:S | Set.OptionName:S
+[Set.Div:8]
+Meter=Shape
+MeterStyle=Set.Div:S
+[Option14]
+Meter=String
+Text=Win block hovered color
 MeterStyle=Set.String:S | Set.OptionName:S
 
 ; ---------------------------------------------------------------------------- ;
@@ -57,13 +93,13 @@ Y=([Option01:Y]-#Set.P#+(-30/2+8)*[Set.S])
 [ReplaceWin:0]
 Meter=String
 Text=Separate module
-Font_Color=(#ReplaceWin# = 0 ? 0 : 255),(#ReplaceWin# = 0 ? 0 : 255),(#ReplaceWin# = 0 ? 0 : 255)
+FontColor=[&Func:returnBool('ReplaceWin', '0', '#Set.Pri_color#', '#Set.Text_Color#')]
 MeterStyle=Set.String:S | Set.PickOption_0:S
 LeftMouseUpAction=[!WriteKeyValue Variables [&Func:GroupVar('#CURRENTSECTION#')] 0 "#Sec.SaveLocation#"][&Func:GroupVar('#CURRENTSECTION#', '0Act')][!Refresh][!Refresh "#Skin.Name#\Main"]
 [ReplaceWin:1]
 Meter=String
 Text=Replace Start
-Font_Color=(#ReplaceWin# = 1 ? 0 : 255),(#ReplaceWin# = 1 ? 0 : 255),(#ReplaceWin# = 1 ? 0 : 255)
+FontColor=[&Func:returnBool('ReplaceWin', '1', '#Set.Pri_color#', '#Set.Text_Color#')]
 MeterStyle=Set.String:S | Set.PickOption_1:S
 LeftMouseUpAction=[!WriteKeyValue Variables [&Func:GroupVar('#CURRENTSECTION#')] 1 "#Sec.SaveLocation#"][&Func:GroupVar('#CURRENTSECTION#', '1Act')][!Refresh][!Refresh "#Skin.Name#\Main"]
 
@@ -102,40 +138,59 @@ Meter=Shape
 SecVar=Mode
 MeterStyle=Set.Pick:S
 Shape2=Rectangle ([#[&Func:GroupVar('#CURRENTSECTION#')]] = 1 ? 0 : (150*[Set.S])),0,(150*[Set.S]),(30*[Set.S]),(7*[Set.S]) | Fill Color 255,255,255 | StrokeWidth 0 |
-Y=([Option04:Y]-#Set.P#+(-30/2+8)*[Set.S])
+Y=([Option11:Y]-#Set.P#+(-30/2+8)*[Set.S])
+Hidden=(1-#WinBlock#)
 [Mode:1]
 Meter=String
 Text=Functional
-Font_Color=(#Mode# = 1 ? 0 : 255),(#Mode# = 1 ? 0 : 255),(#Mode# = 1 ? 0 : 255)
+FontColor=[&Func:returnBool('Mode', '1', '#Set.Pri_color#', '#Set.Text_Color#')]
 MeterStyle=Set.String:S | Set.PickOption_0:S
-LeftMouseUpAction=[!WriteKeyValue Variables [&Func:GroupVar('#CURRENTSECTION#')] 1 "#Sec.SaveLocation#"][&Func:GroupVar('#CURRENTSECTION#', '0Act')][!Refresh][!Refresh "#Skin.Name#\WinBlock"]
+LeftMouseUpAction=[!WriteKeyValue Variables [&Func:GroupVar('#CURRENTSECTION#')] 1 "#Sec.SaveLocation2#"][&Func:GroupVar('#CURRENTSECTION#', '0Act')][!Refresh][!Refresh "#Skin.Name#\WinBlock"]
+Hidden=(1-#WinBlock#)
 [Mode:2]
 Meter=String
 Text=Edit
-Font_Color=(#Mode# = 2 ? 0 : 255),(#Mode# = 2 ? 0 : 255),(#Mode# = 2 ? 0 : 255)
+FontColor=[&Func:returnBool('Mode', '2', '#Set.Pri_color#', '#Set.Text_Color#')]
 MeterStyle=Set.String:S | Set.PickOption_1:S
-LeftMouseUpAction=[!WriteKeyValue Variables [&Func:GroupVar('#CURRENTSECTION#')] 2 "#Sec.SaveLocation#"][&Func:GroupVar('#CURRENTSECTION#', '1Act')][!Refresh][!Refresh "#Skin.Name#\WinBlock"]
+LeftMouseUpAction=[!WriteKeyValue Variables [&Func:GroupVar('#CURRENTSECTION#')] 2 "#Sec.SaveLocation2#"][&Func:GroupVar('#CURRENTSECTION#', '1Act')][!Refresh][!Refresh "#Skin.Name#\WinBlock"]
+Hidden=(1-#WinBlock#)
 
-
-[Button10]
+[W]
 Meter=Shape
-MeterStyle=Set.Button:S
-Y=([Header:Y]-#Set.P#+(-20/2+8)*[Set.S])
-OverColor=#Set.Accent_color#,150
-LeaveColor=#Set.Accent_color#,50
-Act=[!WriteKeyvalue Variables page.page 1 "#SKINSPATH##Skin.Name#\Core\General.inc"][!Refresh]
-[Value10]
+MeterStyle=Set.Textbox:S
+Y=([Option12:Y]-#Set.P#+(-30/2+8)*[Set.S])
+Hidden=(1-#WinBlock#)
+SaveLocation=#Sec.SaveLocation2#
+[Value12]
 Meter=String
-Text=[\xe31b]
-FontFace=Material Icons Round
-FontSize=(14*[Set.S])
+Text=#W# px
 MeterStyle=Set.String:S | Set.Value:S
-[Value101]
+Hidden=(1-#WinBlock#)
+
+[H]
+Meter=Shape
+MeterStyle=Set.Textbox:S
+Y=([Option13:Y]-#Set.P#+(-30/2+8)*[Set.S])
+Hidden=(1-#WinBlock#)
+SaveLocation=#Sec.SaveLocation2#
+[Value13]
 Meter=String
-X=(-25*[Set.S])r
-Y=r
-Text=Return
+Text=#H# px
 MeterStyle=Set.String:S | Set.Value:S
+Hidden=(1-#WinBlock#)
+
+[Over]
+Meter=Shape
+MeterStyle=Set.ColorPacity:S
+SaveLocation=#Sec.SaveLocation2#
+Y=([Option14:Y]-#Set.P#+(-30/2+8)*[Set.S])
+Type=Num|1|255
+Hidden=(1-#WinBlock#)
+[Value14]
+Meter=String
+Text=#OverOpacity#
+MeterStyle=Set.String:S | Set.Pacity:S
+Hidden=(1-#WinBlock#)
 
 @includeKeys=#SKINSPATH##Skin.Name#\@Resources\Actions\HotKeys.ini
 

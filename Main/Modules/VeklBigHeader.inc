@@ -3,7 +3,7 @@
 ; ---------------------------------------------------------------------------- ;
 
 [Variables]
-VeklBigHeaderHeight=(120*#scale#+#Pad#)
+VeklBigHeaderHeight=(149*#scale#+#Pad#)
 
 [MeasureTime]
 Measure=Time

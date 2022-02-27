@@ -1,2 +1,2 @@
 [Variables]
-Version=2.99
+Version=3.0
