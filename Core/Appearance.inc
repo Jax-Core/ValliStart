@@ -103,7 +103,7 @@ Meter=Shape
 MeterStyle=Set.Div:S
 [Option16]
 Meter=String
-Text=Backgroundd image opacity
+Text=Background image opacity
 FontColor=#Set.Text_Color#,(#ImageUnderlay# = 1 ? 255 : 150)
 MeterStyle=Set.String:S | Set.OptionName:S
 [Header17]
@@ -535,7 +535,7 @@ Y=([Option29:Y]-#Set.P#+(-30/2+8)*[Set.S])
 ;String=[&Func:trim('#ImageUnderlayPath#','^.*\','')]
 ;Act=[!CommandMEasure Func "interactionBox([[#SKINSPATH##Skin.Name#\Core\InteractionBox\ValliImageUnderlay.inc]])"]
 ;Hidden=!ImageUnderlay
-;[Backgroundd image opacity]
+;[Background image opacity]
 ;Type=String
 ;Limit=Num|1|255
 ;Variable=ImageUnderlayAlpha
