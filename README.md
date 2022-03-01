@@ -116,7 +116,14 @@ ValliStart includes 8 color scheme presets. You enable them by just selecting th
 - Nord
 - Light
 
-You can also make your own custom schemes through the **Appearance** tab.
+Furthermore, ValliStart also comes with 4 layout presets. You can enable them by just selecting them within the **Layout** tab. These are their names:
+
+- Win11
+- SideBar
+- ClassicWavy
+- Flat
+
+> You can also make your own custom schemes through the **Appearance** tab.
 
 <p align="right">
     <b><a href="#top">↥ back to top</a></b>
@@ -205,7 +212,7 @@ Once you've installed the extension, you can now proceed to configure media cont
 3. Select the **Music** module to enable it.
 4. Refresh ValliStart and your media controls for any website should work.
 
-**The other modules, on the other hand, do not necessitate the installation of any additional applications or extensions. So, you can simply enable them using the same method as described above for the Media Controls module.**
+**The other modules, on the other hand, do not necessitate the installation of any additional applications or extensions. So, you can simply enable them using the same method as described above for the Music module.**
 
 <p align="right">
     <b><a href="#top">↥ back to top</a></b>
