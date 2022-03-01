@@ -156,7 +156,7 @@ That's all there is to it. Your shortcuts will now be visible in the pinned appl
 1. Open Core and head over to the **Modules** section.
 2. Select **ValliStart** from the list and proceed to the **Modules** tab.
 3. Open the settings for the **Weather** module.
-4. Click the green redirect button next to the `Configure weather settings in core's global settings`.
+4. Click the green redirect button next to the `Configure weather settings in core's global settings` text.
     >  <img src ="https://imgur.com/WDatjK5.png" alt = "ref" width="755" height ="81">
       
 5. Once the **Global Variables** configuration window opens, change the weather location to the location you want the weather status of.
