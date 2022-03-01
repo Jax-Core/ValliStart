@@ -93,7 +93,7 @@ ValliStart is a Rainmeter skin that replaces the standard Windows start menu wit
 ### Prerequisites
 
 - **Rainmeter v4.5 or newer.** Rainmeter can be installed by downloading the `.exe` file [from Rainmeter's official website.](https://www.rainmeter.net/)
-- **JaxCore v40005 or newer.** JaxCore can be installed by downloading the `.rmskin` file from [JaxCore's official website.](https://jax-core.github.io/)
+- **JaxCore v44802 or newer.** JaxCore can be installed by downloading the `.rmskin` file from [JaxCore's official website.](https://jax-core.github.io/)
 
 ### Installation
 
@@ -136,7 +136,7 @@ If your ValliStart layout preset does not have the pinned shortcuts module enabl
 1. Open Core and head over to the **Modules** section.
 2. Select **ValliStart** from the list and proceed to the **Modules** tab.
 3. Scroll all way to the bottom, find the module labelled **None** and click `Change`. Alternatively, you can also replace any other pre-existing module with the shortcut module.
-4. Go to the **Shortcut Modules** tab and select a preset you like. You can choose from three presets; WinRow11, DoubleRow, and SingleRow.
+4. Go to the **Shortcut Modules** tab and select a preset you like. You can choose from three presets; **WinRow11**, **DoubleRow**, and **SingleRow**.
     >  <img src ="https://imgur.com/JgHZTni.png" alt = "ref" width="378" height ="80">
 
 
