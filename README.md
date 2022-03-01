@@ -110,13 +110,11 @@ Assuming you successfully downloaded and installed Rainmeter as well as JaxCore,
 ValliStart includes 8 color scheme presets. You enable them by just selecting them within the **Color Scheme** tab. These are their names:
 
 - Dark
-- Blur
+- Transparent
 - CoreUI
 - Dracula
-- Amarena
-- LoveLace
 - Nord
-- Light (If you use this, you will be facing the council)
+- Light
 
 You can also make your own custom schemes through the **Appearance** tab.
 
@@ -131,13 +129,27 @@ Now that you've installed and setup ValliStart, let's begin setting up some modu
 
 ### Pinned Shortcuts
 
-1. Open Core and head over to the **Modules** section.
-2. Select **ValliStart** from the list and proceed to the **General** tab.
-3. Under **Main Shortcuts** press the green button besides the `Select a file` text.
-4. Select the shortcut for the application to be pinned.
-5. Refresh ValliStart by deactivating and activating again using the toggle on the bottom left.
+#### Choosing a module preset
 
-That's all there is to it. Your shortcuts will now be visible in the pinned applications section. **Please keep in mind that you can only pin up to 5 shortcuts at a time.**
+If the pinned shortcuts module is not enabled by default for your ValliStart layout preset, follow the steps outlined below to resolve that.
+
+1. Open Core and head over to the **Modules** section.
+2. Select **ValliStart** from the list and proceed to the **Modules** tab.
+3. Scroll all way to the bottom, find the module labelled **None** and click `Change`. Alternatively, you can also replace any other module with the shortcut module.
+4. Go to the **Shortcut Modules** tab and select a preset you like. You can choose from three presets; WinRow11, DoubleRow, and SingleRow.
+    >  <img src ="https://imgur.com/JgHZTni.png" alt = "ref" width="378" height ="80">
+
+
+#### Configuring the preset
+
+1. Open Core and head over to the **Modules** section.
+2. Select **ValliStart** from the list and proceed to the **Modules** tab.
+3. Open the settings for your currently enabled shortcuts module.
+4. Click on one of the pre-existing shortcut's name.
+5. Select the shortcut for the application to be pinned.
+6. Refresh ValliStart by deactivating and activating again using the toggle on the bottom left.
+
+That's all there is to it. Your shortcuts will now be visible in the pinned applications section.
 
 ### Weather
 
@@ -180,10 +192,8 @@ You can now proceed to configure media controls for Spotify. Simply follow the s
 
 1. Open Core and head over to the **Modules** section.
 2. Select **ValliStart** from the list and proceed to the **Modules** tab.
-3. Select the Media Control module and enable it.
-4. Go to the **Media** tab and select **Spotify**
-5. Ignore the alert for Spicetify(we've already installed this in the previous step) and press **confirm** on the bottom right.
-6. Refresh ValliStart and your media controls for Spotify should work.
+3. Click the **Music** module to enable it.
+4. Refresh ValliStart and your media controls for Spotify should work.
 
 #### For Web Players:
 For media controls to work with a website playing audio in your browser, you will have to install the **[WebNowPlaying Companion](https://chrome.google.com/webstore/detail/webnowplaying-companion/jfakgfcdgpghbbefmdfjkbdlibjgnbli) extension for your browser.** 
@@ -192,10 +202,8 @@ Once you've installed the extension, you can now proceed to configure media cont
 
 1. Open Core and head over to the **Modules** section.
 2. Select **ValliStart** from the list and proceed to the **Modules** tab.
-3. Select the Media Control module and enable it.
-4. Go to the **Media** tab and select **Web**
-5. Ignore the alert for WebNowPlaying Companion extension(we've already installed this in the previous step) and press **confirm** on the bottom right.
-6. Refresh ValliStart and your media controls for any website should work.
+3. Select the **Music** module to enable it.
+4. Refresh ValliStart and your media controls for any website should work.
 
 **The other modules, on the other hand, do not necessitate the installation of any additional applications or extensions. So, you can simply enable them using the same method as described above for the Media Controls module.**
 
