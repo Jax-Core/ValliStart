@@ -166,6 +166,7 @@ That's all there is to it. Your shortcuts will now be visible in the pinned appl
       
 5. Once the **Global Variables** configuration window opens, change the weather location to the location you want the weather status of.
     >  <img src ="https://imgur.com/ycI4Qp4.png" alt = "ref" width="867" height ="55">
+6. Refresh ValliStart by deactivating and activating again using the toggle on the bottom left.
 
 > **Note:** You can also alter other options like the temperature unit, the language the weather is shown in, and the time format when configuring the weather location on **Step 5**. Also, **if you're not sure what the API key is for, don't change or edit it.**
 
