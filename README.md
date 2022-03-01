@@ -107,7 +107,7 @@ Assuming you successfully downloaded and installed Rainmeter as well as JaxCore,
 
 ### Customization
 
-ValliStart includes 8 color scheme presets. You enable them by just selecting them within the **Color Scheme** tab. These are their names:
+ValliStart includes 6 color scheme presets. You enable them by just selecting them within the **Color Scheme** tab. These are their names:
 
 - Dark
 - Transparent
@@ -153,7 +153,6 @@ If your ValliStart layout preset does not have the pinned shortcuts module enabl
 3. Open the settings for your currently enabled shortcuts module.
 4. Click on one of the pre-existing shortcut's name.
 5. Select the shortcut for the application to be pinned.
-6. Refresh ValliStart by deactivating and activating again using the toggle on the bottom left.
 
 That's all there is to it. Your shortcuts will now be visible in the pinned applications section.
 
@@ -167,8 +166,6 @@ That's all there is to it. Your shortcuts will now be visible in the pinned appl
       
 5. Once the **Global Variables** configuration window opens, change the weather location to the location you want the weather status of.
     >  <img src ="https://imgur.com/ycI4Qp4.png" alt = "ref" width="867" height ="55">
-
-6. Refresh ValliStart by deactivating and activating again using the toggle on the bottom left.
 
 > **Note:** You can also alter other options like the temperature unit, the language the weather is shown in, and the time format when configuring the weather location on **Step 5**. Also, **if you're not sure what the API key is for, don't change or edit it.**
 
@@ -198,8 +195,7 @@ You can now proceed to configure media controls for Spotify. Simply follow the s
 
 1. Open Core and head over to the **Modules** section.
 2. Select **ValliStart** from the list and proceed to the **Modules** tab.
-3. Click the **Music** module to enable it.
-4. Refresh ValliStart and your media controls for Spotify should work.
+3. Click the **Music** module to enable it and your media controls for Spotify should work.
 
 #### For Web Players:
 For media controls to work with a website playing audio in your browser, you will have to install the **[WebNowPlaying Companion](https://chrome.google.com/webstore/detail/webnowplaying-companion/jfakgfcdgpghbbefmdfjkbdlibjgnbli) extension for your browser.** 
@@ -208,8 +204,7 @@ Once you've installed the extension, you can now proceed to configure media cont
 
 1. Open Core and head over to the **Modules** section.
 2. Select **ValliStart** from the list and proceed to the **Modules** tab.
-3. Select the **Music** module to enable it.
-4. Refresh ValliStart and your media controls for any website should work.
+3. Select the **Music** module to enable it and your media controls for any website should work.
 
 **The other modules, on the other hand, do not necessitate the installation of any additional applications or extensions. So, you can simply enable them using the same method as described above for the Music module.**
 
