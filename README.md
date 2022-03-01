@@ -164,7 +164,7 @@ That's all there is to it. Your shortcuts will now be visible in the pinned appl
 
 6. Refresh ValliStart by deactivating and activating again using the toggle on the bottom left.
 
-> **Note:** You can also alter other options like the temperature unit, the language the weather is shown in, and the time format when configuring the weather location on **Step 4**. Also, **if you're not sure what the API key is for, don't change or edit it.**
+> **Note:** You can also alter other options like the temperature unit, the language the weather is shown in, and the time format when configuring the weather location on **Step 5**. Also, **if you're not sure what the API key is for, don't change or edit it.**
 
 ### Media Controls
 
