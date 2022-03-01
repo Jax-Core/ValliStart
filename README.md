@@ -131,7 +131,7 @@ Now that you've installed and setup ValliStart, let's begin setting up some modu
 
 #### Choosing a module preset
 
-If the pinned shortcuts module is not enabled by default for your ValliStart layout preset, follow the steps outlined below to resolve that.
+If your ValliStart layout preset does not have the pinned shortcuts module enabled by default, follow the steps outlined below to enable it. However, if it is already enabled/selected, you can skip to configuring it.
 
 1. Open Core and head over to the **Modules** section.
 2. Select **ValliStart** from the list and proceed to the **Modules** tab.
