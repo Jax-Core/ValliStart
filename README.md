@@ -115,15 +115,14 @@ ValliStart includes 8 color scheme presets. You enable them by just selecting th
 - Dracula
 - Nord
 - Light
+> You can also make your own custom schemes through the **Appearance** tab.
 
 Furthermore, ValliStart also comes with 4 layout presets. You can enable them by just selecting them within the **Layout** tab. These are their names:
 
-- Win11
+- Win11 
 - SideBar
 - ClassicWavy
 - Flat
-
-> You can also make your own custom schemes through the **Appearance** tab.
 
 <p align="right">
     <b><a href="#top">↥ back to top</a></b>
