@@ -142,16 +142,15 @@ That's all there is to it. Your shortcuts will now be visible in the pinned appl
 ### Weather
 
 1. Open Core and head over to the **Modules** section.
-2. Select **ValliStart** from the list and proceed to the **General** tab.
-3. Under **Time & Weather** press the **Change global variable** button next to the `Weather Location` text.
-    > **Note:** **It's highlighted in grey.** For reference, see the image below. 
-    >  <img src ="https://imgur.com/Owb2n5l.png" alt = "ref" width="870" height ="54">
+2. Select **ValliStart** from the list and proceed to the **Modules** tab.
+3. Open the settings for the **Weather** module.
+4. Click the green redirect button next to the `Configure weather settings in core's global settings`.
+    >  <img src ="https://imgur.com/WDatjK5.png" alt = "ref" width="755" height ="81">
       
-4. Once the **Global Variables** configuration window opens, change the weather location to the location you want the weather status of.
-    > **Note:** **It's the text that says "Hong Kong".** For reference, see the image below. 
+5. Once the **Global Variables** configuration window opens, change the weather location to the location you want the weather status of.
     >  <img src ="https://imgur.com/ycI4Qp4.png" alt = "ref" width="867" height ="55">
 
-5. Refresh ValliStart by deactivating and activating again using the toggle on the bottom left.
+6. Refresh ValliStart by deactivating and activating again using the toggle on the bottom left.
 
 > **Note:** You can also alter other options like the temperature unit, the language the weather is shown in, and the time format when configuring the weather location on **Step 4**. Also, **if you're not sure what the API key is for, don't change or edit it.**
 
