@@ -7,6 +7,12 @@ WinBlock=0
 ;                                   Function                                   ;
 ; ---------------------------------------------------------------------------- ;
 
+[Activationps1]
+Measure=Plugin
+Plugin=PowershellRM
+DynamicVariables=1
+ScriptFile=#SKINSPATh##Skin.name#\Core\Activation.ps1
+
 [Auto_Refresh:M]
 OnUpdateAction=[!Refresh "#Skin.Name#\Main"][!Refresh "ValliStart\WinBlock"]
 
@@ -19,22 +25,8 @@ Meter=String
 Text=Activation mode
 MeterStyle=Set.String:S | Set.OptionCat:S
 
-[HeaderImage]
-Meter=Image
-X=r
-Y=(20*[Set.S])R
-W=([ContentContainer:W]-30*[Set.S])
-H=([ContentContainer:W]/(13/3))
-ImageName=#SKINSPATH##Skin.Name#\Core\General\Resource#ReplaceWin#.png
-DynamicVariables=1
-ImageAlpha=255
-PreserveAspectRatio=2
-DynamicVariables=1
-MaskImageName=#@#Images\LayoutMask.png
-Container=ContentContainer
 [Option01]
 Meter=String
-Y=(40*[Set.S])R
 Text=How should ValliStart behave?
 MeterStyle=Set.String:S | Set.OptionName:S
 [Set.Div:S19131238]
@@ -45,41 +37,91 @@ Meter=String
 Text=Activation Hotkey
 FontColor=#Set.Text_Color#,(255-150*#ReplaceWin#)
 MeterStyle=Set.String:S | Set.OptionName:S
-[Option03]
-Meter=String
-Text=Override the start button#CRLF#- This button is just an overlay, it does not follow the taskbar#CRLF#- To edit the position of the blocker, turn on edit mode below#CRLF#- To use the blocker after editing, turn on functional mode
-FontColor=#Set.Text_Color#,(255-150*(1-#ReplaceWin#))
-MeterStyle=Set.String:S | Set.OptionName:S
 
 [BlockerTitle]
 Meter=String
-Text=WinBlock settings
+Text=On screen start button
+FontColor=#Set.Text_Color#,(255-150*(1-#ReplaceWin#))
 MeterStyle=Set.String:S | Set.OptionCat:S
-
 [Option11]
 Meter=String
-Text=Win block behavior
+Text=Override the start button
+FontColor=#Set.Text_Color#,(255-150*(1-#ReplaceWin#))
 MeterStyle=Set.String:S | Set.OptionName:S
-[Set.Div:81231212]
+[Div:dbe71b]
 Meter=Shape
 MeterStyle=Set.Div:S
 [Option12]
 Meter=String
-Text=Win block width
+Text=Create pseudo start button
+FontColor=#Set.Text_Color#,(255-150*(1-#ReplaceWin#))
 MeterStyle=Set.String:S | Set.OptionName:S
-[Set.Div:2]
+[Div:12bb3d]
 Meter=Shape
 MeterStyle=Set.Div:S
 [Option13]
 Meter=String
-Text=Win block height
+Text=Pseudo start orb name
+FontColor=#Set.Text_Color#,(255-150*(1-#ReplaceWin#))
 MeterStyle=Set.String:S | Set.OptionName:S
-[Set.Div:8]
+[Div:385472]
 Meter=Shape
 MeterStyle=Set.Div:S
 [Option14]
 Meter=String
+Text=Pseudo start orb directory to put the orb images
+FontColor=#Set.Text_Color#,(255-150*(1-#ReplaceWin#))
+MeterStyle=Set.String:S | Set.OptionName:S
+[Div:72af54]
+Meter=Shape
+MeterStyle=Set.Div:S
+[Option15]
+Meter=String
+Text=Guide on how to remove & replace the start button
+FontColor=#Set.Text_Color#,(255-150*(1-#ReplaceWin#))
+MeterStyle=Set.String:S | Set.OptionName:S
+
+[Blocker2Title]
+Meter=String
+Text=Legacy win block style
+FontColor=#Set.Text_Color#,(255-150*(1-#ReplaceWin#*#WinBlock#))
+MeterStyle=Set.String:S | Set.OptionCat:S
+[Option20]
+Meter=String
+Text=Display WinBlock element (legacy)
+FontColor=#Set.Text_Color#,(255-150*(1-#ReplaceWin#*#WinBlock#))
+MeterStyle=Set.String:S | Set.OptionName:S
+[Div:259c88]
+Meter=Shape
+MeterStyle=Set.Div:S
+[Option21]
+Meter=String
+Text=Win block behavior
+FontColor=#Set.Text_Color#,(255-150*(1-#ReplaceWin#*#WinBlock#))
+MeterStyle=Set.String:S | Set.OptionName:S
+[Set.Div:81231212]
+Meter=Shape
+MeterStyle=Set.Div:S
+[Option22]
+Meter=String
+Text=Win block width
+FontColor=#Set.Text_Color#,(255-150*(1-#ReplaceWin#*#WinBlock#))
+MeterStyle=Set.String:S | Set.OptionName:S
+[Set.Div:2]
+Meter=Shape
+MeterStyle=Set.Div:S
+[Option23]
+Meter=String
+Text=Win block height
+FontColor=#Set.Text_Color#,(255-150*(1-#ReplaceWin#*#WinBlock#))
+MeterStyle=Set.String:S | Set.OptionName:S
+[Set.Div:8]
+Meter=Shape
+MeterStyle=Set.Div:S
+[Option24]
+Meter=String
 Text=Win block hovered color
+FontColor=#Set.Text_Color#,(255-150*(1-#ReplaceWin#*#WinBlock#))
 MeterStyle=Set.String:S | Set.OptionName:S
 
 ; ---------------------------------------------------------------------------- ;
@@ -111,8 +153,8 @@ Act=[!CommandMeasure Func "startSide('Hotkey')"]
 Hidden=#ReplaceWin#
 [Value02]
 Meter=String
-Text=#KeyInString#
-Hidden=#ReplaceWin#
+Text=[&Func:returnBool('ReplaceWin', '1', 'Win', '#KeyInString#')]
+FontColor=[&Func:returnBool('ReplaceWin', '1', '#set.Subtext_color#', '#Set.text_Color#')]
 MeterStyle=Set.String:S | Set.Value:S
 
 [ActiveChecker2]
@@ -126,19 +168,106 @@ IfTrueAction=[!SetVariable WinBlock 1][!UpdateMeter WinBlock][!Redraw]
 [WinBlock]
 Meter=Shape
 MeterStyle=Set.Bool:S | WinBlock#WinBlock#
-Y=([Option03:Y]-#Set.P#+(-20/2+8)*[Set.S])
+Y=([Option11:Y]-#Set.P#+(-20/2+8)*[Set.S])
 Hidden=(1-#ReplaceWin#)
 [WinBlock0]
 Leftmouseupaction=[!ActivateConfig "#Skin.Name#\WinBlock"][!Refresh "#Skin.Name#\Main"][!Refresh]
 [WinBlock1]
 Leftmouseupaction=[!DeactivateConfig "#Skin.Name#\WinBlock"][!Refresh "#Skin.Name#\Main"][!Refresh]
 
+[Button12]
+Meter=Shape
+MeterStyle=Set.Button:S
+Y=([Option12:Y]-#Set.P#+(-30/2+8)*[Set.S])
+OverColor=#Set.Accent_color#,150
+LeaveColor=#Set.Accent_color#,50
+LeftMouseUpAction=[!CommandMeasure Activationps1 "CoreData"]["#SKINSPATH#..\CoreData\Vallistart\"]
+Hidden=(1-#ReplaceWin#)
+[Icon12]
+Meter=String
+Text=[\xe895]
+FontFace=Material Icons Round
+FontSize=(14*[Set.S])
+MeterStyle=Set.String:S | Set.Value:S
+Hidden=(1-#ReplaceWin#)
+[Value12]
+Meter=String
+X=(-25*[Set.S])r
+Y=r
+Text=Create
+MeterStyle=Set.String:S | Set.Value:S
+Hidden=(1-#ReplaceWin#)
+
+[OrbImageName]
+Meter=Shape
+MeterStyle=Set.Textbox:S
+Y=([Option13:Y]-#Set.P#+(-30/2+8)*[Set.S])
+Hidden=(1-#ReplaceWin#)
+SaveLocation=#Sec.SaveLocation2#
+[Value13]
+Meter=String
+Text=#OrbImageName#
+MeterStyle=Set.String:S | Set.Value:S
+Hidden=(1-#ReplaceWin#)
+
+[Button14]
+Meter=Shape
+MeterStyle=Set.Button:S
+Y=([Option14:Y]-#Set.P#+(-30/2+8)*[Set.S])
+LeaveColor=#Set.Sec_Color#
+LeftMouseUpAction=["#SKINSPATH##Skin.Name#\@Resources\Images\StartOrbs\"]
+Hidden=(1-#ReplaceWin#)
+[Icon14]
+Meter=String
+Text=[\xe895]
+FontFace=Material Icons Round
+FontSize=(14*[Set.S])
+MeterStyle=Set.String:S | Set.Value:S
+Hidden=(1-#ReplaceWin#)
+[Value14]
+Meter=String
+X=(-25*[Set.S])r
+Y=r
+Text=Open
+MeterStyle=Set.String:S | Set.Value:S
+Hidden=(1-#ReplaceWin#)
+
+[Button15]
+Meter=Shape
+MeterStyle=Set.Button:S
+Y=([Option15:Y]-#Set.P#+(-30/2+8)*[Set.S])
+OverColor=#Set.Positive_color#,150
+LeaveColor=#Set.Positive_color#,50
+LeftMouseUpAction=["https://github.com/Jax-Core/ValliStart/blob/main/README.md#replacing-the-native-windows-button-and-key"]
+Hidden=(1-#ReplaceWin#)
+[Icon15]
+Meter=String
+Text=[\xe895]
+FontFace=Material Icons Round
+FontSize=(14*[Set.S])
+MeterStyle=Set.String:S | Set.Value:S
+Hidden=(1-#ReplaceWin#)
+[Value15]
+Meter=String
+X=(-25*[Set.S])r
+Y=r
+Text=Github
+MeterStyle=Set.String:S | Set.Value:S
+Hidden=(1-#ReplaceWin#)
+
+[WinblockDisplay]
+Meter=Shape
+MeterStyle=Set.Bool:S
+Y=([Option20:Y]-#Set.P#+(-20/2+8)*[Set.S])
+Hidden=(1-#WinBlock#)
+SaveLocation=#Sec.SaveLocation2#
+
 [Mode:]
 Meter=Shape
 SecVar=Mode
 MeterStyle=Set.Pick:S
 Shape2=Rectangle ([#[&Func:GroupVar('#CURRENTSECTION#')]] = 1 ? 0 : (150*[Set.S])),0,(150*[Set.S]),(30*[Set.S]),(7*[Set.S]) | Fill Color 255,255,255 | StrokeWidth 0 |
-Y=([Option11:Y]-#Set.P#+(-30/2+8)*[Set.S])
+Y=([Option21:Y]-#Set.P#+(-30/2+8)*[Set.S])
 Hidden=(1-#WinBlock#)
 [Mode:1]
 Meter=String
@@ -158,10 +287,10 @@ Hidden=(1-#WinBlock#)
 [W]
 Meter=Shape
 MeterStyle=Set.Textbox:S
-Y=([Option12:Y]-#Set.P#+(-30/2+8)*[Set.S])
+Y=([Option22:Y]-#Set.P#+(-30/2+8)*[Set.S])
 Hidden=(1-#WinBlock#)
 SaveLocation=#Sec.SaveLocation2#
-[Value12]
+[Value22]
 Meter=String
 Text=#W# px
 MeterStyle=Set.String:S | Set.Value:S
@@ -170,10 +299,10 @@ Hidden=(1-#WinBlock#)
 [H]
 Meter=Shape
 MeterStyle=Set.Textbox:S
-Y=([Option13:Y]-#Set.P#+(-30/2+8)*[Set.S])
+Y=([Option23:Y]-#Set.P#+(-30/2+8)*[Set.S])
 Hidden=(1-#WinBlock#)
 SaveLocation=#Sec.SaveLocation2#
-[Value13]
+[Value23]
 Meter=String
 Text=#H# px
 MeterStyle=Set.String:S | Set.Value:S
@@ -183,10 +312,10 @@ Hidden=(1-#WinBlock#)
 Meter=Shape
 MeterStyle=Set.ColorPacity:S
 SaveLocation=#Sec.SaveLocation2#
-Y=([Option14:Y]-#Set.P#+(-30/2+8)*[Set.S])
+Y=([Option24:Y]-#Set.P#+(-30/2+8)*[Set.S])
 Type=Num|1|255
 Hidden=(1-#WinBlock#)
-[Value14]
+[Value24]
 Meter=String
 Text=#OverOpacity#
 MeterStyle=Set.String:S | Set.Pacity:S
