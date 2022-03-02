@@ -66,7 +66,7 @@
 
 <https://user-images.githubusercontent.com/80020581/135605193-383f546f-252e-4717-a38b-431e3d6fcdf8.mp4>
 
-ValliStart is a start menu replacement for Windows, with full customizability, interchangable modules and more.
+ValliStart is a start menu replacement for Windows, with full customizability, interchangeable modules and more.
 
 # Features
 
@@ -102,6 +102,7 @@ Assuming you successfully downloaded and installed Rainmeter as well as JaxCore,
 
 ValliStart includes 6 color scheme presets. You enable them by just selecting them within the **Color Scheme** tab.
 Furthermore, ValliStart also comes with 4 layout presets. You can enable them by just selecting them within the **Layout** tab:
+
 ![image](https://user-images.githubusercontent.com/80020581/156275153-104e47da-ef14-4b63-8809-a5058d15f417.png)
 
 ## Activation 
