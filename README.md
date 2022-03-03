@@ -3,11 +3,11 @@
 <br />
 <div align="center">
   <a href="https://github.com/Jax-Core/ValliStart">
-    <img src="https://cdn.discordapp.com/attachments/936246521807138816/945920749259075684/ValliStartColored.png" alt="Logo" width="200" height="200">
+    <img src="https://cdn.discordapp.com/attachments/936246521807138816/948424036436807741/ValliStart3-512.png?size=4096" alt="Logo" width="200" height="200">
   </a>
   <h3 align="center">ValliStart</h3>
   <p align="center">
-    A custom start menu to replace the default one.
+    Your new start menu
     <br />
     <a href="https://www.deviantart.com/jaxoriginals/art/    ValliStart-Start-menu-replacement-893506095"><strong>More Info »</strong>
     </a>
@@ -65,9 +65,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About
 
-https://user-images.githubusercontent.com/80020581/135605193-383f546f-252e-4717-a38b-431e3d6fcdf8.mp4
+![PreviewImage](https://cdn.discordapp.com/attachments/936246521807138816/948861768657158174/ValliStart3.png?size=4096)
 
-ValliStart is a Rainmeter skin that replaces the standard Windows start menu with an animated, fancy control center. ValliStart includes 8 different color schemes as well as 15+ customization options for you to tweak and customize to your liking. **See the video linked above.**
+Start menu replacement for Windows, with full customizability, interchangeable modules and more. Light weight and optimized.
 
 <p align="right">
     <b><a href="#top">↥ back to top</a></b>
@@ -93,7 +93,6 @@ ValliStart is a Rainmeter skin that replaces the standard Windows start menu wit
 ### Prerequisites
 
 - **Rainmeter v4.5 or newer.** Rainmeter can be installed by downloading the `.exe` file [from Rainmeter's official website.](https://www.rainmeter.net/)
-- **JaxCore v40005 or newer.** JaxCore can be installed by downloading the `.rmskin` file from [JaxCore's official website.](https://jax-core.github.io/)
 
 ### Installation
 
