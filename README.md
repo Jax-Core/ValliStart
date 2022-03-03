@@ -63,7 +63,8 @@
 </details>
 
 <!-- ABOUT THE PROJECT -->
-## About
+
+# About
 
 ![PreviewImage](https://cdn.discordapp.com/attachments/936246521807138816/948861768657158174/ValliStart3.png?size=4096)
 
@@ -73,7 +74,7 @@ Start menu replacement for Windows, with full customizability, interchangeable m
     <b><a href="#top">↥ back to top</a></b>
 </p>
 
-## Features
+# Features
 
 * Built-in Windows Search Compatibility
 * Flawless Animations
@@ -88,13 +89,13 @@ Start menu replacement for Windows, with full customizability, interchangeable m
 </p>
 
 <!-- INSTALLATION AND SETUP -->
-## Getting Started
+# Getting Started
 
-### Prerequisites
+## Prerequisites
 
 - **Rainmeter v4.5 or newer.** Rainmeter can be installed by downloading the `.exe` file [from Rainmeter's official website.](https://www.rainmeter.net/)
 
-### Installation
+## Installation
 
 Assuming you successfully downloaded and installed Rainmeter as well as JaxCore, you can now proceed to install ValliStart by following the steps below.
 
@@ -104,7 +105,7 @@ Assuming you successfully downloaded and installed Rainmeter as well as JaxCore,
 
 > Note:  If you find that the JaxCore option is red on the startup pop-up, please press the red button and Core will be installed automatically. Perchance this fails, you can manually install Core by downloading the `.rmskin` file from [JaxCore's official website.](https://jax-core.github.io/)
 
-### Customization
+## Customization
 
 ValliStart includes 8 color scheme presets. You enable them by just selecting them within the **Color Scheme** tab. These are their names:
 
@@ -124,11 +125,11 @@ You can also make your own custom schemes through the **Appearance** tab.
 </p>
 
 <!-- MODULES SETUP -->
-## Modules Setup
+# Modules Setup
 
 Now that you've installed and setup ValliStart, let's begin setting up some modules it comes with!
 
-### Pinned Shortcuts
+## Pinned Shortcuts
 
 1. Open Core and head over to the **Modules** section.
 2. Select **ValliStart** from the list and proceed to the **General** tab.
@@ -138,7 +139,7 @@ Now that you've installed and setup ValliStart, let's begin setting up some modu
 
 That's all there is to it. Your shortcuts will now be visible in the pinned applications section. **Please keep in mind that you can only pin up to 5 shortcuts at a time.**
 
-### Weather
+## Weather
 
 1. Open Core and head over to the **Modules** section.
 2. Select **ValliStart** from the list and proceed to the **General** tab.
@@ -154,9 +155,9 @@ That's all there is to it. Your shortcuts will now be visible in the pinned appl
 
 > **Note:** You can also alter other options like the temperature unit, the language the weather is shown in, and the time format when configuring the weather location on **Step 4**. Also, **if you're not sure what the API key is for, don't change or edit it.**
 
-### Media Controls
+## Media Controls
 
-#### For Spotify:
+### For Spotify:
 For media controls to work with Spotify, you will have to setup and install **[Spicetify](https://spicetify.app/).** Follow the steps below to do so.
 
 1. Open Powershell (Windows 10) or Windows Terminal (Windows 11) and run the commands that follow:
@@ -185,7 +186,7 @@ You can now proceed to configure media controls for Spotify. Simply follow the s
 5. Ignore the alert for Spicetify(we've already installed this in the previous step) and press **confirm** on the bottom right.
 6. Refresh ValliStart and your media controls for Spotify should work.
 
-#### For Web Players:
+### For Web Players:
 For media controls to work with a website playing audio in your browser, you will have to install the **[WebNowPlaying Companion](https://chrome.google.com/webstore/detail/webnowplaying-companion/jfakgfcdgpghbbefmdfjkbdlibjgnbli) extension for your browser.** 
 
 Once you've installed the extension, you can now proceed to configure media controls for Web Players. Simply follow the steps outlined below:
@@ -204,7 +205,7 @@ Once you've installed the extension, you can now proceed to configure media cont
 </p>
 
 
-## Help and Credits
+# Help and Credits
 - Spicetify installation guide by [khanhas](https://github.com/khanhas).
 - Join the [Core Community Discord Server](https://discord.gg/JmgehPSDD6) for more help.
 
