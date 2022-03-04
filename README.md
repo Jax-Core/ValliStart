@@ -20,7 +20,7 @@
 <p align="center">
   <img alt="Latest by date" src="https://img.shields.io/github/v/tag/Jax-Core/ValliStart?label=Version&style=for-the-badge" />
   <img alt="Releases" src="https://img.shields.io/github/downloads/Jax-Core/ValliStart/total?style=for-the-badge" />
-  <img alt="Release date" src="https://img.shields.io/github/release-date/Jax-Core/ValliStart?label=Last%20Core%20Update&style=for-the-badge" />
+ 
   <img alt="Discord" src="https://img.shields.io/discord/880445067754610688?label=Discord%20server&style=for-the-badge" />
   <img alt="Github" src="https://img.shields.io/github/license/Jax-Core/ValliStart?style=for-the-badge" />
   
