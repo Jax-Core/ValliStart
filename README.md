@@ -3,11 +3,11 @@
 <br />
 <div align="center">
   <a href="https://github.com/Jax-Core/ValliStart">
-    <img src="https://cdn.discordapp.com/attachments/936246521807138816/945920749259075684/ValliStartColored.png" alt="Logo" width="200" height="200">
+    <img src="https://cdn.discordapp.com/attachments/936246521807138816/948424036436807741/ValliStart3-512.png?size=4096" alt="Logo" width="200" height="200">
   </a>
   <h3 align="center">ValliStart</h3>
   <p align="center">
-    A custom start menu to replace the default one.
+    Your new start menu
     <br />
     <a href="https://www.deviantart.com/jaxoriginals/art/    ValliStart-Start-menu-replacement-893506095"><strong>More Info »</strong>
     </a>
@@ -62,14 +62,20 @@
 </details>
 
 <!-- ABOUT THE PROJECT -->
+
 # About
 
-<https://user-images.githubusercontent.com/80020581/135605193-383f546f-252e-4717-a38b-431e3d6fcdf8.mp4>
+![PreviewImage](https://cdn.discordapp.com/attachments/936246521807138816/948861768657158174/ValliStart3.png?size=4096)
 
-ValliStart is a start menu replacement for Windows, with full customizability, interchangeable modules and more.
+Start menu replacement for Windows, with full customizability, interchangeable modules and more. Light weight and optimized.
+
+<p align="right">
+    <b><a href="#top">↥ back to top</a></b>
+</p>
 
 # Features
 
+* Built-in Windows Search Compatibility
 * Flawless Animations
 * Full-fledged Control Center
 * Custom Pinned Shortcuts
@@ -105,28 +111,35 @@ Furthermore, ValliStart also comes with 4 layout presets. You can enable them by
 
 ![image](https://user-images.githubusercontent.com/80020581/156275153-104e47da-ef14-4b63-8809-a5058d15f417.png)
 
-## Activation 
+## Activation
+
 ValliStart can be activated in multiple ways:
+
 #### Replacing the native windows button and key
+
 You can launch ValliStart just like the start menu with the `Win` Key. Additionally, you can replace the windows button by:
-- Creating a pseudo start button with core
-1. Navigate to `JaxCore -> ValliStart -> General -> Setting: Customize how to activate ValliStart` and turn on override start button. 
+* Creating a pseudo start button with core
+
+1. Navigate to `JaxCore -> ValliStart -> General -> Setting: Customize how to activate ValliStart` and turn on override start button.
 2. Select a start orb name. The default is `Win11`. You can choose another one / add your own one in the orbs directory, and entering another start orb name.
 3. Press the `Create` button above
 4. Core should popup the explorer with shortcut `ValliStart.lnk` inside
 5. Drag the shortcut to the taskbar
-6. Now you have a pseudo start button on the taskbar! 
+6. Now you have a pseudo start button on the taskbar!
 7. If you want to remove the stock start button: You can use [StartKiller](http://www.startkiller.com/) for Win10. There are no known ways of doing so on Windows 11.
 
-- Using ValliStart's winblock function to create an overlay which overlaps the start button on your taskbar
-1. Navigate to `JaxCore -> ValliStart -> General -> Setting: Customize how to activate ValliStart` and turn on override start button. 
+* Using ValliStart's winblock function to create an overlay which overlaps the start button on your taskbar
+
+1. Navigate to `JaxCore -> ValliStart -> General -> Setting: Customize how to activate ValliStart` and turn on override start button.
 2. Toggle `Setting: Display WinBlock element (legacy)` on
 3. Switch `Setting: Win block behavior` to edit
 4. Drag the winblocker to desired location
 5. Switch `Setting: Win block behavior` to functional
 
 #### Using a separate hotkey
+
 You can also launch ValliStart with the hotkey of your choice. This does not support overriding the displayed window button on your taskbar.
+
 1. Navigate to `JaxCore -> ValliStart -> General -> Setting: How should ValliStart behave?` and switch the option to `Separate module`
 2. Change `Setting: Activation Hotkey`to your desired hotkey
 
