@@ -26,7 +26,7 @@ FontFace=Segoe MDL2 Assets
 X=(26/2*#Sec.S#)r
 Y=(26/2*#Sec.S#)r
 StringAlign=LeftCenter
-FontSize=(10*#Sec.S#)
+FontSize=((10*#Sec.S#)*#FontSizeModifier#)
 Text=[\xEA1F]
 DynamicVariables=1
 
@@ -64,7 +64,7 @@ Meter=String
 Text=YourMixer#CRLF#Volume control for Windows
 X=(#Sec.W#/2)
 Y=(15*#Sec.s#)R
-FontSize=(20*#Sec.S#)
+FontSize=((20*#Sec.S#)*#FontSizeModifier#)
 InlinePattern=.*#CRLF#
 InlineSetting=GradientColor | 180 | #Set.Accent_Color# ; 1.0 | #Set.Accent_Color_2# ; 0.0
 INlinePattern2=#CRLF#.*
@@ -96,7 +96,7 @@ Leftmouseupaction=[!WriteKeyvalue Variables Hotkey "(#Hotkey# = 1 ? 0 : 1)" #Sec
 Meter=String
 X=(#Sec.P#)r
 Y=(100/2*#Sec.S#)r
-FontSize=(20*#Sec.S#)
+FontSize=((20*#Sec.S#)*#FontSizeModifier#)
 MeterStyle=Sec.String:S | Sec.Icon:S | Section1.Icon:#Hotkey#
 [Section1.Icon:0]
 FontColor=#Set.Accent_Color#
@@ -112,7 +112,7 @@ Meter=String
 X=(60*#Sec.S#)r
 Y=r
 W=(#Sec.W#-120*#sec.S#)
-FontSize=(10*#Sec.S#)
+FontSize=((10*#Sec.S#)*#FontSizeModifier#)
 Text=Use hotkeys to launcher Mixer. #CRLF#You can configure the hotkeys in the settings.
 StringAlign=LeftCenter
 InlinePattern=#CRLF#.*
@@ -136,7 +136,7 @@ Leftmouseupaction=[!WriteKeyvalue Variables Tray "(#Tray# = 1 ? 0 : 1)" #Sec.Sav
 Meter=String
 X=(#Sec.P#)r
 Y=(100/2*#Sec.S#)r
-FontSize=(20*#Sec.S#)
+FontSize=((20*#Sec.S#)*#FontSizeModifier#)
 MeterStyle=Sec.String:S | Sec.Icon:S | Section2.Icon:#Tray#
 [Section2.Icon:0]
 FontColor=#Set.Accent_Color#
@@ -152,7 +152,7 @@ Meter=String
 X=(60*#Sec.S#)r
 Y=r
 W=(#Sec.W#-120*#sec.S#)
-FontSize=(10*#Sec.S#)
+FontSize=((10*#Sec.S#)*#FontSizeModifier#)
 Text=Create a volume tray icon#CRLF#Clicking on the tray icon launches YourMixer
 StringAlign=LeftCenter
 InlinePattern=#CRLF#.*

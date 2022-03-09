@@ -26,7 +26,7 @@ FontFace=Segoe MDL2 Assets
 X=(26/2*#Sec.S#)r
 Y=(26/2*#Sec.S#)r
 StringAlign=LeftCenter
-FontSize=(10*#Sec.S#)
+FontSize=((10*#Sec.S#)*#FontSizeModifier#)
 Text=[\xEA1F]
 DynamicVariables=1
 
@@ -55,7 +55,7 @@ Meter=String
 Text=Smooth animations#CRLF#With customizable directions, duration and easing
 X=(#Sec.W#/2)
 Y=(#Sec.H#/2)
-FontSize=(20*#Sec.S#)
+FontSize=((20*#Sec.S#)*#FontSizeModifier#)
 InlinePattern=.*#CRLF#
 InlineSetting=GradientColor | 180 | #Set.Accent_Color# ; 1.0 | #Set.Accent_Color_2# ; 0.0
 INlinePattern2=#CRLF#.*

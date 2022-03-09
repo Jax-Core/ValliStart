@@ -187,7 +187,7 @@ Hidden=(1-#ReplaceWin#)
 Meter=String
 Text=[\xe895]
 FontFace=Material Icons Round
-FontSize=(14*[Set.S])
+FontSize=((14*[Set.S])*#FontSizeModifier#)
 MeterStyle=Set.String:S | Set.Value:S
 Hidden=(1-#ReplaceWin#)
 [Value12]
@@ -221,7 +221,7 @@ Hidden=(1-#ReplaceWin#)
 Meter=String
 Text=[\xe895]
 FontFace=Material Icons Round
-FontSize=(14*[Set.S])
+FontSize=((14*[Set.S])*#FontSizeModifier#)
 MeterStyle=Set.String:S | Set.Value:S
 Hidden=(1-#ReplaceWin#)
 [Value14]
@@ -244,7 +244,7 @@ Hidden=(1-#ReplaceWin#)
 Meter=String
 Text=[\xe895]
 FontFace=Material Icons Round
-FontSize=(14*[Set.S])
+FontSize=((14*[Set.S])*#FontSizeModifier#)
 MeterStyle=Set.String:S | Set.Value:S
 Hidden=(1-#ReplaceWin#)
 [Value15]
