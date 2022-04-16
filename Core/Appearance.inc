@@ -1,4 +1,34 @@
 [Variables]
+
+; ---------------------------------------------------------------------------- ;
+;                                  MeterStyle                                  ;
+; ---------------------------------------------------------------------------- ;
+[Item.Shape:S]
+X=(30*[Set.S])
+Y=(35*[SEt.S])r
+Shape=Rectangle 0,0,([ContentContainer:W]-#Set.P#),(50*[SEt.S]),(2*[Set.S]) | StrokeWidth 0 | Extend Fill
+Fill=Fill Color #Set.Sec_Color#
+Stroke=Stroke Color #Set.Ter_Color#
+MouseOverAction=[!SetOption #CURRENTSECTION# Fill "Fill Color #Set.Ter_Color#"][!SetOption #CURRENTSECTION# Stroke "Stroke Color #Set.Subtext_Color#,50"][!UpdateMeter #CURRENTSECTION#][!Redraw]
+MouseLeaveAction=[!SetOption #CURRENTSECTION# Fill "Fill Color #Set.Sec_Color#"][!SetOption #CURRENTSECTION# Stroke "Stroke Color #Set.Ter_Color#"][!UpdateMeter #CURRENTSECTION#][!Redraw]
+DynamicVariables=1
+Container=ContentContainer
+[Item.StringIcon:S]
+X=(50*[Set.S]/2)r
+Y=(50*[Set.S]/2)r
+StringAlign=leftCenter
+FontFace=Segoe Fluent Icons
+Container=ContentContainer
+[Item.String:S]
+X=(#Set.P#/2)R
+Y=r
+StringAlign=LeftCenter
+Container=ContentContainer
+
+; ---------------------------------------------------------------------------- ;
+;                                    Content                                   ;
+; ---------------------------------------------------------------------------- ;
+
 [Header01]
 Meter=String
 Text=Dimensions
@@ -118,10 +148,27 @@ MeterStyle=Set.String:S | Set.OptionName:S
 Meter=String
 Text=Fill & Color
 MeterStyle=Set.String:S | Set.OptionCat:S
+
+
+[Item1.Shape]
+Meter=Shape
+MeterStyle=Item.Shape:S
+[Item1.StringIcon]
+Meter=String
+Text=[\xf1ad]
+MeterStyle=Set.String:S | Item.StringIcon:S
+[Item1.String]
+Meter=String
+Text=Background blur's rounded corner is only supported for Windows 11
+MeterStyle=Set.String:S | Item.String:S
+
+[Divider19]
+Meter=Shape
+X=(30*[Set.S])
+MeterStyle=Set.Div:S
 [Option19]
 Meter=String
 Text=Blur type
-
 MeterStyle=Set.String:S | Set.OptionName:S
 [Divider20]
 Meter=Shape
