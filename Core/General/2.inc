@@ -203,7 +203,7 @@ Meter=Shape
 MeterStyle=Set.Textbox:S
 Y=([Option13:Y]-#Set.P#+(-30/2+8)*[Set.S])
 Hidden=(1-#ReplaceWin#)
-SaveLocation=#Sec.SaveLocation2#
+SaveLocation=2
 [Value13]
 Meter=String
 Text=#OrbImageName#
@@ -260,7 +260,7 @@ Meter=Shape
 MeterStyle=Set.Bool:S
 Y=([Option20:Y]-#Set.P#+(-20/2+8)*[Set.S])
 Hidden=(1-#WinBlock#)
-SaveLocation=#Sec.SaveLocation2#
+SaveLocation=2
 
 [Mode:]
 Meter=Shape
@@ -289,7 +289,7 @@ Meter=Shape
 MeterStyle=Set.Textbox:S
 Y=([Option22:Y]-#Set.P#+(-30/2+8)*[Set.S])
 Hidden=(1-#WinBlock#)
-SaveLocation=#Sec.SaveLocation2#
+SaveLocation=2
 [Value22]
 Meter=String
 Text=#W# px
@@ -301,7 +301,7 @@ Meter=Shape
 MeterStyle=Set.Textbox:S
 Y=([Option23:Y]-#Set.P#+(-30/2+8)*[Set.S])
 Hidden=(1-#WinBlock#)
-SaveLocation=#Sec.SaveLocation2#
+SaveLocation=2
 [Value23]
 Meter=String
 Text=#H# px
@@ -311,7 +311,7 @@ Hidden=(1-#WinBlock#)
 [Over]
 Meter=Shape
 MeterStyle=Set.ColorPacity:S
-SaveLocation=#Sec.SaveLocation2#
+SaveLocation=2
 Y=([Option24:Y]-#Set.P#+(-30/2+8)*[Set.S])
 Type=Num|1|255
 Hidden=(1-#WinBlock#)
