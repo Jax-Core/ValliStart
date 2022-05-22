@@ -3,7 +3,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/Jax-Core/ValliStart">
-    <img src="https://cdn.discordapp.com/attachments/936246521807138816/945920749259075684/ValliStartColored.png" alt="Logo" width="200" height="200">
+    <img src="https://cdn.discordapp.com/attachments/875630623853793283/977856719055114250/ValliStart3.png" alt="Logo" width="200" height="200">
   </a>
   <h3 align="center">ValliStart</h3>
   <p align="center">
@@ -64,7 +64,7 @@
 <!-- ABOUT THE PROJECT -->
 # About
 
-<https://user-images.githubusercontent.com/80020581/135605193-383f546f-252e-4717-a38b-431e3d6fcdf8.mp4>
+![ValliStart3](https://user-images.githubusercontent.com/80020581/169686772-4ffa8032-c98f-4af7-9805-4f6bcfd25d32.png)
 
 ValliStart is a start menu replacement for Windows, with full customizability, interchangeable modules and more.
 
