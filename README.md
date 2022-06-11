@@ -62,13 +62,13 @@
 </details>
 
 <!-- ABOUT THE PROJECT -->
-# About
+## About
 
 ![ValliStart3](https://user-images.githubusercontent.com/80020581/169686772-4ffa8032-c98f-4af7-9805-4f6bcfd25d32.png)
 
 ValliStart is a start menu replacement for Windows, with full customizability, interchangeable modules and more.
 
-# Features
+## Features
 
 * Flawless Animations
 * Full-fledged Control Center
@@ -82,13 +82,13 @@ ValliStart is a start menu replacement for Windows, with full customizability, i
 </p>
 
 <!-- INSTALLATION AND SETUP -->
-# Getting Started
+## Getting Started
 
-## Prerequisites
+### Prerequisites
 - **Windows 10** or above
 - For older systems, **Powershell v5.1 or newer** is required. Upgrade powershell **[here](https://docs.microsoft.com/en-us/powershell/scripting/windows-powershell/install/installing-windows-powershell?view=powershell-7.2#upgrading-existing-windows-powershell)**!
 
-## Installation 
+### Installation 
 **By Powershell CLI:**
 Run the following command in Powershell (`win + r` -> `powershell.exe` / search)
 ```
