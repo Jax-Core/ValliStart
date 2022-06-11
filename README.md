@@ -92,7 +92,7 @@ ValliStart is a start menu replacement for Windows, with full customizability, i
 **By Powershell CLI:**
 Run the following command in Powershell (`win + r` -> `powershell.exe` / search)
 ```
-Invoke-WebRequest -UseBasicParsing "https://raw.githubusercontent.com/Jax-Core/JaxCore/master/CoreInstaller.ps1" | Invoke-Expression
+$installSkin="ValliStart";Invoke-WebRequest -UseBasicParsing "https://raw.githubusercontent.com/Jax-Core/JaxCore/master/CoreInstaller.ps1" | Invoke-Expression
 ```
 **By legacy [Rainmeter](https://www.rainmeter.net/) .rmskin installer:**
 Download and run the `.rmskin` file from the latest release **[here](https://github.com/Jax-Core/ValliStart/releases/latest)**.
