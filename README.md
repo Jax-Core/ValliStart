@@ -85,18 +85,20 @@ ValliStart is a start menu replacement for Windows, with full customizability, i
 # Getting Started
 
 ## Prerequisites
+- **Windows 10** or above
+- For older systems, **Powershell v5.1 or newer** is required. Upgrade powershell **[here](https://docs.microsoft.com/en-us/powershell/scripting/windows-powershell/install/installing-windows-powershell?view=powershell-7.2#upgrading-existing-windows-powershell)**!
 
-* **Rainmeter v4.5 or newer.** Rainmeter can be installed by downloading the `.exe` file [from Rainmeter's official website.](https://www.rainmeter.net/)
-
-## Installation
-
-Assuming you successfully downloaded and installed Rainmeter as well as JaxCore, you can now proceed to install ValliStart by following the steps below.
-
-1. Download and run the `.rmskin` file for **ValliStart** from the official [JaxCore site](https://jax-core.github.io/) to install **ValliStart**.
-2. Leave the installation settings at their defaults and click Install.
-3. When the installation is finished, a startup pop-up should appear. Follow through the pop-up to finish installing ValliStart.
-
+## Installation 
+**By Powershell CLI:**
+Run the following command in Powershell (`win + r` -> `powershell.exe` / search)
+```
+Invoke-WebRequest -UseBasicParsing "https://raw.githubusercontent.com/Jax-Core/JaxCore/master/CoreInstaller.ps1" | Invoke-Expression
+```
+**By legacy [Rainmeter](https://www.rainmeter.net/) .rmskin installer:**
+Download and run the `.rmskin` file from the latest release **[here](https://github.com/Jax-Core/ValliStart/releases/latest)**.
 > Note:  If you find that the JaxCore option is red on the startup pop-up, please press the red button and Core will be installed automatically. Perchance this fails, you can manually install Core by downloading the `.rmskin` file from [JaxCore's official website.](https://jax-core.github.io/)
+<br />
+<br />
 
 ## Customization
 
@@ -174,56 +176,6 @@ That's all there is to it. Your shortcuts will now be visible in the pinned appl
 6. Refresh ValliStart by deactivating and activating again using the toggle on the bottom left.
 
 > **Note:** You can also alter other options like the temperature unit, the language the weather is shown in, and the time format when configuring the weather location on **Step 5**. Also, **if you're not sure what the API key is for, don't change or edit it.**
-
-## Media Controls
-
-### For Spotify
-
-For media controls to work with Spotify, you will have to setup and install **[Spicetify](https://spicetify.app/).** Follow the steps below to do so.
-
-1. Open Powershell (Windows 10) or Windows Terminal (Windows 11) and run the commands that follow:
-
-    ```
-      Invoke-WebRequest -UseBasicParsing "https://raw.githubusercontent.com/khanhas/spicetify-cli/master/install.ps1" | Invoke-Expression
-
-      spicetify
-
-      spicetify config extensions webnowplaying.js
-    ```
-
-   **If you only want to install `webnowplaying.js` without the custom themes, use the following command:**
-
-      ```
-        spicetify config inject_css 0 replace_colors 0
-      ```
-
-2. And finally, run the following command to save and apply all your changes:
-
-    ```
-      spicetify backup apply
-    ```
-
-You can now proceed to configure media controls for Spotify. Simply follow the steps outlined below:
-
-1. Open Core and head over to the **Modules** section.
-2. Select **ValliStart** from the list and proceed to the **Modules** tab.
-3. Click the **Music** module to enable it and your media controls for Spotify should work.
-
-### For Web Players
-
-For media controls to work with a website playing audio in your browser, you will have to install the **[WebNowPlaying Companion](https://chrome.google.com/webstore/detail/webnowplaying-companion/jfakgfcdgpghbbefmdfjkbdlibjgnbli) extension for your browser.**
-
-Once you've installed the extension, you can now proceed to configure media controls for Web Players. Simply follow the steps outlined below:
-
-1. Open Core and head over to the **Modules** section.
-2. Select **ValliStart** from the list and proceed to the **Modules** tab.
-3. Select the **Music** module to enable it and your media controls for any website should work.
-
-**The other modules, on the other hand, do not necessitate the installation of any additional applications or extensions. So, you can simply enable them using the same method as described above for the Music module.**
-
-<p align="right">
-    <b><a href="#top">↥ back to top</a></b>
-</p>
 
 # Help and Credits
 
