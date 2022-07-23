@@ -100,86 +100,11 @@ Download and run the `.rmskin` file from the latest release **[here](https://git
 <br />
 <br />
 
-## Customization
-
-ValliStart includes 6 color scheme presets. You enable them by just selecting them within the **Color Scheme** tab.
-Furthermore, ValliStart also comes with 4 layout presets. You can enable them by just selecting them within the **Layout** tab:
-
-![image](https://user-images.githubusercontent.com/80020581/156275153-104e47da-ef14-4b63-8809-a5058d15f417.png)
-
-## Activation 
-ValliStart can be activated in multiple ways:
-#### Replacing the native windows button and key
-You can launch ValliStart just like the start menu with the `Win` Key. Additionally, you can replace the windows button by:
-- Creating a pseudo start button with core
-1. Navigate to `JaxCore -> ValliStart -> General -> Setting: Customize how to activate ValliStart` and turn on override start button. 
-2. Select a start orb name. The default is `Win11`. You can choose another one / add your own one in the orbs directory, and entering another start orb name.
-3. Press the `Create` button above
-4. Core should popup the explorer with shortcut `ValliStart.lnk` inside
-5. Drag the shortcut to the taskbar
-6. Now you have a pseudo start button on the taskbar! 
-7. If you want to remove the stock start button: You can use [StartKiller](http://www.startkiller.com/) for Win10. There are no known ways of doing so on Windows 11.
-
-- Using ValliStart's winblock function to create an overlay which overlaps the start button on your taskbar
-1. Navigate to `JaxCore -> ValliStart -> General -> Setting: Customize how to activate ValliStart` and turn on override start button. 
-2. Toggle `Setting: Display WinBlock element (legacy)` on
-3. Switch `Setting: Win block behavior` to edit
-4. Drag the winblocker to desired location
-5. Switch `Setting: Win block behavior` to functional
-
-#### Using a separate hotkey
-You can also launch ValliStart with the hotkey of your choice. This does not support overriding the displayed window button on your taskbar.
-1. Navigate to `JaxCore -> ValliStart -> General -> Setting: How should ValliStart behave?` and switch the option to `Separate module`
-2. Change `Setting: Activation Hotkey`to your desired hotkey
-
-<p align="right">
-    <b><a href="#top">↥ back to top</a></b>
-</p>
-
-<!-- MODULES SETUP -->
-# Modules Setup
-
-Now that you've installed and setup ValliStart, let's begin setting up some modules it comes with!
-
-## Pinned Shortcuts
-
-### Choosing a module preset
-
-If your ValliStart layout preset does not have the pinned shortcuts module enabled by default, follow the steps outlined below to enable it. However, if it is already enabled/selected, you can skip to configuring it.
-
-1. Open Core and head over to the **Modules** section.
-2. Select **ValliStart** from the list and proceed to the **Modules** tab.
-3. Scroll all way to the bottom, find the module labelled **None** and click `Change`. Alternatively, you can also replace any other pre-existing module with the shortcut module.
-4. Go to the **Shortcut Modules** tab and select a preset you like. You can choose from three presets; **WinRow11**, **DoubleRow**, and **SingleRow**.
-    >  <img src ="https://imgur.com/JgHZTni.png" alt = "ref" width="378" height ="80">
-
-### Configuring the preset
-
-1. Open Core and head over to the **Modules** section.
-2. Select **ValliStart** from the list and proceed to the **Modules** tab.
-3. Open the settings for your currently enabled shortcuts module.
-4. Click on one of the pre-existing shortcut's name.
-5. Select the shortcut for the application to be pinned.
-
-That's all there is to it. Your shortcuts will now be visible in the pinned applications section.
-
-## Weather
-
-1. Open Core and head over to the **Modules** section.
-2. Select **ValliStart** from the list and proceed to the **Modules** tab.
-3. Open the settings for the **Weather** module.
-4. Click the green redirect button next to the `Configure weather settings in core's global settings` text.
-    >  <img src ="https://imgur.com/WDatjK5.png" alt = "ref" width="755" height ="81">
-
-5. Once the **Global Variables** configuration window opens, change the weather location to the location you want the weather status of.
-    >  <img src ="https://imgur.com/ycI4Qp4.png" alt = "ref" width="867" height ="55">
-6. Refresh ValliStart by deactivating and activating again using the toggle on the bottom left.
-
-> **Note:** You can also alter other options like the temperature unit, the language the weather is shown in, and the time format when configuring the weather location on **Step 5**. Also, **if you're not sure what the API key is for, don't change or edit it.**
-
-# Help and Credits
-
-* Spicetify installation guide by [khanhas](https://github.com/khanhas).
+## Guide for customization and activation
+You can find the guide in [JaxCore's documentation](https://jaxcore.gitbook.io/core/modules/vallistart)
+<br />
+<br />
+## Help and Credits
 
 * Join the [Core Community Discord Server](https://discord.gg/JmgehPSDD6) for more help.
 
