@@ -77,9 +77,6 @@ ValliStart is a start menu replacement for Windows, with full customizability, i
 * Customizable Hotkeys
 * Additional Modules like Weather Status
 
-<p align="right">
-    <b><a href="#top">↥ back to top</a></b>
-</p>
 
 <!-- INSTALLATION AND SETUP -->
 ## Getting Started
@@ -89,11 +86,15 @@ ValliStart is a start menu replacement for Windows, with full customizability, i
 - For older systems, **Powershell v5.1 or newer** is required. Upgrade powershell **[here](https://docs.microsoft.com/en-us/powershell/scripting/windows-powershell/install/installing-windows-powershell?view=powershell-7.2#upgrading-existing-windows-powershell)**!
 
 ### Installation 
-Run the following command in Powershell to get the latest version of JaxCore (`win + r` -> `powershell.exe` / search)
+Run the following command in Powershell to install the latest version of JaxCore.
+
+(To launch Powershell as an Admin: `Win + R` -> `powershell` -> Press `CTRL + SHIFT + ENTER` on your keyboard. Powershell can also be launched via Windows Search.)
+
 ```
 Invoke-WebRequest -UseBasicParsing "https://raw.githubusercontent.com/Jax-Core/JaxCore/master/CoreInstaller.ps1" | Invoke-Expression
 ```
-Alternatively you can get it on the [website](https://jax-core.github.io/)
+
+> Alternatively, you can download it from the [JaxCore website](https://jax-core.github.io/).
 
 After you've proceeded through the welcome screen, select this module and click Install. It will appear in the library page after that.
 <br />
@@ -107,6 +108,3 @@ You can find the guide in [JaxCore's documentation](https://jaxcore.gitbook.io/c
 
 * Join the [Core Community Discord Server](https://discord.gg/JmgehPSDD6) for more help.
 
-<p align="right">
-    <b><a href="#top">↥ back to top</a></b>
-</p>
