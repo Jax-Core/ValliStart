@@ -28,7 +28,7 @@
 
 ![ValliStart](https://raw.githubusercontent.com/Jax-Core/ReadME-Template/main/Resources/Splash/ValliStart.png)
 <!-- END About.mustache -->
-ValliStart is a start menu replacement for Windows, with full customizability, interchangeable modules and more.
+**ValliStart** is a start menu replacement for Windows, with full customizability, interchangeable modules and more.
 
 <!-- START Features.mustache -->
 
