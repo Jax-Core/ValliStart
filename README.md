@@ -2,7 +2,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/Jax-Core/ValliStart">
-    <img src="https://raw.githubusercontent.com/Jax-Core/ReadME-Template/main/Resources/Icons/ValliStart.png" alt="Logo" width="80" height="80">
+    <img src="https://raw.githubusercontent.com/Jax-Core/ReadME-Template/main/Resources/Icons/ValliStart.png" alt="Logo" width="180" height="180">
   </a>
 
 <h3 align="center">ValliStart</h3>
@@ -12,6 +12,7 @@
     <a href="https://discord.gg/JmgehPSDD6">Help, Report Bugs & Request Features »</a>
   </p>
 </div>
+
 <!-- END Header.mustache -->
 <!-- START ShieldsFull.mustache -->
 <p align="center">
@@ -27,6 +28,7 @@
 ## About
 
 ![ValliStart](https://raw.githubusercontent.com/Jax-Core/ReadME-Template/main/Resources/Splash/ValliStart.png)
+
 <!-- END About.mustache -->
 **ValliStart** is a start menu replacement for Windows, with full customizability, interchangeable modules and more.
 
@@ -75,8 +77,6 @@ For more information, visit [JaxCore's documentation](https://jaxcore.gitbook.io
 * Join the [CoreCommunity Discord Server](https://discord.gg/JmgehPSDD6) for help
 * or [Create an issue](https://github.com/Jax-Core/ValliStart)
 
----
-
 ## Say Hi!
 * Follow me on 👨‍💻 [Github](https://github.com/EnhancedJax) and stay updated on new things that I make
 * You can also watch me on 🐦 [DeviantArt](https://www.deviantart.com/jaxoriginals) instead
@@ -88,5 +88,4 @@ For more information, visit [JaxCore's documentation](https://jaxcore.gitbook.io
 <i>Made with ❤️ by Jax</i>
    <br/><br/>
    <img src="https://raw.githubusercontent.com/Jax-Core/ReadME-Template/main/Resources/Assets/Logo.png"  width="32" height="32"/>
-</p>
----<!-- END Footer.mustache -->
+</p><!-- END Footer.mustache -->
