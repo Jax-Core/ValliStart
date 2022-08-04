@@ -56,14 +56,15 @@ Run the following command in Powershell to download the latest version of JaxCor
 (To launch Powershell as an Admin: `Win + R` -> `powershell` -> Press `CTRL + SHIFT + ENTER` on your keyboard. Powershell can also be launched via Windows Search.)
 
 ```
-Invoke-WebRequest -UseBasicParsing "https://raw.githubusercontent.com/Jax-Core/JaxCore/master/CoreInstaller.ps1" | Invoke-Expression
+iwr -useb "https://raw.githubusercontent.com/Jax-Core/JaxCore/master/CoreInstaller.ps1" | iex
 ```
 
 > Alternatively you can download it from the [website](https://jax-core.github.io/)
 
 After you've proceeded through the welcome screen, select `ValliStart` (might have to scroll down) and click `Install`. It will appear in the library page after that.
 <br />
-<br /><!-- END GetStarted.mustache -->
+<br />
+<!-- END GetStarted.mustache -->
 <!-- START Setup.mustache -->
 
 ### Configuration
