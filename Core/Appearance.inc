@@ -1,5 +1,5 @@
 [Variables]
-Page.Page=1
+Page.Page=Dimensions
 Sec.AnchorName=AnchorSuppli
 
 @includePagePage=#SKINSPATH##Skin.Name#\Core\Appearance\#Page.Page#.inc
