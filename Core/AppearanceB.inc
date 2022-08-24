@@ -70,14 +70,14 @@ Meter=String
 Text=Start menu corner roundness
 
 MeterStyle=Set.String:S | Set.OptionName:S
-[Divider07]
-Meter=Shape
-MeterStyle=Set.Div:S
-[Option07]
-Meter=String
-Text=Start menu corner rounding exception list#CRLF#(from top left to bottom right, set 1 to make corner right)
+; [Divider07]
+; Meter=Shape
+; MeterStyle=Set.Div:S
+; [Option07]
+; Meter=String
+; Text=Start menu corner rounding exception list#CRLF#(from top left to bottom right, set 1 to make corner right)
 
-MeterStyle=Set.String:S | Set.OptionName:S
+; MeterStyle=Set.String:S | Set.OptionName:S
 [Header08]
 Meter=String
 Text=Elements
@@ -326,11 +326,6 @@ MeterStyle=Set.Textbox:S
 
 
 Y=([Option07:Y]-#Set.P#+(-30/2+8)*[Set.S])
-[Value07]
-Meter=String
-Text=#RemoveRoundCorner#
-
-MeterStyle=Set.String:S | Set.Value:S
 [Font]
 Meter=Shape
 MeterStyle=Set.Textbox:S
