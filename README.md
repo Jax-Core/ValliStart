@@ -34,7 +34,7 @@
 
 <!-- START Screenshots.mustache -->
 ## Screenshots
-You can view screenshots [here](https://github.com/Jax-Core/ValliStart/blob/main/README.md)!
+You can view screenshots [here](https://github.com/Jax-Core/ValliStart/blob/main/Screenshots.md)!
 
 <!-- END Screenshots.mustache -->
 
