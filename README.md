@@ -33,6 +33,8 @@
 **ValliStart** is a start menu replacement for Windows, with full customizability, interchangeable modules and more.
 
 <!-- START Screenshots.mustache -->
+## Screenshots
+You can view screenshots [here](https://raw.githubusercontent.com/Jax-Core/ValliStart/main/Screenshots.md)!
 <!-- END Screenshots.mustache -->
 
 <!-- START Features.mustache -->
@@ -67,6 +69,7 @@ iwr -useb "https://raw.githubusercontent.com/Jax-Core/JaxCore/master/CoreInstall
 After you've proceeded through the welcome screen, select `ValliStart` (might have to scroll down) and click `Install`. It will appear in the library page after that.
 <br />
 <br />
+
 <!-- END GetStarted.mustache -->
 <!-- START Setup.mustache -->
 
