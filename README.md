@@ -32,6 +32,9 @@
 <!-- END About.mustache -->
 **ValliStart** is a start menu replacement for Windows, with full customizability, interchangeable modules and more.
 
+<!-- START Screenshots.mustache -->
+<!-- END Screenshots.mustache -->
+
 <!-- START Features.mustache -->
 
 ## Features<!-- END Features.mustache -->
